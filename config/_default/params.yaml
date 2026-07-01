@@ -1,0 +1,97 @@
+canonicalBaseURL: https://www.nex.rip/
+
+author:
+  name: John Urquhart Ferguson
+  email: enquiries@nex.rip
+  post: Nex.RIP, PO Box 10101, Glasgow, G71 9DN, UK
+
+description: The return of Nexami Engeo.
+images:
+- /social-logo.svg
+social:
+  facebook_admin: john.u.ferguson
+
+enableSearch: true
+searchPagerSize: 5
+
+logo:
+  svg: "images/logo.svg"
+  height: "3.688rem"
+  width: "11.064rem"
+
+colors:  # Standard Theme
+  logoHigh: "#F19A10"
+  logoLow: "#CD315B"
+  siteBackground: "#F9F9F9"
+  boxBackground: "#F9F9F9"
+  topStoriesBackground: "#4C5C5C"
+  inputBackground: "#F9F9F9"
+  inputText: "#0B0D0C"
+  navA: "#6D7474"
+  navAActive: "#0B0D0C"
+  navAHover: "#485757"
+  a: "#7C8C8C"
+  aActive: "#0B0D0C"
+  aHover: "#4C5C5C"
+  bodyText: "#0B0D0C"
+  h1: "#0B0D0C"
+  summary: "#4C5C5C"
+  topThreeA: "#FFFFFF"
+  topThreeAHover: "#A8FFFF"
+  logoHighDark: "#F19A10"
+  logoLowDark: "#CD315B"
+  siteBackgroundDark: "#0B0D0C"
+  boxBackgroundDark: "#061E26"
+  topStoriesBackgroundDark: "#B8AFD5"
+  inputBackgroundDark: "#0B0D0C"
+  inputTextDark: "#F9F9F9"
+  navADark: "#747C7C"
+  navAActiveDark: "#F9F9F9"
+  navAHoverDark: "#86A0A0"
+  aDark: "#7C8C8C"
+  aActiveDark: "#F9F9F9"
+  aHoverDark: "#4C5C5C"
+  bodyTextDark: "#F9F9F9"
+  h1Dark: "#F9F9F9"
+  summaryDark: "#B8AFD5"
+  topThreeADark: "#000000"
+  topThreeAHoverDark: "#1A1A74"
+
+
+#dateColors:  # Seasonal Themes (cannot span across the yearline). startDate is first active day. endDate is last active day. Both are MM-DD formatted. Same format as 'colors' above, but each block should also start with a name, startDate, and endDate.
+
+# Set this to "Standard" to turn off dateColors. Set to the name of a dateColor to force its use. Set it to null (without quotes) to go back to normal behaviour.
+colorsOverride: Standard
+
+
+authors:
+- name: John Urquhart Ferguson
+  image: "images/Author - John Urquhart Ferguson.png"
+  bio: "John was a collaborator before Nex had his brief stint of fame. He helped with business aspects of the early *engeo* releases, gave advice on sound engineering and production, and built our first website.\n\n
+
+I'm glad to have him back as the webmaster for Nex.RIP, and to continue getting his advice on how to record music with computers at home. I've asked him to contribute some articles that can help all my visitors learn to record and produce songs on a budget."
+#  vcard: "BEGIN:VCARD\nVERSION:2.1\nN;CHARSET=UTF-8:Ferguson;John;Urquhart;Dr;PhD\nFN;CHARSET=UTF-8:John Urquhart Ferguson, PhD\nORG;CHARSET=UTF-8:Nex.RIP\nTITLE;CHARSET=UTF-8:Webmaster\nEMAIL;TYPE=HOME:webmaster@nex.rip\nURL;TITLE:https://www.johnurquhartferguson.info\nEND:VCARD"
+  website: https://johnurquhartferguson.info
+  instagram: sympodius
+  facebook: john.u.ferguson
+  xtwitter: sympodius
+  github: sympodius
+  reddit: sympodius
+  flickr: fictionality
+  imdb: nm9001784
+  imvdb: john-ferguson
+  email: webmaster@nex.rip
+  keybase: sympodius
+  kofi: J3J81NSHKV
+- name: Nexami Engeo
+  image: "images/Author - Nexami Engeo.png"
+  bio: "Scottish singer/songwriter, best known from the band, *engeo*. After a couple of decades hiatus, he is back writing songs and spreading hope for a new generation.\n\n
+
+Nex is still finding his way with modern recording techniques and DIY studios. However, whatever he discovers will be shared here so that all may benefit.\n\n
+
+Despite reports to the contrary, Nex is very much alive."
+  website: https://nex.rip
+  instagram: nexami.engeo
+  facebook: nexami.engeo
+  email: enquiries@nex.rip
+  

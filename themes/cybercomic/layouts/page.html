@@ -1,0 +1,160 @@
+{{ define "main" }}
+{{- $page := . }}
+
+{{- /*
+  If using production code, get the third party javascript from CDNs. Otherwise, use a local copy.
+  This makes it easier for me to test the site without an internet connection.
+*/}}
+{{- if eq hugo.Environment "production" }}
+  {{- $jqueryUrl := "https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" }}
+  {{- with try (resources.GetRemote $jqueryUrl) }}
+    {{- with .Err }}
+      {{- errorf "%s" . }}
+    {{- else }}
+      {{- with (resources.GetRemote $jqueryUrl) | fingerprint }}
+    <script type="text/javascript" src="{{ $jqueryUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
+      {{- end }}
+    {{- end }}
+  {{- else }}
+    {{- errorf "Unable to get remote resource %q" $jqueryUrl }}
+  {{- end }}
+  {{- $nanogallery2CSSUrl := "https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" }}
+  {{- with try (resources.GetRemote $nanogallery2CSSUrl) }}
+    {{- with .Err }}
+      {{- errorf "%s" . }}
+    {{- else }}
+    <link href="{{ $nanogallery2CSSUrl }}" rel="stylesheet" type="text/css" crossorigin="anonymous">
+    {{- end }}
+  {{- else }}
+    {{- errorf "Unable to get remote resource %q" $nanogallery2CSSUrl }}
+  {{- end }}
+  {{- $nanogallery2JSUrl := "https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js" }}
+  {{- with try (resources.GetRemote $nanogallery2JSUrl) }}
+    {{- with .Err }}
+      {{- errorf "%s" . }}
+    {{- else }}
+      {{- with (resources.GetRemote $nanogallery2JSUrl) | fingerprint }}
+    <script type="text/javascript" src="{{ $nanogallery2JSUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
+      {{- end }}
+    {{- end }}
+  {{- else }}
+    {{- errorf "Unable to get remote resource %q" $nanogallery2JSUrl }}
+  {{- end }}
+{{- else }}
+  {{- with resources.Get "js/jquery.min.js" }}
+    {{- if eq hugo.Environment "development" }}
+      {{- with . }}
+    <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
+      {{- end }}
+    {{- else }}
+      {{- with . | resources.Minify | fingerprint }}
+    <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
+      {{- end }}
+    {{- end }}
+  {{- else }}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
+  {{- end }}
+  {{- with resources.Get "css/nanogallery2.min.css" }}
+    {{- if eq hugo.Environment "development" }}
+      {{- with . }}
+    <link href="{{ .RelPermalink }}" rel="stylesheet" type="text/css" crossorigin="anonymous">
+      {{- end }}
+    {{- else }}
+      {{- with . | resources.Minify }}
+    <link href="{{ .RelPermalink }}" rel="stylesheet" type="text/css" crossorigin="anonymous">
+      {{- end }}
+    {{- end }}
+  {{- else }}
+    <link href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
+  {{- end }}
+  {{- with resources.Get "js/jquery.nanogallery2.min.js" }}
+    {{- if eq hugo.Environment "development" }}
+      {{- with . }}
+    <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
+      {{- end }}
+    {{- else }}
+      {{- with . | resources.Minify | fingerprint }}
+    <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
+      {{- end }}
+    {{- end }}
+  {{- else }}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js" defer></script>
+  {{- end }}
+{{- end }}
+
+    <div id="nanogallery2-content-images" data-nanogallery2-lgroup="content-group"
+         data-nanogallery2-lightbox = '{
+           "viewerToolbar": {
+             "display":    true,
+             "standard":   "minimizeButton, label",
+             "minimized":  "minimizeButton, label, linkOriginalButton, downloadButton"
+           },
+           "viewerTools": {
+             "topLeft": "pageCounter, playPauseButton",
+             "topRight": "rotateLeft, rotateRight, zoomButton, fullscreenButton, closeButton"
+           }
+         }'>
+    </div>
+
+    <div class="single-page-container">
+      <article>
+      {{ partial "breadcrumbs.html" (dict "page" .) }}
+        <h1>{{- .Title -}}</h1>
+        <div class="summary">{{ .Summary }}</div>
+        <div class="entry-info">
+        {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{- $dateHuman := .Date | time.Format ":date_long" }}
+          <div class="byline">{{- with .Params.Author -}}By {{ page.Params.Author }} on {{ end -}}<time datetime="{{- $dateMachine -}}">{{- $dateHuman -}}</time></div>
+          <div class="reading-sizes"><span class="reading-sizes-label">Reading Time:</span> {{ .ReadingTime }} minutes ({{ .FuzzyWordCount }} words)</div>
+          {{ with .Params.readingEase -}}<div class="reading-difficulty">For {{ page.Params.ReadingEase }} and above{{- with page.Params.GradeLevel }} (Grade Level: {{ page.Params.GradeLevel -}}){{- end -}}</div>{{- end }}
+        </div>
+        {{ partial "storySharingLinks.html" (dict "page" .) }}
+        {{ .Content }}
+      </article>
+
+      <aside>
+      {{ partial "authorCard.html" (dict "authorName" page.Params.Author "page" .) }}
+      {{- $related := .Site.RegularPages.Related . | first 5 }}
+      {{- with $related }}
+        <div class="aside-card box box2 bubble-low print-hidden-block hidden">
+	  <div class="evenboxinner">
+            <div class="aside-card-title">Recommended For You</div>
+            <ul class="related-entries">
+              {{- range . }}
+                {{- $page := . }}
+                {{- $relBannerImages := .Params.images }}
+                {{- $relBannerImgURL := index $relBannerImages 0 | safeURL }}
+                {{- $relBannerImg := .Resources.GetMatch $relBannerImgURL }}
+                {{- if not $relBannerImg }}
+                  {{- $relBannerImg = resources.GetMatch "images/ClearBanner.png" -}}
+                {{- end -}}
+              <li>
+		<div class="related-link-container">
+		  {{- with $relBannerImg }}
+                    {{- $relBannerImgWebP := .Fill "138x138 webp" }}
+                  <div class="related-link-image">
+		    <div class="halftone-image-canvas">
+                      <a href="{{- $page.RelPermalink -}}"><img loading="lazy" src="{{- $relBannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $relBannerImgWebP.Width }}" height="{{ $relBannerImgWebP.Height }}"/></a>
+		    </div>
+                  </div>
+		  {{- end }}
+                  <div class="related-link-title"><a href="{{- .RelPermalink -}}">{{- .LinkTitle -}}</a></div>
+		</div>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+	</div>
+      {{- end }}
+
+      {{- with .GetTerms "tags" }}
+        <div class="aside-card box box5 bubble-high print-hidden-block hidden">
+	  <div class="oddboxinner">
+            <div class="aside-card-title">Related Tags</div>
+            {{ partial "terms.html" (dict "taxonomy" "tags" "page" $page) }}
+          </div>
+	</div>
+      {{- end }}
+      </aside>
+    </div>
+{{ end }}

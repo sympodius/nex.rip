@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="194.27mm" height="58.505mm" version="1.2" viewBox="0 0 194.28 58.505" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="linearGradient38" x1="62.318" x2="62.416" y1="8.5915" y2="60.093" gradientUnits="userSpaceOnUse">
+   <stop style="stop-color:#953c22" offset="0"/>
+   <stop style="stop-color:#da532c" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-6.5999,-4.9488)" style="fill:url(#linearGradient38)">
+  <g id="XGroup" style="fill:url(#linearGradient38)">
+   <path d="m175.38 18.678-4.3184-7.2233-11.119 3.1975 5.5322 8.5797z" style="fill:url(#linearGradient38)"/>
+   <path d="m194.31 9.9769-9.1292 0.74762-2.333 4.5221z" style="fill:url(#linearGradient38)"/>
+   <path d="m171.86 52.235-15.407 2.8646-3.2652 4.6508 16.06-2.9093z" style="fill:url(#linearGradient38)"/>
+   <path d="m190.83 48.709c-0.77306 0.61025-6.0457 1.3889-11.744 2.1835l2.9966 7.0716 13.025-2.2697z" style="fill:url(#linearGradient38)"/>
+   <path d="m196.4 12.05-2.6681 0.2188c-5.1778 0.87168-7.963 3.3035-11.462 5.2697l-4.4074 8.5417-3.056-5.1108c-3.9357 1.2659-6.9414 2.9015-9.9048 4.554l6.3335 9.8226-13.064 18.608c4.9173-1.4279 10.03-2.4321 15.407-2.8646l4.46-7.8623 2.7627 6.5198 11.744-2.1835-8.263-13.493z" style="fill:url(#linearGradient38)"/>
+  </g>
+  <g id="EGroup" style="fill:url(#linearGradient38)">
+   <path d="m153.92 8.5914-25.432 2.5187c-0.0534 4.4881-0.11752 8.9425-0.20873 13.316z" style="fill:url(#linearGradient38)"/>
+   <path d="m154.65 28.103-0.11081 0.51259 1.343-0.61723z" style="fill:url(#linearGradient38)"/>
+   <path d="m158.04 8.8706-2.9647 0.29379c-7.4121 5.8019-16.665 10.754-25.641 15.835-0.10799 5.1771-0.25818 10.227-0.48965 15.031l24.828-11.415 0.11082-0.51259-15.116 1.2826 0.96028-7.6407 15.788-1.1964z" style="fill:url(#linearGradient38)"/>
+   <path d="m158.81 8.8706-2.5238 11.678 1.6184-0.12255 2.878-11.75z" style="fill:url(#linearGradient38)"/>
+   <path d="m147.74 56.778-8.7067 1.6183 8.1768 0.83156z" style="fill:url(#linearGradient38)"/>
+   <path d="m148.51 56.778-0.52994 2.4499 2.1343 0.21712 0.34638-3.0296z" style="fill:url(#linearGradient38)"/>
+   <path d="m150.6 46.838-1.9524 9.0302 3.2261-0.59933 0.9614-8.4157z" style="fill:url(#linearGradient38)"/>
+   <path d="m153.28 30.868c-5.8141 3.9833-15.444 7.7133-24.914 11.454-0.23236 4.8222-0.54661 9.3963-0.98321 13.6l13.062 1.3279 7.4314-1.3816 1.9524-9.0302-11.496-0.07777 0.0862-6.8371 12.965-0.28036z" style="fill:url(#linearGradient38)"/>
+   <path d="m154.06 30.868-1.8965 8.7744 1.3234-0.02852 2.028-9.3408-0.1981 0.0168z" style="fill:url(#linearGradient38)"/>
+  </g>
+  <g id="NGroup" style="fill:url(#linearGradient38)">
+   <path d="m122.71 13.383-10.85 1.5003c-0.13864 4.5954-0.27758 9.1863-0.39675 15.744l-8.5216-14.161-12.752 0.13317c0.99179 11.715 1.2429 21.319 1.1863 30.046 10.556-7.4622 20.938-13.728 31.215-19.277z" style="fill:url(#linearGradient38)"/>
+   <path d="m123.38 13.383-0.11863 13.987 1.4868-0.91829c0.21674-4.4468 0.46589-8.9007 0.73642-13.359z" style="fill:url(#linearGradient38)"/>
+   <path d="m105.31 52.922-13.046 5.9977 13.132-0.59093c-9e-3 -2.0475-0.0436-3.776-0.0856-5.4068z" style="fill:url(#linearGradient38)"/>
+   <path d="m122.57 29.233c-10.988 5.0366-20.125 12.267-30.053 18.56-0.01972 3.0407-0.07495 5.979-0.15165 8.8573l0.46671-0.02126 13.046-5.9977c-0.0805-3.1229-0.20051-5.7432-0.3061-8.5473l3.6603 7.005 13.221-6.0778z" style="fill:url(#linearGradient38)"/>
+   <path d="m123.25 29.233-0.11694 13.778 2.2115-1.0168c0.12718-4.7864 0.31956-9.587 0.554-14.397z" style="fill:url(#linearGradient38)"/>
+   <path d="m123.01 44.785c-5.2993 1.3133-9.8056 3.9838-14.346 6.5954l3.6268 6.9412 10.6 0.55848z" style="fill:url(#linearGradient38)"/>
+   <path d="m123.69 44.785-0.11976 14.095 1.0476 0.05539c-0.0343-4.8643 0.0276-9.7495 0.1578-14.65z" style="fill:url(#linearGradient38)"/>
+  </g>
+  <g id="SigilGroup" transform="translate(11,9.5004)" style="fill:url(#linearGradient38)">
+   <path transform="scale(.45422)" d="m-1.98-1.9801v112.96h112.96v-112.96h-112.96zm23.833 13.96h65.292l-32.646 32.646-32.647-32.646zm-9.8723 9.8734 25.67 25.67h-25.67v-25.67zm85.031 0.003413v25.667h-25.667l25.667-25.667zm-85.031 39.627h25.661l-25.661 25.661v-25.661zm59.376 0h25.655v25.654l-25.655-25.654zm-16.858 2.8876 32.64 32.64h-65.28l32.64-32.64z" style="fill:url(#linearGradient38);stop-color:#000000"/>
+  </g>
+ </g>
+</svg>

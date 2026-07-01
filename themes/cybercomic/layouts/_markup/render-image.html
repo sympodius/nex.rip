@@ -1,0 +1,38 @@
+{{- $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+{{- $parent := . }}
+{{- $imageWebP := $image.Process "webp" }}
+{{- $maxWidth := 962 }}
+{{- $maxHeight := 520 }}
+{{- $imageSmallWebP := $image.Process "webp" }}
+{{- $maxWidthSmall := 836 }}
+{{- $maxHeightSmall := 452 }}
+{{- with $image }}
+  {{- $overMaxWidth := gt $image.Width $maxWidth }}
+  {{- if $overMaxWidth }}
+    {{- $imageWebP = $imageWebP.Resize "962x" }}
+  {{- end }}
+  {{- $overMaxHeight := gt $imageWebP.Height $maxHeight }}
+  {{- if $overMaxHeight }}
+    {{- $imageWebP = $imageWebP.Resize "x520" }}
+  {{- end }}
+
+  {{- $overMaxWidthSmall := gt $image.Width $maxWidthSmall }}
+  {{- if $overMaxWidthSmall }}
+    {{- $imageSmallWebP = $imageSmallWebP.Resize "836x" }}
+  {{- end }}
+  {{- $overMaxHeightSmall := gt $imageSmallWebP.Height $maxHeightSmall }}
+  {{- if $overMaxHeightSmall }}
+    {{- $imageSmallWebP = $imageSmallWebP.Resize "x452" }}
+  {{- end }}
+
+  {{- if $parent.IsBlock }}
+        <figure>
+	  <div class="halftone-image-canvas">
+            <img class="article-image" loading="lazy" srcset="{{- $imageSmallWebP.RelPermalink | safeURL }} {{ $imageSmallWebP.Width -}}w, {{- $imageWebP.RelPermalink | safeURL }} {{ $imageWebP.Width -}}w" sizes="(min-width: 56.25rem) {{ $imageWebP.Width -}}px, {{ $imageSmallWebP.Width -}}px" src="{{- $imageWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- $image.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} width="{{ $imageWebP.Width }}" height="{{ $imageWebP.Height }}"/>
+	  </div>
+          <figcaption>{{- $parent.Title -}}</figcaption>
+        </figure>
+  {{- else }}
+        <a href="{{- $image.RelPermalink | safeURL -}}"><img loading="lazy" src="{{- $imageWebP.RelPermalink | safeURL -}}" {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} {{ with $parent.Title -}}title="{{- . -}}"{{- end }}  width="{{ $imageWebP.Width }}" height="{{ $imageWebP.Height }}"/></a>
+  {{- end }}
+{{- end }}

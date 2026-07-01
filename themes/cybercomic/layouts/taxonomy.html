@@ -1,0 +1,12 @@
+{{ define "main" }}
+    <div class="list-page-container">
+      <h1 id="list-page-title">{{- .Title -}}</h1>
+      {{ .Content }}
+      <div class="list-page-terms-container">
+      {{- range .Pages.ByTitle }}
+        <div class="list-page-terms lowercase"><a href="{{ .RelPermalink }}">{{- if eq $.Title "Tags" -}}#{{- replace .LinkTitle " " "-" -}}{{- else -}}{{- .LinkTitle | humanize -}}{{- end -}}</a></div>
+        {{ .Summary }}
+      {{- end }}
+      </div>
+    </div>
+{{ end }}

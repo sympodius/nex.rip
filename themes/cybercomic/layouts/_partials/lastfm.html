@@ -1,0 +1,57 @@
+{{- $data := hugo.Data.lastfm -}}
+{{- $artists := index $data "artists" -}}
+{{- with $artists -}}
+{{- if gt (len .) 0 -}}
+
+
+<nav class="lastfm-widget" aria-label="Top Listens This Week">
+  <ol class="lastfm-widget-list">
+    {{- range $index, $element := . -}}
+    {{- $track := index $element "top_track" -}}
+    <li class="lastfm-widget-item lastfm-widget-item-ranking">
+      <span class="lastfm-widget-rank" aria-hidden="true">#{{ $index | add 1 }}</span>
+      {{- $album := index $track "album" -}}
+      {{- $imgHash := index $album "image" -}}
+      {{- $albumUrl := index $album "url" -}}
+      {{- $albumName := index $album "name" -}}
+      <div class="lastfm-widget-art">
+        {{- if $imgHash -}}
+          {{- $imgPath := printf "lastfm/images/%s" $imgHash -}}
+          <div class="halftone-image-canvas">
+              <a href="{{ $albumUrl }}" target="_blank" rel="noopener noreferrer">
+                {{ $img := resources.Get $imgPath }}
+                {{- with $img -}}
+                  {{ $resized := $img.Resize "120x webp" }}
+                  <img src="{{ $resized.RelPermalink }}" alt="{{ $albumName }}" loading="lazy" width="60" height="60" />
+                {{- end -}}
+              </a>
+          </div>
+        {{- else -}}
+          {{ template "lastfm-fallback-svg" }}
+        {{- end -}}
+      </div>
+      <div class="lastfm-widget-info">
+        <a class="lastfm-widget-artist" href="{{ index $element "url" }}" target="_blank" rel="noopener noreferrer">{{ index $element "name" }}</a>
+        {{- with $track -}}
+          <a class="lastfm-widget-track" href="{{ index . "url" }}" target="_blank" rel="noopener noreferrer">{{ index . "name" }}</a>
+        {{- end -}}
+      </div>
+    </li>
+    {{- end -}}
+  </ol>
+</nav>
+{{- end -}}
+{{- end -}}
+
+{{- define "lastfm-fallback-svg" -}}
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="No album art">
+  <g>
+    <circle fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" cx="32" cy="32" r="31"></circle>
+    <circle fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" cx="32" cy="32" r="8"></circle>
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M32,48c-8.838,0-16-7.16-16-16"></path>
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M32,16c8.838,0,16,7.162,16,16"></path>
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M32.003,55C19.299,55,9,44.707,9,32"></path>
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M32,9c12.704,0,23,10.295,23,23"></path>
+  </g>
+</svg>
+{{- end -}}

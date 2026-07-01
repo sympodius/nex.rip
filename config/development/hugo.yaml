@@ -1,0 +1,18 @@
+buildDrafts: true
+buildFuture: true
+buildExpired: true
+timeout: 120s
+
+caches:
+  assets:
+    dir: :resourceDir/_gen
+    maxAge: 0
+  getresource:
+    dir: :cacheDir/:project
+    maxAge: 0
+  images:
+    dir: :resourceDir/_gen
+    maxAge: 0
+  modules:
+    dir: :cacheDir/modules
+    maxAge: 0

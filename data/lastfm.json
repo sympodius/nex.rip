@@ -1,0 +1,87 @@
+{
+  "fetched_at": "2026-06-23T17:18:37.157Z",
+  "user": "sympodius",
+  "period_days": 7,
+  "artists": [
+    {
+      "rank": 1,
+      "name": "Jo Mango",
+      "play_count": 52,
+      "url": "https://www.last.fm/music/Jo+Mango",
+      "top_track": {
+        "name": "The Windowpane",
+        "play_count": 20,
+        "url": "https://www.last.fm/music/Jo+Mango/_/The+Windowpane",
+        "album": {
+          "image": "a61d6b1510196f2d148d2874513eecc1.jpg",
+          "name": "The Lightswitch",
+          "url": "https://www.last.fm/music/Jo+Mango/The+Lightswitch"
+        }
+      }
+    },
+    {
+      "rank": 2,
+      "name": "Siobhan Wilson",
+      "play_count": 28,
+      "url": "https://www.last.fm/music/Siobhan+Wilson",
+      "top_track": {
+        "name": "Thaw",
+        "play_count": 13,
+        "url": "https://www.last.fm/music/Siobhan+Wilson/_/Thaw",
+        "album": {
+          "image": "7aba4372bca685d1723f462901e530e8.jpg",
+          "name": "Thaw",
+          "url": "https://www.last.fm/music/Siobhan+Wilson/Thaw"
+        }
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Raveloe",
+      "play_count": 18,
+      "url": "https://www.last.fm/music/Raveloe",
+      "top_track": {
+        "name": "The Chair is Nowhere",
+        "play_count": 15,
+        "url": "https://www.last.fm/music/Raveloe/_/The+Chair+is+Nowhere",
+        "album": {
+          "image": "deb31b0349748832886a383546a7b2ba.jpg",
+          "name": "Exit Light",
+          "url": "https://www.last.fm/music/Raveloe/Exit+Light"
+        }
+      }
+    },
+    {
+      "rank": 4,
+      "name": "The Hate Eighties",
+      "play_count": 17,
+      "url": "https://www.last.fm/music/The+Hate+Eighties",
+      "top_track": {
+        "name": "Straight To The Heart",
+        "play_count": 17,
+        "url": "https://www.last.fm/music/The+Hate+Eighties/_/Straight+To+The+Heart",
+        "album": {
+          "image": "91242780099c45fe7575ebeacd23f147.jpg",
+          "name": "NOW",
+          "url": "https://www.last.fm/music/The+Hate+Eighties/NOW"
+        }
+      }
+    },
+    {
+      "rank": 5,
+      "name": "The Willow Trio",
+      "play_count": 17,
+      "url": "https://www.last.fm/music/The+Willow+Trio",
+      "top_track": {
+        "name": "Oystercatchers / I'm Not Getting On A Boat!",
+        "play_count": 15,
+        "url": "https://www.last.fm/music/The+Willow+Trio/_/Oystercatchers+%2F+I%27m+Not+Getting+On+A+Boat!",
+        "album": {
+          "image": null,
+          "name": "The Bestiary",
+          "url": "https://www.last.fm/music/The+Willow+Trio/The+Bestiary"
+        }
+      }
+    }
+  ]
+}

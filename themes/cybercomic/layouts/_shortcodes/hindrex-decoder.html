@@ -1,0 +1,85 @@
+<form id="hindrexScoreToCode" onsubmit="convertHindrexScoreToCode(); return false;" style="margin-top: 1rem; margin-bottom: 1rem;">
+  <label for="hindrexScoreIn">Hindrex Score:</label><br>
+  <input id="hindrexScoreIn" placeholder="Hindrex score (eg, 3678)" class="inputbar" style="width: 20rem;">
+  <button type="button" onclick="convertHindrexScoreToCode()" class="inputbutton" form="hindrexScoreToCode" style="width: 10rem;">Convert to code</button><br>
+  <output name="hindrexCodeOut" for="hindrexScoreIn" id="hindrexCodeOut"></output>
+</form>
+
+<form id="hindrexCodeToScore" onsubmit="convertHindrexCodeToScore(); return false;" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+  <label for="hindrexCodeIn">Hindrex Code:</label><br>
+  <input id="hindrexCodeIn" placeholder="Hindrex code (eg, FF-NN-RTR-LRC)" class="inputbar" style="width: 20rem;">
+  <button type="button" onclick="convertHindrexCodeToScore()" class="inputbutton" form="hindrexCodeToScore" style="width: 10rem;">Convert to score</button><br>
+  <output name="hindrexScoreOut" for="hindrexCodeIn" id="hindrexScoreOut"></output>
+</form>
+
+<script>
+  const mapping = [
+    [2048, "FOSS"],
+    [1024, "ZI"],
+    [512, "FP"],
+    [256, "ZLS"],
+    [128, "ZR"],
+    [64, "FF"],
+    [32, "A"],
+    [16, "ZC"],
+    [8, "NN"],
+    [4, "RTR"],
+    [2, "LRC"],
+    [1, "LFC"],
+  ];
+
+  const codeToValue = Object.fromEntries(
+    mapping.map(([value, code]) => [code, value])
+  );
+
+  function hindrexScoreToCode(score) {
+    const parts = [];
+    for (const [value, code] of mapping) {
+      while (score >= value) {
+        score -= value;
+        parts.push(code);
+      }
+    }
+    return parts.join("-");
+  }
+
+  function hindrexCodeToScore(code) {
+    return code
+      .split("-")
+      .filter(Boolean)
+      .reduce((sum, part) => sum + (codeToValue[part] || 0), 0);
+  }
+
+  function convertHindrexScoreToCode() {
+    let result;
+    let scoreIn = document.getElementById("hindrexScoreIn").value.trim().replace(/\*/g, "");
+    let score = parseInt(scoreIn, 10);
+
+    if (isNaN(score)) {
+      result = "Input not valid";
+    } else {
+      result = "<em>Result:</em> <strong>" + hindrexScoreToCode(score).toString() + "</strong>";
+    }
+
+    document.getElementById("hindrexCodeOut").innerHTML = result;
+  }
+
+  function convertHindrexCodeToScore() {
+    let result;
+    let codeIn = document.getElementById("hindrexCodeIn").value.trim().toUpperCase();
+
+    const parts = codeIn.split("-").filter(Boolean);
+    if (parts.length === 0) {
+       result = "Input not valid";
+    } else {
+      const invalid = parts.filter((part) => !(part in codeToValue));
+      if (invalid.length > 0) {
+        result = "Input not valid";
+      } else {
+        result = "<em>Result:</em> <strong>" + hindrexCodeToScore(codeIn).toString() + "</strong>";
+      }
+    }
+
+    document.getElementById("hindrexScoreOut").innerHTML = result;
+  }
+</script>{{- /* This comment removes trailing newlines. */ -}}

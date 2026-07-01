@@ -1,0 +1,40 @@
+{{- $bannerImg := .Page.Resources.GetMatch (.Get "src" | safeURL) }}
+{{- $altText := .Get "alt" }}
+{{- $titleText := $altText }}
+{{- $captionText := .Get "caption" }}
+{{- with $captionText }}
+  {{- $titleText = $captionText }}
+{{- end }}
+{{- with .Get "title" }}{{ $titleText = . }}{{ end }}
+{{- $maxWidth := 962 }}
+{{- $maxHeight := 520 }}
+{{- $maxWidthSmall := 836 }}
+{{- $maxHeightSmall := 452}}
+{{- with $bannerImg }}
+  {{- $bannerImgWebP := $bannerImg.Process "webp" }}
+  {{- $overMaxWidth := gt $bannerImg.Width $maxWidth }}
+  {{- if $overMaxWidth }}
+    {{- $bannerImgWebP = $bannerImgWebP.Resize "962x" }}
+  {{- end }}
+  {{- $overMaxHeight := gt $bannerImgWebP.Height $maxHeight }}
+  {{- if $overMaxHeight }}
+    {{- $bannerImgWebP = $bannerImgWebP.Resize "x520" }}
+  {{- end }}
+  {{- $bannerImgSmallWebP := $bannerImg.Process "webp" }}
+  {{- $overMaxWidthSmall := gt $bannerImg.Width $maxWidthSmall }}
+  {{- if $overMaxWidthSmall }}
+    {{- $bannerImgSmallWebP = $bannerImgSmallWebP.Resize "836x" }}
+  {{- end }}
+  {{- $overMaxHeightSmall := gt $bannerImgSmallWebP.Height $maxHeightSmall }}
+  {{- if $overMaxHeightSmall }}
+    {{- $bannerImgSmallWebP = $bannerImgSmallWebP.Resize "x452" }}
+  {{- end }}
+        <div class="banner-image">
+          <figure>
+	    <div class="halftone-image-canvas">
+              <img loading="eager" srcset="{{- $bannerImgSmallWebP.RelPermalink | safeURL }} {{ $bannerImgSmallWebP.Width -}}w, {{- $bannerImgWebP.RelPermalink | safeURL }} {{ $bannerImgWebP.Width -}}w" sizes="(min-width: 56.25rem) {{ $bannerImgWebP.Width -}}px, {{ $bannerImgSmallWebP.Width -}}px" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- .RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $altText -}}alt="{{- . -}}"{{- end }} width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}" fetchpriority="high"/>
+	    </div>
+            <figcaption>{{- $titleText -}}</figcaption>
+          </figure>
+        </div>
+{{- end }}

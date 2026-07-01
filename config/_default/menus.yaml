@@ -1,0 +1,21 @@
+main:
+- name: Choons
+  pageRef: /choons
+  weight: 10
+- name: Secrets
+  pageRef: /secrets
+  weight: 20
+  
+legal:
+- name: About
+  pageRef: /legal/about
+  weight: 10
+- name: Credits
+  pageRef: /legal/credits
+  weight: 20
+- name: Privacy Policy
+  pageRef: /legal/privacy
+  weight: 30
+- name: Terms of Use
+  pageRef: /legal/terms
+  weight: 40

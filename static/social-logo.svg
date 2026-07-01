@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52.018mm" height="52.217mm" version="1.1" viewBox="0 0 52.018 52.217" xmlns="http://www.w3.org/2000/svg">
+ <rect x="5.5511e-17" width="52.018" height="52.217" style="fill:#da532c"/>
+ <g transform="matrix(.85054 0 0 .85054 -4.4044 -2.9736)">
+  <g transform="translate(11,9.5004)">
+   <rect transform="scale(.45422)" x="5" y="5" width="98.993" height="98.993" style="fill:none;stroke-width:13.962;stroke:#fff"/>
+   <path transform="scale(.45422)" d="m4.9965 4.9965 99 99" style="fill:none;stroke-width:13.962;stroke:#fff"/>
+   <path transform="scale(.45422)" d="m104 4.9965-99 99" style="fill:none;stroke-width:13.962;stroke:#fff"/>
+   <path transform="scale(.45422)" d="m4.4965 54.504h100" style="fill:none;stroke-width:13.962;stroke:#fff"/>
+  </g>
+ </g>
+</svg>

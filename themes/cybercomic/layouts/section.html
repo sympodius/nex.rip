@@ -1,0 +1,167 @@
+{{ define "main" }}
+{{- $basepage := . }}
+{{- $pages := .Pages }}
+{{- $paginator := .Paginate $pages.ByDate.Reverse }}
+    <div class="list-page-container">
+      <div id="section-title">{{ .Title | humanize | title -}}</div>
+
+    {{- if not $paginator.HasPrev }}
+      {{- range first 1 $pages.ByDate.Reverse }}
+        {{- $page := . }}
+        {{- $bannerImages := .Params.images }}
+        {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
+        {{- $bannerImg := .Resources.GetMatch $bannerImgURL }}
+        {{- if not $bannerImg }}
+          {{- $bannerImg = resources.GetMatch "images/ClearBanner.png" -}}
+        {{- end -}}
+        {{- $bannerImgOverlay := resources.GetMatch "images/ComicBannerMask.svg" -}}
+      <div id="section-pull-banner">
+	<div id="section-pull-top-story-small">
+	  <div id="section-pull-top-summary" class="hidden">
+            {{ .Summary }}
+          </div>
+	  <div class="section-pull-top-title">
+            <a href="{{- $page.RelPermalink -}}">{{- .Title -}}</a>
+          </div>
+	</div>
+	<div class="section-pull-banner-image-large hidden">
+          {{ with $bannerImg -}}<div class="halftone-image-canvas"><a href="{{- $page.RelPermalink -}}">{{- $bannerImgWebP := .Fill "1536x768 webp" -}}<img loading="eager" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}" fetchpriority="high"/><div id="banner-overlay-image"><img loading="eager" src="{{- $bannerImgOverlay.RelPermalink | safeURL -}}" alt="Comic Book Overlay" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}" fetchpriority="high"/></div></a></div>{{ end }}
+	</div>
+	<div class="section-pull-banner-image-medium hidden">
+          {{ with $bannerImg -}}<div class="halftone-image-canvas"><a href="{{- $page.RelPermalink -}}">{{- $bannerImgWebP := .Fill "1516x758 webp" -}}<img loading="eager" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}" fetchpriority="high"/><div id="banner-overlay-image"><img loading="eager" src="{{- $bannerImgOverlay.RelPermalink | safeURL -}}" alt="Comic Book Overlay" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}" fetchpriority="high"/></div></a></div>{{ end }}
+	</div>
+	<div class="section-pull-banner-image-small">
+          {{ with $bannerImg -}}<div class="halftone-image-canvas"><a href="{{- $page.RelPermalink -}}">{{- $bannerImgWebP := .Fill "836x418 webp" -}}<img loading="eager" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}" fetchpriority="high"/><div id="banner-overlay-image"><img loading="eager" src="{{- $bannerImgOverlay.RelPermalink | safeURL -}}" alt="Comic Book Overlay" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}" fetchpriority="high"/></div></a></div>{{ end }}
+	</div>
+        <div id="section-pull-top-story" class="hidden">
+          <div id="section-pull-top-summary" class="hidden">
+            {{ .Summary }}
+          </div>
+          <div class="section-pull-top-title">
+            <a href="{{- $page.RelPermalink -}}">{{- .Title -}}</a>
+          </div>
+        </div>
+	{{- if gt (len $pages) 1 }}
+        <div id="section-pull-top-stories">
+	  <div class="top-three-separator-large hidden"></div>
+	  <div class="top-three-separator-reverse"></div>
+          {{- range after 1 $pages.ByDate.Reverse | first 3 }}
+            {{- $page := . }}
+            {{- $firstRangePage := index (slice (first 4 $pages.ByDate.Reverse)) 0 1 -}}
+            {{- $lastRangePage := index (slice (first 4 $pages.ByDate.Reverse)) 0 3 -}}
+	  <div class="top-three-separator"></div>
+          <div class="top-three{{- if $page.Eq $firstRangePage }} first-top-three{{ else if $page.Eq $lastRangePage }} last-top-three{{- end -}}">
+            <a href="{{- $page.RelPermalink -}}">
+              <div class="top-three-summary hidden">{{- .Summary -}}</div>
+              <div class="top-three-title">{{- .Title -}}</div>
+            </a>
+          </div>
+          {{- end }}
+        </div>
+	{{- end }}
+      </div>
+      {{- end }}
+    {{- end }}
+
+      <div class="single-page-container">
+        <article class="more-on">
+          {{ .Content }}
+          <h1>More on {{ .Title | humanize | title -}}</h1>
+	  {{- $storyCounter := 0 }}
+          {{- range (.Paginate .Pages).Pages }}
+            {{- $page := . }}
+            {{- $bannerImages := .Params.images }}
+            {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
+            {{- $bannerImg := .Resources.GetMatch $bannerImgURL }}
+            {{- if not $bannerImg }}
+              {{- $bannerImg = resources.GetMatch "images/ClearBanner.png" -}}
+            {{- end -}}
+	    {{- $storyCounter = add $storyCounter 1 }}
+            {{- if gt $storyCounter 5 }}
+              {{- $storyCounter = 1 }}
+            {{- end }}
+          <div class="list-stories-block">
+	    <div class="box box{{ $storyCounter }}">
+              <div class="list-story-generic-block {{ if modBool $storyCounter 2 }}evenboxinner{{- else }}oddboxinner{{- end }}">
+		<div class="list-story-generic-block-text">
+                  <h2><a href="{{- .RelPermalink -}}">{{ .LinkTitle | humanize | title }}</a></h2>
+                  <div class="list-story-generic-block-summary hidden">{{ .Summary }}</div>
+                  <div class="list-story-generic-block-entry-info">
+                    {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+                    {{- $dateHuman := .Date | time.Format ":date_long" }}
+                    <div class="list-story-generic-block-date"><time datetime="{{- $dateMachine -}}">{{- $dateHuman -}}</time></div>
+                    <div class="list-story-generic-block-author hidden">{{- with $page.Params.Author }}By {{ $page.Params.Author -}}{{- end -}}</div>
+                    <div class="list-story-generic-block-reading-time">Reading Time: {{ $page.ReadingTime }} minutes <span class="list-story-generic-block-word-count hidden">({{- $page.FuzzyWordCount }} words)</span></div>
+                  </div>
+		</div>
+		<div class="list-story-generic-block-image-rectangle hidden">
+		  {{- with $bannerImg }}
+                  {{- $bannerImgWebP := .Fill "220x133 webp" }}
+		  <div class="halftone-image-canvas">
+                    <a href="{{- $page.RelPermalink -}}"><img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}"/></a>
+		  </div>
+		  {{- end }}
+		</div>
+		<div class="list-story-generic-block-image-square">
+		  {{- with $bannerImg }}
+                  {{- $bannerImgWebP := .Fill "138x138 webp" }}
+		  <div class="halftone-image-canvas">
+                    <a href="{{- $page.RelPermalink -}}"><img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}"/></a>
+		  </div>
+		  {{- end }}
+		</div>
+              </div>
+	    </div>
+          </div>
+          {{- end }}
+	  {{ partial "pagination.html" (dict "page" . "format" "cybercomic") }}
+        </article>
+
+        <aside class="aside-list">
+        {{- $sec := .Section }}
+          <div class="aside-card aside-card-list-top box box3 bubble-high print-hidden-block hidden">
+	    <div class="oddboxinner">
+              <div class="aside-card-title">Trending Tags in {{ .Title | humanize | title -}}</div>
+              <div class="terms-container">
+		<ul>
+		  {{- $t := where .Site.Taxonomies.tags ".Page.Section" $sec }}
+	          {{- range $t.ByCount | first $paginator.PagerSize }}
+	          <li><a class="lowercase" href="{{- .Page.RelPermalink -}}">#{{- replace .Page.Title " " "-" -}}</a></li>
+		  {{- end }}
+		</ul>
+              </div>
+            </div>
+	  </div>
+
+          <div class="aside-card box box4 bubble-low print-hidden-block hidden">
+	    <div class="evenboxinner">
+              <div class="aside-card-title">Trending Categories in {{ .Title | humanize | title -}}</div>
+              <div class="terms-container">
+		<ul>
+		  {{- $c := where .Site.Taxonomies.categories ".Page.Section" $sec }}
+	          {{- range $c.ByCount | first $paginator.PagerSize }}
+	          <li><a href="{{- .Page.RelPermalink -}}">{{- .Page.Title | humanize | lower -}}</a></li>
+		  {{- end }}
+		</ul>
+              </div>
+            </div>
+	  </div>
+
+          {{- $data := hugo.Data.lastfm -}}
+          {{- $artists := index $data "artists" -}}
+          {{- with $artists -}}
+          {{- if gt (len .) 0 -}}
+          <div class="aside-card box box1 bubble-high print-hidden-block hidden">
+	          <div class="oddboxinner">
+              <div class="aside-card-title">Top Listens This Week</div>
+              <div class="terms-container">
+		            {{ partial "lastfm.html" $basepage }}
+              </div>
+	          </div>
+          </div>
+          {{- end }}
+          {{- end }}
+        </aside>
+      </div>
+    </div>
+{{ end }}
