@@ -153,7 +153,7 @@ function populateResults(results) {
 	    boxnumber: boxnumber,
 	    boxinnertype: boxinnertype,
 	    title: value.item.title,
-	    link: value.item.permalink,
+	    link: value.item.relpermalink,
 	    tags: tags,
 	    categories: value.item.categories,
 	    snippet: snippet
