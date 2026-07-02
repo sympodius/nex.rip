@@ -20,7 +20,7 @@ tags:
 draft: false
 ---
 
-{{< banner src="images/post-cover.png" alt="Banner Image" >}}
+{{< banner src="images/post-cover.png" alt="A black handheld device with a physical keyboard, secured by a metal chain and padlock. Credit: John Urquhart Ferguson" >}}
 
 {{< md-comment >}}
 # Instructions
