@@ -83,7 +83,7 @@ Because some of the higher scores imply the criteria for the lower scores, the m
 
 At times throughout the site, I'll give my preferred software choice for a given task. In most cases, I'll also say whether my choice is based on a high hindrex rating or the software's output quality (hopefully both).
 
-Even though I will always try to give both the score and code for a hindrex rating, you may wish to use the decoder below on the off chance that I forget. Or, if you want to use hindrex scores as part of your own evaluations of software, the encoder for codes to scores might be helpful to you as well. You can thank John for coding those up for me.
+Even though I will always try to give both the score and code for a hindrex rating, you may wish to use the decoder below on the off chance that I forget. Or, if you want to use hindrex scores as part of your own evaluations of software, the encoder for codes-to-scores might be helpful to you as well. You can thank John for coding those up for me.
 
 {{< hindrex-decoder >}}
 
