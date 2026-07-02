@@ -757,6 +757,7 @@ tr:nth-child(1) {
   width: fit-content;
 }
 
+th,
 td {
   border-right: 1px solid #999999;
   border-left: 1px solid #999999;

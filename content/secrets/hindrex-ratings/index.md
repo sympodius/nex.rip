@@ -62,18 +62,18 @@ These fears have led to the development of the *Hindrance Index Rating System* (
 | **1**         | **LFC** : Low Financial Cost                   |
 
 These are the definitions for the criteria above:
-- **FOSS**: Free and Open Source Software, abiding by the four essential freedoms of free software[^free-software-def], and the Open Source definition[^open-source-def]
-- **ZI**: Zero Internet required to install and run the software (excluding a potential one-off download step)
-- **FP**: Full Privacy, such that the entity you got the software from never gets any personal information about you and does not spy on you
-- **ZLS**: Zero Licensing Servers required to download, install, or run the software
-- **ZR**: Zero Registration required to download, install, or run the software
-- **FF**: Full-Featured, without limitations (this means that it is fully usable for its intended purpose and free of timed or sporadic crippling. It does not mean that it includes all the features of a paid counterpart)
-- **A**: Archivable such that it can be backed up and reinstalled later without requiring new licenses/registrations, or a connection to the Internet
-- **ZC**: Zero Cost, meaning that no outlay of money is required to attain or run the software
-- **NN**: No Nag screens/boxes asking you to buy an upgrade or another product such that it interferes with regular operation of the software
-- **RTR**: Ready To Run, or extremely easy and low cost to compile from source code
-- **LRC**: Low Run Cost, meaning that it doesn't have prohibitively expensive hardware requirements
-- **LFC**: Low Financial Cost, meaning that it isn't prohibitively expensive to purchase
+- **FOSS** :: Free and Open Source Software, abiding by the four essential freedoms of free software[^free-software-def], and the Open Source definition[^open-source-def]
+- **ZI** :: Zero Internet required to install and run the software (excluding a potential one-off download step)
+- **FP** :: Full Privacy, such that the entity you got the software from never gets any personal information about you and does not spy on you
+- **ZLS** :: Zero Licensing Servers required to download, install, or run the software
+- **ZR** :: Zero Registration required to download, install, or run the software
+- **FF** :: Full-Featured, without limitations (this means that it is fully usable for its intended purpose and free of timed or sporadic crippling. It does not mean that it includes all the features of a paid counterpart)
+- **A** :: Archivable such that it can be backed up and reinstalled later without requiring new licenses/registrations, or a connection to the Internet
+- **ZC** :: Zero Cost, meaning that no outlay of money is required to attain or run the software
+- **NN** :: No Nag screens/boxes asking you to buy an upgrade or another product such that it interferes with regular operation of the software
+- **RTR** :: Ready To Run, or extremely easy and low cost to compile from source code
+- **LRC** :: Low Run Cost, meaning that it doesn't have prohibitively expensive hardware requirements
+- **LFC** :: Low Financial Cost, meaning that it isn't prohibitively expensive to purchase
 
 This rating system should always produce a uniquely reversible number, such that a single score can always be split back down into the criteria with only one possible outcome. In general, though, I'll still give ratings as both a single number and a series of criteria abbreviations.
 
