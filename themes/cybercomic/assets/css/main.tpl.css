@@ -106,7 +106,7 @@
 
 /* Typefaces */
 :root {
-  --typeface-one: "Bangers", system-ui;
+  --typeface-one: "Bangers", monospace;
   --typeface-two: "Architects Daughter", cursive;
   --typeface-three: "Comic Neue", cursive;
 }
