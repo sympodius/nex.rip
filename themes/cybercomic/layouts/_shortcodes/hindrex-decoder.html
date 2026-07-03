@@ -35,9 +35,9 @@
   function hindrexScoreToCode(score) {
     const parts = [];
     for (const [value, code] of mapping) {
-      while (score >= value) {
-        score -= value;
+      if (score & value) {
         parts.push(code);
+        score &= ~value;
       }
     }
     return parts.join("-");
@@ -51,10 +51,11 @@
 
   function hindrexCodeToScore(code) {
     const parts = code.split("-").filter(Boolean);
-    const present = new Set(parts);
+    const unique = [...new Set(parts)];
+    const present = new Set(unique);
 
     // Remove any code superseded by a higher-priority code that is also present
-    const filtered = parts.filter(part => {
+    const filtered = unique.filter(part => {
       for (const [dominant, dominated] of Object.entries(superseding)) {
         if (present.has(dominant) && dominated.includes(part)) {
           return false;
@@ -86,8 +87,8 @@
     let scoreIn = document.getElementById("hindrexScoreIn").value.trim().replace(/\*/g, "");
     let score = parseInt(scoreIn, 10);
 
-    if (isNaN(score)) {
-      result = "Input not valid";
+    if (isNaN(score) || score < 1 || score > 4095) {
+      result = "Input not valid (must be 1–4095)";
     } else {
       const code = hindrexScoreToCode(score);
       const parts = code.split("-").filter(Boolean);
@@ -104,8 +105,8 @@
         });
         const correctedScore = correctedParts.reduce((s, p) => s + codeToValue[p], 0);
         warning = "<br><span style='color:#f66;'>⚠ Score " + score + " is technically invalid: " +
-                  messages.join(", ") + ". Corrected score: " + correctedScore + " (" +
-                  correctedParts.join("-") + ").</span>";
+                  messages.join(", ") + ". Corrected score: <strong>" + correctedScore +
+                  "</strong> => <em>" + correctedParts.join("-") + "</em>.</span>";
       }
 
       result = "<em>Result:</em> <strong>" + code + "</strong>" + warning;
