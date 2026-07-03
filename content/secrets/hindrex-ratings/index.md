@@ -1,6 +1,6 @@
 ---
 title: 'Hindrex Ratings'
-date: 2026-06-23T22:30:26+01:00
+date: 2026-07-03T22:30:26+01:00
 author: Nexami Engeo
 description: "Introducing the hindrex rating system: a score that measures how hindered software is by privacy invasions, internet requirements, and licensing servers."
 summary: A scoring system for software freedom and privacy.

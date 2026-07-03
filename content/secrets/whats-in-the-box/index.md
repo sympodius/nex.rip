@@ -1,6 +1,6 @@
 ---
 title: "What's In The Box?"
-date: 2026-06-23T09:36:46+01:00
+date: 2026-07-02T09:36:46+01:00
 author: Nexami Engeo
 description: A roadmap to in-the-box music production. Discover how this site helps you make professional music at home quickly and cheaply with open-source tools.
 summary: The roadmap for Nex.RIP

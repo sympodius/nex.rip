@@ -1,6 +1,6 @@
 ---
 title: 'Which Wolf to Feed'
-date: 2026-06-20T10:51:59Z
+date: 2026-07-01T10:51:59Z
 author: Nexami Engeo
 description: Two wolves fight inside us — fear and hope. A musician's journey to decide which one to feed when art meets comfort.
 summary: Knowing when to play it safe, and when to throw the dice.
@@ -43,7 +43,7 @@ draft: false
 
 As I got closer to making and releasing music again, I wanted to talk about it with my friends.
 
-The first person I really opened up to was Fabienne Black. I'm sure you know her name, both for her critically acclaimed solo work, and her wildly successful band, *Le Chien*. Fabienne came to fame around the same time as me, but she managed to maintain her success. She says the difference between us is that she came to fame slowly, while we were thrust into it. She had the time to develop good business relationships and learn the industry, while we had to bluff our way and put faith in people we barely knew.
+The first person I really opened up to was Fabienne Black. I'm sure you know her name, both for her critically acclaimed solo work, and her wildly successful band, *Le Chien*. Fabienne came to fame around the same time as me, but she managed to maintain her success. She says the difference between us is that she came to fame slowly, while we were thrust into it. She had the time to develop good business relationships and learn the industry, while we had to bluff everything and put faith in people we barely knew.
 
 In any case, Fabienne and I met in the cafeteria of a music-based television station in Sweden. We were both promoting our music, and we quickly found common ground (both being up-and-coming musicians from the same part of Scotland). However, what really got us chatting was talking about magic tricks. I don't remember how the topic came up, but we spent the better part of an hour performing illusions for each other before I got called to a green room. We've been great friends ever since.
 
