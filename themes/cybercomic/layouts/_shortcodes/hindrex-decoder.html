@@ -43,11 +43,42 @@
     return parts.join("-");
   }
 
+  const superseding = {
+    FOSS: ["A"],
+    FP:   ["ZLS", "ZR"],
+    ZC:   ["LFC"],
+  };
+
   function hindrexCodeToScore(code) {
-    return code
-      .split("-")
-      .filter(Boolean)
-      .reduce((sum, part) => sum + (codeToValue[part] || 0), 0);
+    const parts = code.split("-").filter(Boolean);
+    const present = new Set(parts);
+
+    // Remove any code superseded by a higher-priority code that is also present
+    const filtered = parts.filter(part => {
+      for (const [dominant, dominated] of Object.entries(superseding)) {
+        if (present.has(dominant) && dominated.includes(part)) {
+          return false;
+        }
+      }
+      return true;
+    });
+
+    return filtered.reduce((sum, part) => sum + (codeToValue[part] || 0), 0);
+  }
+
+  function findSupersedingConflicts(parts) {
+    const present = new Set(parts);
+    const conflicts = [];
+    for (const [dominant, dominated] of Object.entries(superseding)) {
+      if (present.has(dominant)) {
+        for (const sub of dominated) {
+          if (present.has(sub)) {
+            conflicts.push({ dominant, sub });
+          }
+        }
+      }
+    }
+    return conflicts;
   }
 
   function convertHindrexScoreToCode() {
@@ -58,7 +89,26 @@
     if (isNaN(score)) {
       result = "Input not valid";
     } else {
-      result = "<em>Result:</em> <strong>" + hindrexScoreToCode(score).toString() + "</strong>";
+      const code = hindrexScoreToCode(score);
+      const parts = code.split("-").filter(Boolean);
+      const conflicts = findSupersedingConflicts(parts);
+
+      let warning = "";
+      if (conflicts.length > 0) {
+        const messages = conflicts.map(c => c.dominant + " supersedes " + c.sub);
+        const correctedParts = parts.filter(part => {
+          for (const [dom, dominated] of Object.entries(superseding)) {
+            if (parts.includes(dom) && dominated.includes(part)) return false;
+          }
+          return true;
+        });
+        const correctedScore = correctedParts.reduce((s, p) => s + codeToValue[p], 0);
+        warning = "<br><span style='color:#f66;'>⚠ Score " + score + " is technically invalid: " +
+                  messages.join(", ") + ". Corrected score: " + correctedScore + " (" +
+                  correctedParts.join("-") + ").</span>";
+      }
+
+      result = "<em>Result:</em> <strong>" + code + "</strong>" + warning;
     }
 
     document.getElementById("hindrexCodeOut").innerHTML = result;
