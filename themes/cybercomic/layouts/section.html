@@ -3,7 +3,7 @@
 {{- $pages := .Pages }}
 {{- $paginator := .Paginate $pages.ByDate.Reverse }}
     <div class="list-page-container">
-      <div id="section-title">{{ .Title | humanize | title -}}</div>
+      <div id="section-title">{{ .Title | title -}}</div>
 
     {{- if not $paginator.HasPrev }}
       {{- range first 1 $pages.ByDate.Reverse }}
@@ -66,7 +66,7 @@
       <div class="single-page-container">
         <article class="more-on">
           {{ .Content }}
-          <h1>More on {{ .Title | humanize | title -}}</h1>
+          <h1>More on {{ .Title | title -}}</h1>
 	  {{- $storyCounter := 0 }}
           {{- range (.Paginate .Pages).Pages }}
             {{- $page := . }}
@@ -84,7 +84,7 @@
 	    <div class="box box{{ $storyCounter }}">
               <div class="list-story-generic-block {{ if modBool $storyCounter 2 }}evenboxinner{{- else }}oddboxinner{{- end }}">
 		<div class="list-story-generic-block-text">
-                  <h2><a href="{{- .RelPermalink -}}">{{ .LinkTitle | humanize | title }}</a></h2>
+                  <h2><a href="{{- .RelPermalink -}}">{{ .LinkTitle | title }}</a></h2>
                   <div class="list-story-generic-block-summary hidden">{{ .Summary }}</div>
                   <div class="list-story-generic-block-entry-info">
                     {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
@@ -121,12 +121,12 @@
         {{- $sec := .Section }}
           <div class="aside-card aside-card-list-top box box3 bubble-high print-hidden-block hidden">
 	    <div class="oddboxinner">
-              <div class="aside-card-title">Trending Tags in {{ .Title | humanize | title -}}</div>
+              <div class="aside-card-title">Trending Tags in {{ .Title | title -}}</div>
               <div class="terms-container">
 		<ul>
 		  {{- $t := where .Site.Taxonomies.tags ".Page.Section" $sec }}
 	          {{- range $t.ByCount | first $paginator.PagerSize }}
-	          <li><a class="lowercase" href="{{- .Page.RelPermalink -}}">#{{- replace .Page.Title " " "-" -}}</a></li>
+	          <li><a class="lowercase" href="{{- .Page.RelPermalink -}}">#{{- replace .Page.Title " " "-" | lower -}}</a></li>
 		  {{- end }}
 		</ul>
               </div>
@@ -135,7 +135,7 @@
 
           <div class="aside-card box box4 bubble-low print-hidden-block hidden">
 	    <div class="evenboxinner">
-              <div class="aside-card-title">Trending Categories in {{ .Title | humanize | title -}}</div>
+              <div class="aside-card-title">Trending Categories in {{ .Title | title -}}</div>
               <div class="terms-container">
 		<ul>
 		  {{- $c := where .Site.Taxonomies.categories ".Page.Section" $sec }}

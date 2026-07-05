@@ -1,7 +1,7 @@
 {{ define "main" }}
     <div class="list-page-container">
       <article class="more-on">
-        <h1>{{ if eq .Data.Plural "tags" }}#{{ replace .Title " " "-" }}{{ else }}{{ .Title | humanize }}{{ end }}</h1>
+        <h1 class="lowercase">{{ if eq .Data.Plural "tags" }}#{{ replace .Title " " "-" | lower }}{{ else }}{{ .Title | humanize | lower }}{{ end }}</h1>
         {{ .Content -}}
         {{- $paginator := .Paginate .Pages.ByDate.Reverse }}
         {{- $storyCounter := 0 }}
@@ -21,7 +21,7 @@
 	  <div class="box box{{ $storyCounter }}">
             <div class="list-story-generic-block {{ if modBool $storyCounter 2 }}evenboxinner{{- else }}oddboxinner{{- end }}">
               <div class="list-story-generic-block-text">
-		<h2><a href="{{ .RelPermalink }}">{{ .LinkTitle | humanize | title }}</a></h2>
+		<h2><a href="{{ .RelPermalink }}">{{ .LinkTitle | title }}</a></h2>
 		<div class="list-story-generic-block-summary hidden">{{ .Summary }}</div>
 		<div class="list-story-generic-block-entry-info">
 		  {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}

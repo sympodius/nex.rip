@@ -122,7 +122,7 @@
 	    <div class="box box{{ $storyCounter }}">
               <div class="list-story-generic-block {{ if modBool $storyCounter 2 }}evenboxinner{{- else }}oddboxinner{{- end }}">
 		<div class="list-story-generic-block-text">
-                  <h2><a href="{{- .RelPermalink -}}">{{- .LinkTitle | humanize | title -}}</a></h2>
+                  <h2><a href="{{- .RelPermalink -}}">{{- .LinkTitle | title -}}</a></h2>
                   <div class="list-story-generic-block-summary hidden">{{ .Summary }}</div>
                   <div class="list-story-generic-block-entry-info">
                     {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
@@ -162,7 +162,7 @@
               <div class="terms-container">
 		            <ul>
 		            {{- range site.Taxonomies.tags.ByCount | first $paginator.PagerSize }}
-                  <li><a class="lowercase" href="{{- .Page.RelPermalink -}}">#{{- replace .Page.Title " " "-" -}}</a></li>
+                  <li><a class="lowercase" href="{{- .Page.RelPermalink -}}">#{{- replace .Page.Title " " "-" | lower -}}</a></li>
 		            {{- end }}
 		            </ul>
               </div>
