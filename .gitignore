@@ -26,6 +26,11 @@ go.work.sum
 
 # Secrets
 .env
+
+# Emacs Undo Files
+*.~undo-tree~
+
+# Hugo Build Files
 /resources/
 /public/
 /.hugo_build.lock
