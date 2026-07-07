@@ -41,11 +41,11 @@ draft: false
 - [x] You can use up to two more images in the blog entry, but try not to use any more (unless this is a listicle). Only the banner is essential
 - [ ] Try to write 1000 words. The closer to this number, the better, but don't go over (75% of the public prefers reading articles under 1,000 words)
 - [x] Reading time should not exceed seven minutes
-- [ ] Make sure to include a description and summary for the blog entry as these are used on the site and in SEO. Ideally the summary should be short and engaging to entice readers. The description is for webcrawlers and should be around 150 words (no more than 160)
-- [ ] Make an appropriate choice of tags in the front matter. These will help in recommending pages to the reader
-- [ ] Make an appropriate choice of categories in the front matter. The first category will be used in the breadcrumb for the page, others will generate the side menu
-- [ ] Use Emacs to generate the reading ease and grade level (this should happen automatically when saving the file in my Emacs configuration). These are just for fun, incidentally, and appear to have no impact on audience engagement
-- [ ] Set the draft to false when you want to publish, then push to GitHub
+- [x] Make sure to include a description and summary for the blog entry as these are used on the site and in SEO. Ideally the summary should be short and engaging to entice readers. The description is for webcrawlers and should be around 150 words (no more than 160)
+- [x] Make an appropriate choice of tags in the front matter. These will help in recommending pages to the reader
+- [x] Make an appropriate choice of categories in the front matter. The first category will be used in the breadcrumb for the page, others will generate the side menu
+- [x] Use Emacs to generate the reading ease and grade level (this should happen automatically when saving the file in my Emacs configuration). These are just for fun, incidentally, and appear to have no impact on audience engagement
+- [x] Set the draft to false when you want to publish, then push to GitHub
 - [ ] Drop a video announcing this post on Instagram etc, and post anywhere else you can as well. Reels and videos work better for engagement
 - [ ] Consider what tomorrow's article will be, and try to post a new one once a day (more is fine)
 {{</ md-comment >}}
@@ -66,7 +66,7 @@ The album is bookended by the *Oystercatchers* theme. It does indeed feel like s
 
 The third track, *Miss Mollie Moo*, made me think about a kingfisher darting in and out of the river, with periods of quiet surveillance to look for the next catch. For some reason, this is the only track in which my imaginings appeared as animation rather than real life. Take from that what you will.
 
-I think *Jasper* is the first piece where we hear sounds made by something other than a harp. A rhythmic shaker and some other light percussion that stops and starts throughout suggest some structured physical action being carried out beyond the more carefree meanderings of the mind. I imagine myself walking down the street with all the weird thoughts in my mind, but trying to keep my walk smooth and unremarkable so that I don't draw attention to myself. And yet, every now and then, I let a bit of a silly walk into my steps, like a pressure release to allow me to return to normal.
+I think *Jasper* is the first piece where we hear sounds made by something other than a harp. A rhythmic shaker and some other light percussion that stops and starts throughout suggest some structured physical action being carried out beyond the more carefree meanderings of the mind. I imagine myself walking down the street with all the weird thoughts in my head, but trying to keep my walk smooth and unremarkable so that I don't draw attention to myself. And yet, every now and then, I let a bit of a silly walk into my steps, like a pressure release to allow me to return to normal.
 
 An odd vision entered my head when listening to *The Gentle Giant*. I imagined a Studio Ghibli styled cat wandering around a rural Japanese community. The framing, movement, and actions all seemed to match that style but, oddly, it was all live action. It's a sweet little piece at any rate. It definitely made me think of someone exploring their domain with safe reassurance that all is well (and anything that seems like it isn't is probably just a misunderstanding).
 
