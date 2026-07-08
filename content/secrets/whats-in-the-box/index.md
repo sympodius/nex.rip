@@ -12,7 +12,7 @@ categories:
 - tutorials
 tags:
 - tutorials
-- music-production
+- audio-production
 - in-the-box
 - open-source
 - beginner
