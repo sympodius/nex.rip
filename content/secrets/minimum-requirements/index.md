@@ -18,6 +18,8 @@ tags:
 - midi
 - guitar
 - backstage
+- fabienne-black
+- john
 draft: false
 ---
 
@@ -59,7 +61,7 @@ Of course, the slight downside to this is that it wasn't very high-quality audio
 
 We ended up using a *lot* of digital processing to get rid of the noise in our early recordings. Somehow, we seemed to get away with it, but it meant a lot of additional work and never quite capturing the quality our mics were capable of.
 
-When I investigated the old equipment, I was amused to see that this was the way we'd left things, and had never figured out the problem back then. These are the sort of gotchas I hope to save you all from experiencing.
+I got Fabienne and John over to help me assess the old equipment, and the three of us were very amused to see that I'd never figured out the problem back then. These are the sort of gotchas I hope to save you all from experiencing.
 
 I won't go into detail about everything I still had from the old days, but for the hardcore fans: here is a table summary of equipment still relevant to my *in the box* audio production today:
 
@@ -81,13 +83,13 @@ Another fun fact for you: apart from the SM58 mics, all of those products are di
 
 Oddly enough, quite a lot of that was bought *after* we released our first two EPs, and was us gearing up for the next thing. Of course, we quickly ended up in professional studios after that, so most of this equipment was largely unused.
 
-There were lots of instruments from the old days too: 1996 Fender Tex-Mex Strat electric guitar[^tex-mex]; Yamaha FGX-412SC acoustic guitar; Deering Goodtime Sweet 16 banjo; Pono MTD-E tenor ukulele; electric violin; acoustic violins; harmonium; saxophone; harmonicas; theremin; etc. But really, none of that is important in the discussion of what was missing for *in the box* audio production.
+There were lots of instruments from the old days too: a 1996 Fender Tex-Mex Strat electric guitar[^tex-mex]; a Yamaha FGX-412SC acoustic guitar; a Deering Goodtime Sweet 16 banjo; a Pono MTD-E tenor ukulele; an electric violin; two acoustic violins; a harmonium; a saxophone; harmonicas; a theremin; etc. But really, none of that is important in the discussion of what was missing for *in the box* audio production.
 
-Looking through all that equipment, and with my better knowledge of audio production, the really important things I was now missing were: a way to route all those great MIDI devices to the computer; an audio interface for the computer; additional polar pattern options for microphones; a stereo option for the condenser mic; decent headphones.
+After looking through all the equipment and talking it over with Fabienne and John, the really important things I was missing were: a way to route all those great MIDI devices to the computer; an audio interface for the computer; additional polar pattern options for microphones; a stereo option for the condenser mic; and decent headphones.
 
 You might notice that there is no real analogue portion to my planned pipeline. The analogue audio is converted to digital as quickly as possible. This is, again, the fundamental principle of my recording setup at home because it is cheaper and more versatile. The two guitar amps are an exception because they were needed for live performances. I'd still be inclined to record them with a microphone over using a digital replica though---but only because I already own them. Which is an important point: while we can save money by using digital replicas of analogue hardware, if we actually own the hardware already then it will probably always sound just a little bit better than its digital counterpart.
 
-Also curious is our lack of MIDI capture. We had all these great MIDI devices back in the day, but no way to easily get them into the computer. I remember being pretty down on MIDI back then, though. Modern digital instruments driven by MIDI sound infinitely better than they did back then. The V-Drums actually came with a computer interface, as did the Dark Fire, but neither of them work anymore. However, because MIDI hasn't really changed much since it was invented decades ago, one modern box was able to solve both problems.
+Also curious is our lack of MIDI capture. We had all these great MIDI devices back in the day, but no way to easily get them into the computer. I remember being pretty down on MIDI back then, though. Modern digital instruments driven by MIDI sound infinitely better now. The V-Drums actually came with a computer interface, as did the Dark Fire, but neither of them work anymore. However, because MIDI hasn't really changed much since it was invented decades ago, one modern box was able to solve both problems.
 
 Although I plan to go over these purchases in more detail later, I filled in the missing pieces with these items:
 
