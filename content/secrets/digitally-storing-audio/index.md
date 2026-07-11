@@ -2,7 +2,7 @@
 title: 'Digitally Storing Audio'
 date: 2026-07-10T11:36:37+01:00
 author: John Urquhart Ferguson
-description: Learn how sample rate, bit depth, and file format affect digital audio quality — plus practical recording settings to avoid aliasing, clipping, and quantisation noise.
+description: Learn how sample rate, bit depth, and file format affect digital audio quality---plus practical recording settings to avoid aliasing, clipping, and quantisation noise.
 summary: The settings that make or break your recording.
 readingEase: 10th to 12th Graders
 gradeLevel: 12
