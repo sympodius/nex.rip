@@ -9,7 +9,7 @@
 {{- $maxWidth := 962 }}
 {{- $maxHeight := 520 }}
 {{- $maxWidthSmall := 836 }}
-{{- $maxHeightSmall := 452}}
+{{- $maxHeightSmall := 452 }}
 {{- with $bannerImg }}
   {{- $bannerImgWebP := $bannerImg.Process "webp" }}
   {{- $overMaxWidth := gt $bannerImg.Width $maxWidth }}
