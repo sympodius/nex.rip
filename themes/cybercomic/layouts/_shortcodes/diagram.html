@@ -1,0 +1,38 @@
+{{- $diagramImg := .Page.Resources.GetMatch (.Get "src" | safeURL) }}
+{{- $altText := .Get "alt" }}
+{{- $titleText := $altText }}
+{{- $captionText := .Get "caption" }}
+{{- with $captionText }}
+  {{- $titleText = $captionText }}
+{{- end }}
+{{- with .Get "title" }}{{ $titleText = . }}{{ end }}
+{{- $maxWidth := 962 }}
+{{- $maxHeight := 1924 }}
+{{- $maxWidthSmall := 836 }}
+{{- $maxHeightSmall := 1672 }}
+{{- with $diagramImg }}
+  {{- $diagramImgWebP := $diagramImg.Process "webp" }}
+  {{- $overMaxWidth := gt $diagramImg.Width $maxWidth }}
+  {{- if $overMaxWidth }}
+    {{- $diagramImgWebP = $diagramImgWebP.Resize "962x" }}
+  {{- end }}
+  {{- $overMaxHeight := gt $diagramImgWebP.Height $maxHeight }}
+  {{- if $overMaxHeight }}
+    {{- $diagramImgWebP = $diagramImgWebP.Resize "x1924" }}
+  {{- end }}
+  {{- $diagramImgSmallWebP := $diagramImg.Process "webp" }}
+  {{- $overMaxWidthSmall := gt $diagramImg.Width $maxWidthSmall }}
+  {{- if $overMaxWidthSmall }}
+    {{- $diagramImgSmallWebP = $diagramImgSmallWebP.Resize "836x" }}
+  {{- end }}
+  {{- $overMaxHeightSmall := gt $diagramImgSmallWebP.Height $maxHeightSmall }}
+  {{- if $overMaxHeightSmall }}
+    {{- $diagramImgSmallWebP = $diagramImgSmallWebP.Resize "x1672" }}
+  {{- end }}
+        <div class="diagram-image">
+          <figure>
+              <img loading="eager" srcset="{{- $diagramImgSmallWebP.RelPermalink | safeURL }} {{ $diagramImgSmallWebP.Width -}}w, {{- $diagramImgWebP.RelPermalink | safeURL }} {{ $diagramImgWebP.Width -}}w" sizes="(min-width: 56.25rem) {{ $diagramImgWebP.Width -}}px, {{ $diagramImgSmallWebP.Width -}}px" src="{{- $diagramImgWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- .RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $altText -}}alt="{{- . -}}"{{- end }} width="{{ $diagramImgWebP.Width }}" height="{{ $diagramImgWebP.Height }}" fetchpriority="high"/>
+            <figcaption>{{- $titleText -}}</figcaption>
+          </figure>
+        </div>
+{{- end }}
