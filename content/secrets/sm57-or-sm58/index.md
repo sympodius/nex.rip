@@ -122,12 +122,12 @@ I bought my first two SM58 microphones back in 2004. I've never had to replace t
 [^shure-sm57-hum]: An official [SHURE response in their FAQ](https://service.shure.com/Service/s/article/sm57-hum?language=en_US&region=en-US) where they show that the SM58 has better electromagnetic shielding than the SM57.
 [^shure-youtube]: [YouTube Clip on SHURE's Official Channel](https://www.youtube.com/clip/Ugkx85z3yGLjMvy0f_-bwuMDeiEBRBfyIMtf) where SHURE's official historian says the sensor element in the SM57 and SM58 is identical.
 [^shure-faq]: [SHURE's official FAQ saying that the grille is the only major difference between the SM57 and SM58](https://service.shure.com/s/article/sm57-vs-sm58?language=en_US&region=en-US).
-[^madonna]: https://web.archive.org/web/20110830193214/http://www.sheppettibone.com/sp_erotica_diaries.htm
-[^bowie]: https://web.archive.org/web/20161105071200/http://timpalmer.com/wp-content/themes/timpalmer/pdfs/Melody_maker_1989.pdf
-[^lennon]: https://web.archive.org/web/20160808104354/https://www.soundonsound.com/people/john-lennon-whatever-gets-you-thru-night
-[^jackwhite]: https://www.soundonsound.com/techniques/inside-track-jack-white
-[^bjork]: https://www.moredarkthanshark.org/eno_int_audproint-oct08.html
-[^bono]: https://www.soundonsound.com/people/robbie-adams-recording-u2s-achtung-baby-zooropa
-[^ratm]: https://soyuzmicrophones.com/articles/soyuz-spotlight-garth-richardson
+[^madonna]: [Shep Pettibone speaking about the production of "Erotica."](https://web.archive.org/web/20110830193214/http://www.sheppettibone.com/sp_erotica_diaries.htm)
+[^bowie]: [Tim Palmer speaking about the production of "Tin Machine."](https://web.archive.org/web/20161105071200/http://timpalmer.com/wp-content/themes/timpalmer/pdfs/Melody_maker_1989.pdf)
+[^lennon]: [Roy Cicala speaking about the production of John Lennon recordings](https://web.archive.org/web/20160808104354/https://www.soundonsound.com/people/john-lennon-whatever-gets-you-thru-night).
+[^jackwhite]: [Jack White speaking about the production of his recordings](https://www.soundonsound.com/techniques/inside-track-jack-white).
+[^bjork]: [Markus Dravs speaking about the production of Björk recordings](https://www.moredarkthanshark.org/eno_int_audproint-oct08.html).
+[^bono]: [Robbie Adams speaking about the production of "Achtung Baby."](https://www.soundonsound.com/people/robbie-adams-recording-u2s-achtung-baby-zooropa)
+[^ratm]: [Garth Richardson speaking about the production of "Rage Against The Machine."](https://soyuzmicrophones.com/articles/soyuz-spotlight-garth-richardson)
 [^nebraska]: [Bruce Springsteen's "Nebraska" was made entirely with an SM57](https://en.wikipedia.org/wiki/Nebraska_%28album%29#Recording).
 [^michigan]: [Sufjan Stevens' "Michigan" was made almost entirely with an SM57](https://en.wikipedia.org/wiki/Michigan_%28album%29#Recording_and_production).

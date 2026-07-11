@@ -5,7 +5,7 @@ author: Nexami Engeo
 description: "Introducing the hindrex rating system: a score that measures how hindered software is by privacy invasions, internet requirements, and licensing servers."
 summary: A scoring system for software freedom and privacy.
 readingEase: College Students
-gradeLevel: 19
+gradeLevel: 18
 images:
 - images/post-cover.png
 categories:
@@ -88,5 +88,5 @@ Even though I will always try to give both the score and code for a hindrex rati
 {{< hindrex-decoder >}}
 
 [^hindrex-collaborators]: My thanks to John Urquhart Ferguson and the great Ladon for helping me develop the hindrex system.
-[^free-software-def]: https://en.wikipedia.org/wiki/The_Free_Software_Definition
-[^open-source-def]: https://en.wikipedia.org/wiki/Open-source_software
+[^free-software-def]: [The free software definition at Wikipedia](https://en.wikipedia.org/wiki/The_Free_Software_Definition).
+[^open-source-def]: [Wikipedia page on open source software](https://en.wikipedia.org/wiki/Open-source_software).
