@@ -96,7 +96,7 @@ Although I plan to go over these purchases in more detail later, I filled in the
 | New Equipment                    |                                                                                                                       Holes Filled |
 |:---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------:|
 | **RØDE NT2-A**[^nt2-a]           | Similar to the RØDE NT1-A, but can operate with three different polar patterns and allow stereo options when paired with the NT1-A |
-| **Radial Pro DI**[^radial-pro]   |                                                                             A way to turn unbalanced signals into balanced signals |
+| **Radial Pro DI**[^radial-pro]   | Converts high-impedance, unbalanced instrument-level signals to low-impedance, balanced mic/line-level signals |
 | **CME U6MIDI Pro**[^u6midi]      |                                MIDI router interface to get multiple MIDI devices inputting to the computer (or each other) at once |
 | **Arturia MiniLab 3**[^minilab3] |                                   Dedicated MIDI controller with controls missing from other devices I owned (sliders, knobs, etc) |
 | **Zoom H6**[^zoom-h6]            | Portable recorder used as an audio interface and dedicated recording device (as well as supplying phantom power to condenser mics) |

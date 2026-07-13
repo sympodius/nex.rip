@@ -81,7 +81,7 @@ This method of averaging the sample measurements is also why we can distribute o
 
 Higher sampling rates also make pitch adjustments easier. If the sampling rate is higher than the Nyquist rate for human hearing, then we can bring back notes and harmonics that would have been outwith human hearing range before the pitch adjustment. If you try to pitch-shift down audio that was originally above the Nyquist limit, it simply won't have been captured cleanly. The resulting aliasing will then become audible in your recording.
 
-The downside of higher sampling rates is that they require more computer processing power. As such, your computer may be the deciding factor in which sample rate you pick. Another, less common, downside is that higher sample rates can increase the likelihood of intermodulation distortion[^intermodulation-distortion]. However, this is unlikely to affect you while recording, so you should probably ignore it when making your choice.
+The downside of higher sampling rates is that they require more computer processing power. As such, your computer may be the deciding factor in which sample rate you pick. Another consideration is intermodulation distortion[^intermodulation-distortion]. During digital processing (like saturation or heavy compression), non-linear effects generate high-frequency harmonics. If these harmonics exceed the Nyquist limit of your project's sample rate, they can fold back into the audible range as distortion. Higher sample rates actually *reduce* this risk by pushing the Nyquist limit higher, giving harmonics more room before they alias. (Some engineers also note that capturing ultrasonic content can cause intermodulation distortion in non-linear analog playback equipment, but this is highly debated and rarely an issue in practice.)
 
 Although 48 kHz is a common choice for studio-level recordings, you should use 96 kHz or 192 kHz if your recording setup and computer allow it (these are considered *archive-level* quality).
 
@@ -113,7 +113,7 @@ Lossless [Linear PCM](https://en.wikipedia.org/wiki/Pulse-code_modulation) [WAV]
 
 This format retains all the original information given to it, so nothing is lost. It is for this reason that it is called a *lossless* format. It does take up considerable storage space, though, especially when using higher sample rates and bit depths.
 
-If you are done with a recording and have released it to the world, you could switch to storing things in [FLAC](https://en.wikipedia.org/wiki/FLAC) format for archiving. FLAC files are also lossless, but they compress their data to only use about half the disc space of Linear PCM WAV files.
+If you are done with a recording and have released it to the world, you could switch to storing things in [FLAC](https://en.wikipedia.org/wiki/FLAC) format for archiving. FLAC files are also lossless, but they compress their data to use roughly 50–70% of the disc space of Linear PCM WAV files, depending on the complexity of the audio.
 
 You should steer clear of [MP3](https://en.wikipedia.org/wiki/MP3) and other *lossy* compressed formats when recording and editing. Lossy files *do* throw away data, and there is no way to get it back.
 
