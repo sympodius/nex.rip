@@ -17,6 +17,8 @@ tags:
 - beginner
 - microphones
 - shure
+- shure-sm57
+- shure-sm58
 - gear
 - live-sound
 - vocals
@@ -49,7 +51,7 @@ When people ask for beginner microphone recommendations these days, I see one an
 
 When I see these two mics being compared online, the SM57 is usually recommended over the SM58 because it's the more 'versatile' option: the SM57 is apparently great for all instruments and vocals, whereas the SM58 is 'just a vocal mic.' Well, let's have a closer look at the two microphones and see what we can find.
 
-Both the SM57 and SM58 are dynamic microphones. Unlike condenser microphones, dynamic mics can handle very loud sound pressure levels without distorting, and they don't require phantom power, which keeps their inherent noise floor low. This makes dynamic microphones very versatile and easy for beginners to use. They're especially well suited to live situations, for recording guitar amplifiers and other very loud signals, and for recording singers or instruments with a high dynamic range. The downside is that they usually lack the fuller clarity of high-quality ribbon and condenser microphones.
+Both the SM57 and SM58 are dynamic microphones. Dynamic mics can handle very loud sound pressure levels without distorting, and they don't require phantom power or active electronics, so they have no inherent self-noise. This makes dynamic microphones very versatile and easy for beginners to use. They're especially well suited to live situations, for recording guitar amplifiers and other very loud signals, and for recording singers or instruments with a high dynamic range[^dynamic-range]. The downside is that they usually lack the fuller clarity of high-quality ribbon and condenser microphones.
 
 The SM57 and SM58 both employ near-identical cardioid polar patterns[^sm57-spec][^sm58-spec]. Cardioid mics accept sound from the front, and reject it from the rear (with diminishing acceptance along the sides). This means that you can direct the microphone toward a sound source and not have to worry so much about the ambient noises from other directions.
 
