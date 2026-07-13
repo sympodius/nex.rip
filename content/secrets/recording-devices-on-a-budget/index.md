@@ -86,6 +86,6 @@ The Radial Pro DI is a passive DI unit that doesn't require a power source. Pass
 
 One final point: don't assume you know what a cable is designed for just because you recognise the connector. For example, a speaker cable and an instrument cable look identical from the outside and share the same type of connector, but internally they are very different and should not be used interchangeably.
 
-Two hundred pounds for a recording box (plus even more for an optional DI) might seem like a lot of money, but it's the cheapest way to make the most of your microphones and the dead room setup.
+Two hundred pounds for a recording box (plus even more for an optional DI) might seem like a lot of money---especially since a standard audio interface with built-in instrument inputs would be cheaper overall. But for the dead room workflow, where you need a quiet, self-contained recorder right next to you, it's the most practical way to make the most of your microphones and isolation setup.
 
 [^xlr-cable]: [Wikipedia page on XLR cables](https://en.wikipedia.org/wiki/XLR_connector).
