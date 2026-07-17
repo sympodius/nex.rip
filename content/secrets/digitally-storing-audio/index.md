@@ -81,7 +81,9 @@ This method of averaging the sample measurements is also why we can distribute o
 
 Higher sampling rates also make pitch adjustments easier. If the sampling rate is higher than the Nyquist rate for human hearing, then we can bring back notes and harmonics that would have been outwith human hearing range before the pitch adjustment. If you try to pitch-shift down audio that was originally above the Nyquist limit, it simply won't have been captured cleanly. The resulting aliasing will then become audible in your recording.
 
-The downside of higher sampling rates is that they require more computer processing power. As such, your computer may be the deciding factor in which sample rate you pick. Another consideration is intermodulation distortion[^intermodulation-distortion]. During digital processing (like saturation or heavy compression), non-linear effects generate high-frequency harmonics. If these harmonics exceed the Nyquist limit of your project's sample rate, they can fold back into the audible range as distortion. Higher sample rates actually *reduce* this risk by pushing the Nyquist limit higher, giving harmonics more room before they alias. (Some engineers also note that capturing ultrasonic content can cause intermodulation distortion in non-linear analog playback equipment, but this is highly debated and rarely an issue in practice.)
+Another consideration is intermodulation distortion[^intermodulation-distortion]. During digital processing (like saturation or heavy compression), non-linear effects can generate high-frequency harmonics. If these harmonics exceed the Nyquist limit of your project's sample rate, they can fold back into the audible range as distortion. Higher sample rates reduce this risk by pushing the Nyquist limit higher, giving harmonics more room before they alias. (Some engineers also note that capturing ultrasonic content can cause intermodulation distortion in non-linear analog playback equipment, but this is highly debated and rarely an issue in practice.)
+
+The downside of higher sampling rates is that they require more computer processing power. As such, your computer may be the deciding factor in which sample rate you pick. 
 
 Although 48 kHz is a common choice for studio-level recordings, you should use 96 kHz or 192 kHz if your recording setup and computer allow it (these are considered *archive-level* quality).
 
@@ -106,7 +108,7 @@ To give you a rough idea of the quality of various bit depths, here are some exa
 - 16-bit is generally fine ([CD](https://en.wikipedia.org/wiki/Compact_Disc_Digital_Audio#Audio_format) quality is 16-bit at 44.1 kHz)
 - 24-bit is very high quality ([DVD](https://en.wikipedia.org/wiki/DVD-Video#Audio_data) quality is often 24-bit at 96 kHz, but sometimes 16-bit at 48 kHz)
 
-16-bit is the lowest you can reasonably choose for a modern recording if you're hoping to make it sound like the original audio. However, consider using 24-bit if you're using a 48 kHz sample rate, and 24-bit or 32-bit if you're using 96 kHz or 192 kHz. This will make the most of the sample rate, reduce the likelihood of clipping by allowing you to use a larger dynamic range, and lower the quantisation noise.
+16-bit is the lowest you can reasonably choose for a modern recording if you're hoping to make it sound like the original audio. However, consider using 24-bit if you're using a 48 kHz sample rate, and 24-bit or 32-bit (float) if you're using 96 kHz or 192 kHz. This will make the most of the sample rate, reduce the likelihood of clipping by allowing you to use a larger dynamic range, and lower the quantisation noise.
 
 ## File Format
 Lossless [Linear PCM](https://en.wikipedia.org/wiki/Pulse-code_modulation) [WAV](https://en.wikipedia.org/wiki/WAV) format is the most common audio file format used in digital recording, and you should stick to it as much as you can. It's often listed simply as *WAV* or *Lossless WAV*.
