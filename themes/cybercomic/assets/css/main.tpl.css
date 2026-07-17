@@ -1797,6 +1797,15 @@ aside {
     box-shadow: 2px 2px 0 var(--color-ink-disabled);
 }
 
+.other-tutorials-container {
+    margin-top: 4.577636719rem;
+    text-align: center;
+}
+
+.other-tutorials-list {
+    margin-top: 1.5625rem;
+}
+
 #section-title {
     font-weight: 800;
     color: var(--h1);

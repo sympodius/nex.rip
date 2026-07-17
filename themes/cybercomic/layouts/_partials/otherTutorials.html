@@ -1,0 +1,70 @@
+{{- $page := .page }}
+
+{{/* Check that this is a tutorials page before doing additional processing */}}
+{{- if in $page.Params.categories "tutorials" }}
+  {{- $tutorials := where (where site.RegularPages.ByDate.Reverse "Section" "eq" "secrets") "Params.categories" "intersect" (slice "tutorials") }}
+  {{- $mostRecent := index $tutorials 0 }}
+  {{- $earliest := index $tutorials (sub (len $tutorials) 1) }}
+
+<div class="other-tutorials-container">
+
+  <p class="other-tutorials-instructions"><a href="/categories/tutorials/asc.html">Check out all the other tutorials</a>, or flip around:</p>
+
+  <ul class="pagination pagination-cybercomic other-tutorials-list">
+  {{/* Earliest tutorial (unless current) */}}
+  {{- if ne $page $earliest }}
+    <li class="page-item">
+      <a href="{{ $earliest.RelPermalink }}" aria-label="First" class="page-link" role="button"><span aria-hidden="true">First</span></a>
+    </li>
+  {{- else }}
+    <li class="page-item disabled">
+      <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">First</span></a>
+    </li>
+  {{- end }}
+
+  {{/* Find index of current page */}}
+  {{- range $i, $p := $tutorials }}
+    {{- if eq $p $page }}
+      {{- $page.Scratch.Set "idx" $i }}
+    {{- end }}
+  {{- end }}
+  {{- $idx := $page.Scratch.Get "idx" }}
+
+  {{/* Previous tutorial (unless first) */}}
+  {{- if lt $idx (sub (len $tutorials) 1) }}
+    {{- $prev := index $tutorials (add $idx 1) }}
+    <li class="page-item">
+      <a href="{{ $prev.RelPermalink }}" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">Previous</span></a>
+    </li>
+  {{- else }}
+    <li class="page-item disabled">
+      <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">Previous</span></a>
+    </li>
+  {{- end }}
+
+  {{/* Next tutorial (unless last) */}}
+  {{- if ge $idx 1 }}
+    {{- $next := index $tutorials (sub $idx 1) }}
+    <li class="page-item">
+      <a href="{{ $next.RelPermalink }}" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">Next</span></a>
+    </li>
+  {{- else }}
+    <li class="page-item disabled">
+      <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">Next</span></a>
+    </li>
+  {{- end }}
+
+  {{/* Most recent tutorial (unless current) */}}
+  {{- if ne $page $mostRecent }}
+    <li class="page-item">
+      <a href="{{ $mostRecent.RelPermalink }}" aria-label="Latest" class="page-link" role="button"><span aria-hidden="true">Latest</span></a>
+    </li>
+  {{- else }}
+    <li class="page-item disabled">
+      <a aria-disabled="true" aria-label="Latest" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">Latest</span></a>
+    </li>
+  {{- end }}
+  </ul>
+
+<div>
+{{- end }}

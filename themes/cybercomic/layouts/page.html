@@ -110,6 +110,9 @@
         </div>
         {{ partial "storySharingLinks.html" (dict "page" .) }}
         {{ .Content }}
+        {{- if in .Params.categories "tutorials" }}
+	  {{ partial "otherTutorials.html" (dict "page" .) }}
+	{{- end }}
       </article>
 
       <aside>
