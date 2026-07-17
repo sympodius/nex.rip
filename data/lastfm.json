@@ -1,85 +1,85 @@
 {
-  "fetched_at": "2026-06-23T17:18:37.157Z",
+  "fetched_at": "2026-07-10T10:24:26.025Z",
   "user": "sympodius",
   "period_days": 7,
   "artists": [
     {
       "rank": 1,
-      "name": "Jo Mango",
-      "play_count": 52,
-      "url": "https://www.last.fm/music/Jo+Mango",
+      "name": "The Rolling Stones",
+      "play_count": 15,
+      "url": "https://www.last.fm/music/The+Rolling+Stones",
       "top_track": {
-        "name": "The Windowpane",
-        "play_count": 20,
-        "url": "https://www.last.fm/music/Jo+Mango/_/The+Windowpane",
+        "name": "Paint It Black",
+        "play_count": 1,
+        "url": "https://www.last.fm/music/The+Rolling+Stones/_/Paint+It+Black",
         "album": {
-          "image": "a61d6b1510196f2d148d2874513eecc1.jpg",
-          "name": "The Lightswitch",
-          "url": "https://www.last.fm/music/Jo+Mango/The+Lightswitch"
+          "image": "a1cf18363a7b20d9b19f6426757350e6.png",
+          "name": "Forty Licks [2023 Reissue]",
+          "url": "https://www.last.fm/music/The+Rolling+Stones/Rolled+Gold+%252B"
         }
       }
     },
     {
       "rank": 2,
-      "name": "Siobhan Wilson",
-      "play_count": 28,
-      "url": "https://www.last.fm/music/Siobhan+Wilson",
+      "name": "The Beatles",
+      "play_count": 9,
+      "url": "https://www.last.fm/music/The+Beatles",
       "top_track": {
-        "name": "Thaw",
-        "play_count": 13,
-        "url": "https://www.last.fm/music/Siobhan+Wilson/_/Thaw",
+        "name": "Come Together",
+        "play_count": 3,
+        "url": "https://www.last.fm/music/The+Beatles/_/Come+Together",
         "album": {
-          "image": "7aba4372bca685d1723f462901e530e8.jpg",
-          "name": "Thaw",
-          "url": "https://www.last.fm/music/Siobhan+Wilson/Thaw"
+          "image": "cade3ec3d03b2482cf697deafeebf4be.jpg",
+          "name": "Abbey Road (Remastered)",
+          "url": "https://www.last.fm/music/The+Beatles/Abbey+Road+(Remastered)"
         }
       }
     },
     {
       "rank": 3,
-      "name": "Raveloe",
-      "play_count": 18,
-      "url": "https://www.last.fm/music/Raveloe",
+      "name": "Pixies",
+      "play_count": 4,
+      "url": "https://www.last.fm/music/Pixies",
       "top_track": {
-        "name": "The Chair is Nowhere",
-        "play_count": 15,
-        "url": "https://www.last.fm/music/Raveloe/_/The+Chair+is+Nowhere",
+        "name": "Where Is My Mind?",
+        "play_count": 1,
+        "url": "https://www.last.fm/music/Pixies/_/Where+Is+My+Mind%3F",
         "album": {
-          "image": "deb31b0349748832886a383546a7b2ba.jpg",
-          "name": "Exit Light",
-          "url": "https://www.last.fm/music/Raveloe/Exit+Light"
+          "image": "8ac6c33d65006006c05b1ae324a18f8c.png",
+          "name": "Wave Of Mutilation: Best Of Pixies",
+          "url": "https://www.last.fm/music/Pixies/Wave+Of+Mutilation:+Best+Of+Pixies"
         }
       }
     },
     {
       "rank": 4,
-      "name": "The Hate Eighties",
-      "play_count": 17,
-      "url": "https://www.last.fm/music/The+Hate+Eighties",
+      "name": "Alan Silvestri",
+      "play_count": 3,
+      "url": "https://www.last.fm/music/Alan+Silvestri",
       "top_track": {
-        "name": "Straight To The Heart",
-        "play_count": 17,
-        "url": "https://www.last.fm/music/The+Hate+Eighties/_/Straight+To+The+Heart",
+        "name": "DeLorean Reveal (From “Back To The Future” Original Score)",
+        "play_count": 1,
+        "url": "https://www.last.fm/music/Alan+Silvestri/_/DeLorean+Reveal+(From+%E2%80%9CBack+To+The+Future%E2%80%9D+Original+Score)",
         "album": {
-          "image": "91242780099c45fe7575ebeacd23f147.jpg",
-          "name": "NOW",
-          "url": "https://www.last.fm/music/The+Hate+Eighties/NOW"
+          "image": "fb6af6ea4c2dfcdd5f1b348226bb5e59.jpg",
+          "name": "Back To The Future (Original Motion Picture Soundtrack / Expanded Edition)",
+          "url": "https://www.last.fm/music/Alan+Silvestri/Back+To+The+Future+(Original+Motion+Picture+Soundtrack+%2F+Expanded+Edition)"
         }
       }
     },
     {
       "rank": 5,
-      "name": "The Willow Trio",
-      "play_count": 17,
-      "url": "https://www.last.fm/music/The+Willow+Trio",
+      "name": "Dead Man Fall",
+      "play_count": 3,
+      "url": "https://www.last.fm/music/Dead+Man+Fall",
       "top_track": {
-        "name": "Oystercatchers / I'm Not Getting On A Boat!",
-        "play_count": 15,
-        "url": "https://www.last.fm/music/The+Willow+Trio/_/Oystercatchers+%2F+I%27m+Not+Getting+On+A+Boat!",
+        "name": "Bang Your Drum (All Star Version)",
+        "play_count": 3,
+        "url": "https://www.last.fm/music/Dead+Man+Fall/_/Bang+Your+Drum+(All+Star+Version)",
         "album": {
-          "image": null,
-          "name": "The Bestiary",
-          "url": "https://www.last.fm/music/The+Willow+Trio/The+Bestiary"
+          "image": "c64be9ac279e5571510d0f957a8fa3f4.jpg",
+          "name": "Bang Your Drum",
+          "url": "https://www.last.fm/music/Dead+Man+Fall/Bang+Your+Drum"
         }
       }
     }
