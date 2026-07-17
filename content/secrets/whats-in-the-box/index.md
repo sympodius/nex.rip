@@ -41,7 +41,7 @@ draft: false
 - [ ] Consider what tomorrow's article will be, and try to post a new one once a day (more is fine)
 {{</ md-comment >}}
 
-Many years ago, I recorded some music at home with my band. We didn't know what we were doing, we had no money, and there was no one to guide us. I was pretty adept with computers and brimming with youthful confidence, so I tried to fake a recording studio at home using just my desktop and some decent microphones. It would be another five or ten years before that became a common approach. Today we'd call that 'in the box' music production.
+Many years ago, I recorded some music at home with my band. We didn't know what we were doing, we had no money, and there was no one to guide us. I was pretty adept with computers and brimming with youthful confidence, so I tried to fake a recording studio at home using just my desktop computer and some decent microphones. It would be another five or ten years before that became a common approach. Today we'd call that 'in the box' music production.
 
 Despite our lack of resources or knowledge, our trial-and-error approach yielded decent enough results to release some music into the world.
 
