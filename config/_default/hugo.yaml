@@ -31,6 +31,14 @@ markup:
       link:
         useEmbedded: fallback
 
+outputFormats:
+  asc:
+    baseName: asc
+    mediaType: text/html
+    path: ""
+    permalinkable: true
+    ugly: false
+
 outputs:
   home:
     - html
@@ -44,6 +52,7 @@ outputs:
   term:
     - html
     - rss
+    - asc
 
 imaging:
   exif:

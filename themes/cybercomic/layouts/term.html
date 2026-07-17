@@ -1,9 +1,27 @@
 {{ define "main" }}
+    {{- $isAsc := strings.HasSuffix .RelPermalink "asc.html" }}
+    {{- $pages := .Pages }}
+    {{- if $isAsc }}
+      {{- $pages = $pages.ByDate }}
+    {{- else }}
+      {{- $pages = $pages.ByDate.Reverse }}
+    {{- end }}
+    {{- $paginator := .Paginate $pages }}
+
     <div class="list-page-container">
       <article class="more-on">
         <h1 class="lowercase">{{ if eq .Data.Plural "tags" }}#{{ replace .Title " " "-" | lower }}{{ else }}{{ .Title | humanize | lower }}{{ end }}</h1>
-        {{ .Content -}}
-        {{- $paginator := .Paginate .Pages.ByDate.Reverse }}
+        {{ .Content }}
+        {{- /* Sort toggle link */ -}}
+        {{- $ascUrl := printf "%s/asc.html" (strings.TrimSuffix "/" .RelPermalink) }}
+        {{- $defaultUrl := strings.TrimSuffix "/asc.html" .RelPermalink }}
+        <div class="sort-toggle">
+          {{- if $isAsc }}
+            <a href="{{ $defaultUrl }}">Switch to Newest First</a>
+          {{- else }}
+            <a href="{{ $ascUrl }}">Switch to Oldest First</a>
+          {{- end }}
+        </div>
         {{- $storyCounter := 0 }}
         {{- range $paginator.Pages }}
           {{- $page := . }}
