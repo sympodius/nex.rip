@@ -67,9 +67,9 @@ colorsOverride: Standard
 authors:
 - name: John Urquhart Ferguson
   image: "images/Author - John Urquhart Ferguson.png"
-  bio: "John was a collaborator before Nex had his brief stint of fame. He helped with business aspects of the early *engeo* releases, gave advice on sound engineering and production, and built our first website.\n\n
+  bio: "John was a collaborator before Nex had his brief stint with fame, helping with business aspects of the early *engeo* releases, giving advice on sound engineering and production, and building the first *engeo* website.\n\n
 
-I'm glad to have him back as the webmaster for Nex.RIP, and to continue getting his advice on how to record music with computers at home. I've asked him to contribute some articles that can help all my visitors learn to record and produce songs on a budget."
+He's back now as the webmaster and editor for Nex.RIP, continuing to give advice on how to cheaply record music with computers at home. He'll be contributing articles here and there (mostly on the more technical topics)."
 #  vcard: "BEGIN:VCARD\nVERSION:2.1\nN;CHARSET=UTF-8:Ferguson;John;Urquhart;Dr;PhD\nFN;CHARSET=UTF-8:John Urquhart Ferguson, PhD\nORG;CHARSET=UTF-8:Nex.RIP\nTITLE;CHARSET=UTF-8:Webmaster\nEMAIL;TYPE=HOME:webmaster@nex.rip\nURL;TITLE:https://www.johnurquhartferguson.info\nEND:VCARD"
   website: https://johnurquhartferguson.info
   instagram: sympodius
