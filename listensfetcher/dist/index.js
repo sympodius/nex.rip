@@ -68,7 +68,7 @@ async function getTopArtists(user) {
   );
   return result;
 }
-async function getRecentTracks(user, limit = 200) {
+async function getRecentTracks(user, limit = 1000) {
   const result = await request(
     "user.getRecentTracks",
     { user, limit: String(limit) },
@@ -229,10 +229,8 @@ var EMPTY_ALBUM = {
   url: ""
 };
 function matchTopTracks(artists, recentTracks) {
-  const sevenDaysAgo = Date.now() / 1e3 - 7 * 24 * 60 * 60;
-  const filtered = recentTracks.filter((t) => t.timestamp >= sevenDaysAgo);
   const trackCounts = /* @__PURE__ */ new Map();
-  for (const t of filtered) {
+  for (const t of recentTracks) {
     const key = `${t.artist}::${t.name}`;
     const existing = trackCounts.get(key);
     if (existing) {
@@ -281,7 +279,7 @@ async function main() {
     const topArtists = await getTopArtists(USER);
     console.log(`\u2713 Found ${topArtists.length} top artist(s)`);
     console.log(`\u280B Fetching recent tracks...`);
-    const recentTracks = await getRecentTracks(USER, 200);
+    const recentTracks = await getRecentTracks(USER, 1000);
     console.log(`\u2713 Fetched ${recentTracks.length} recent track(s)`);
     const topTracks = matchTopTracks(topArtists, recentTracks);
     mkdirSync2(IMAGES_DIR, { recursive: true });

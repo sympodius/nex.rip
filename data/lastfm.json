@@ -1,28 +1,60 @@
 {
-  "fetched_at": "2026-07-10T10:24:26.025Z",
+  "fetched_at": "2026-07-19T10:27:06.667Z",
   "user": "sympodius",
   "period_days": 7,
   "artists": [
     {
       "rank": 1,
-      "name": "The Rolling Stones",
-      "play_count": 15,
-      "url": "https://www.last.fm/music/The+Rolling+Stones",
+      "name": "Nine Inch Nails",
+      "play_count": 37,
+      "url": "https://www.last.fm/music/Nine+Inch+Nails",
       "top_track": {
-        "name": "Paint It Black",
-        "play_count": 1,
-        "url": "https://www.last.fm/music/The+Rolling+Stones/_/Paint+It+Black",
+        "name": "Hyperpower",
+        "play_count": 3,
+        "url": "https://www.last.fm/music/Nine+Inch+Nails/_/Hyperpower",
         "album": {
-          "image": "a1cf18363a7b20d9b19f6426757350e6.png",
-          "name": "Forty Licks [2023 Reissue]",
-          "url": "https://www.last.fm/music/The+Rolling+Stones/Rolled+Gold+%252B"
+          "image": null,
+          "name": "[HALO 24] - Year Zero",
+          "url": "https://www.last.fm/music/Nine+Inch+Nails/%5BHALO+24%5D+-+Year+Zero"
         }
       }
     },
     {
       "rank": 2,
+      "name": "Radiohead",
+      "play_count": 35,
+      "url": "https://www.last.fm/music/Radiohead",
+      "top_track": {
+        "name": "True Love Waits",
+        "play_count": 2,
+        "url": "https://www.last.fm/music/Radiohead/_/True+Love+Waits",
+        "album": {
+          "image": "397f5702679d292403fd3871e99dce20.jpg",
+          "name": "I Might Be Wrong: Live Recordings",
+          "url": "https://www.last.fm/music/Radiohead/I+Might+Be+Wrong:+Live+Recordings"
+        }
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Pixies",
+      "play_count": 30,
+      "url": "https://www.last.fm/music/Pixies",
+      "top_track": {
+        "name": "Dead",
+        "play_count": 2,
+        "url": "https://www.last.fm/music/Pixies/_/Dead",
+        "album": {
+          "image": "a4c45c756afe1c0f00fde2bff487eedb.jpg",
+          "name": "Doolittle",
+          "url": "https://www.last.fm/music/Pixies/Doolittle"
+        }
+      }
+    },
+    {
+      "rank": 4,
       "name": "The Beatles",
-      "play_count": 9,
+      "play_count": 29,
       "url": "https://www.last.fm/music/The+Beatles",
       "top_track": {
         "name": "Come Together",
@@ -36,50 +68,18 @@
       }
     },
     {
-      "rank": 3,
-      "name": "Pixies",
-      "play_count": 4,
-      "url": "https://www.last.fm/music/Pixies",
-      "top_track": {
-        "name": "Where Is My Mind?",
-        "play_count": 1,
-        "url": "https://www.last.fm/music/Pixies/_/Where+Is+My+Mind%3F",
-        "album": {
-          "image": "8ac6c33d65006006c05b1ae324a18f8c.png",
-          "name": "Wave Of Mutilation: Best Of Pixies",
-          "url": "https://www.last.fm/music/Pixies/Wave+Of+Mutilation:+Best+Of+Pixies"
-        }
-      }
-    },
-    {
-      "rank": 4,
-      "name": "Alan Silvestri",
-      "play_count": 3,
-      "url": "https://www.last.fm/music/Alan+Silvestri",
-      "top_track": {
-        "name": "DeLorean Reveal (From “Back To The Future” Original Score)",
-        "play_count": 1,
-        "url": "https://www.last.fm/music/Alan+Silvestri/_/DeLorean+Reveal+(From+%E2%80%9CBack+To+The+Future%E2%80%9D+Original+Score)",
-        "album": {
-          "image": "fb6af6ea4c2dfcdd5f1b348226bb5e59.jpg",
-          "name": "Back To The Future (Original Motion Picture Soundtrack / Expanded Edition)",
-          "url": "https://www.last.fm/music/Alan+Silvestri/Back+To+The+Future+(Original+Motion+Picture+Soundtrack+%2F+Expanded+Edition)"
-        }
-      }
-    },
-    {
       "rank": 5,
-      "name": "Dead Man Fall",
-      "play_count": 3,
-      "url": "https://www.last.fm/music/Dead+Man+Fall",
+      "name": "Gorillaz",
+      "play_count": 21,
+      "url": "https://www.last.fm/music/Gorillaz",
       "top_track": {
-        "name": "Bang Your Drum (All Star Version)",
-        "play_count": 3,
-        "url": "https://www.last.fm/music/Dead+Man+Fall/_/Bang+Your+Drum+(All+Star+Version)",
+        "name": "Charger",
+        "play_count": 2,
+        "url": "https://www.last.fm/music/Gorillaz/_/Charger",
         "album": {
-          "image": "c64be9ac279e5571510d0f957a8fa3f4.jpg",
-          "name": "Bang Your Drum",
-          "url": "https://www.last.fm/music/Dead+Man+Fall/Bang+Your+Drum"
+          "image": "2969836bccc6e0a8e5ec714c7c4c75b4.png",
+          "name": "Humanz",
+          "url": "https://www.last.fm/music/Gorillaz/Humanz"
         }
       }
     }
