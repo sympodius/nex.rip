@@ -1,0 +1,137 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+  squash_merges: true
+publish_mode: editorial_workflow
+media_folder: static/images/uploads
+public_folder: /images/uploads
+site_url: https://www.nex.rip
+display_url: https://www.nex.rip
+logo_url: https://www.nex.rip/social-logo.svg
+collections:
+  - name: 'choons'
+    label: 'Choons'
+    folder: 'content/choons'
+    path: '{{slug}}/index'
+    media_folder: 'images'
+    public_folder: 'images'
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', picker_utc: true, default: '{{now}}' }
+      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', picker_utc: true, required: false, hint: 'Optional' }
+      - { label: 'Author', name: 'author', widget: 'string', default: 'Nexami Engeo' }
+      - { label: 'Description', name: 'description', widget: 'string', hint: 'This is what you write for SEO.' }
+      - { label: 'Summary', name: 'summary', widget: 'string', hint: 'This is what you write for list page summaries on the site.' }
+      - { label: 'Reading Ease', name: 'readingEase', widget: 'string', required: false, hint: 'Personified Flesch reading-ease score, should be one of: Professionals, College Graduates, College Students, 10th to 12th Graders, 8th/9th Graders, 7th Graders, 6th Graders, or 5th Graders' }
+      - { label: 'Grade Level', name: 'gradeLevel', widget: 'number', required: false, hint: 'Rounded Flesch-Kincaid grade level', value_type: 'int' }
+      - { label: 'Images Used (for SEO)', name: 'images', widget: 'list', default: ['images/post-cover.png'], allow_add: true, hint: 'A list of comma separated links to images for SEO (first link will be thumbnail)' }
+      - { label: 'Categories', name: 'categories', widget: 'list', default: ['musings'], allow_add: true, hint: 'The first category will be used in the breadcrumb for the page, others will generate the side menu' }
+      - { label: 'Tags', name: 'tags', widget: 'list', default: ['musings', 'coding', 'backstage', 'tutorial', 'bookbinding', 'crafts', 'etc, delete as appropriate or add new ones'], allow_add: true, hint: 'These will help in recommending pages to the reader' }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: 'true' }
+      - { label: 'Body', name: 'body', widget: 'markdown', default: '
+
+{{< banner src="images/post-cover.png" alt="Banner Image" >}}
+
+
+{{< md-comment >}}
+
+# Instructions
+
+
+- [ ] Encourage engagement and interaction
+
+- [ ] Keep all blog entries as leaf bundles (for example, `hugo new content tech/blog-entry-name` with no .md creates a leaf bundle in the tech section)
+
+- [ ] Create a banner image (post-cover.png) in your leaf bundle that has a ratio of 1.85:1, and is no smaller than: 962x520 pixels (Ideally 1536x830 or greater)
+
+- [ ] Still manually add banner image into page content, first thing before anything else using the banner shortcode
+
+- [ ] Add any other images you use to the images front matter array (this is purely to help with OpenGraph generation)
+
+- [ ] You can use up to two more images in the blog entry, but try not to use any more (unless this is a listicle). Only the banner is essential
+
+- [ ] Try to write 1000 words. The closer to this number, the better, but don''t go over (75% of the public prefers reading articles under 1,000 words)
+
+- [ ] Reading time should not exceed seven minutes
+
+- [ ] Make sure to include a description and summary for the blog entry as these are used on the site and in SEO. Ideally the summary should be short and engaging to entice readers. The description is for webcrawlers and should be around 150 characters (no more than 160)
+
+- [ ] Make an appropriate choice of tags in the front matter. These will help in recommending pages to the reader
+
+- [ ] Make an appropriate choice of categories in the front matter. The first category will be used in the breadcrumb for the page, others will generate the side menu
+
+- [ ] Use Emacs to generate the reading ease and grade level (this should happen automatically when saving the file in my Emacs configuration). These are just for fun, incidentally, and appear to have no impact on audience engagement
+
+- [ ] Set the draft to false when you want to publish, then push to GitHub
+
+- [ ] Drop a video announcing this post on Instagram etc, and post anywhere else you can as well. Reels and videos work better for engagement
+
+- [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)
+
+{{</ md-comment >}}' }
+  - name: 'secrets'
+    label: 'Secrets'
+    folder: 'content/secrets'
+    path: '{{slug}}/index'
+    media_folder: 'images'
+    public_folder: 'images'
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', picker_utc: true, default: '{{now}}' }
+      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', picker_utc: true, required: false, hint: 'Optional' }
+      - { label: 'Author', name: 'author', widget: 'string', default: 'Nexami Engeo' }
+      - { label: 'Description', name: 'description', widget: 'string', hint: 'This is what you write for SEO.' }
+      - { label: 'Summary', name: 'summary', widget: 'string', hint: 'This is what you write for list page summaries on the site.' }
+      - { label: 'Reading Ease', name: 'readingEase', widget: 'string', required: false, hint: 'Personified Flesch reading-ease score, should be one of: Professionals, College Graduates, College Students, 10th to 12th Graders, 8th/9th Graders, 7th Graders, 6th Graders, or 5th Graders' }
+      - { label: 'Grade Level', name: 'gradeLevel', widget: 'number', required: false, hint: 'Rounded Flesch-Kincaid grade level', value_type: 'int' }
+      - { label: 'Images Used (for SEO)', name: 'images', widget: 'list', default: ['images/post-cover.png'], allow_add: true, hint: 'A list of comma separated links to images for SEO (first link will be thumbnail)' }
+      - { label: 'Categories', name: 'categories', widget: 'list', default: ['musings'], allow_add: true, hint: 'The first category will be used in the breadcrumb for the page, others will generate the side menu' }
+      - { label: 'Tags', name: 'tags', widget: 'list', default: ['musings', 'coding', 'backstage', 'tutorial', 'bookbinding', 'crafts', 'etc, delete as appropriate or add new ones'], allow_add: true, hint: 'These will help in recommending pages to the reader' }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: 'true' }
+      - { label: 'Body', name: 'body', widget: 'markdown', default: '
+
+{{< banner src="images/post-cover.png" alt="Banner Image" >}}
+
+
+{{< md-comment >}}
+
+# Instructions
+
+
+- [ ] Encourage engagement and interaction
+
+- [ ] Keep all blog entries as leaf bundles (for example, `hugo new content tech/blog-entry-name` with no .md creates a leaf bundle in the tech section)
+
+- [ ] Create a banner image (post-cover.png) in your leaf bundle that has a ratio of 1.85:1, and is no smaller than: 962x520 pixels (Ideally 1536x830 or greater)
+
+- [ ] Still manually add banner image into page content, first thing before anything else using the banner shortcode
+
+- [ ] Add any other images you use to the images front matter array (this is purely to help with OpenGraph generation)
+
+- [ ] You can use up to two more images in the blog entry, but try not to use any more (unless this is a listicle). Only the banner is essential
+
+- [ ] Try to write 1000 words. The closer to this number, the better, but don''t go over (75% of the public prefers reading articles under 1,000 words)
+
+- [ ] Reading time should not exceed seven minutes
+
+- [ ] Make sure to include a description and summary for the blog entry as these are used on the site and in SEO. Ideally the summary should be short and engaging to entice readers. The description is for webcrawlers and should be around 150 characters (no more than 160)
+
+- [ ] Make an appropriate choice of tags in the front matter. These will help in recommending pages to the reader
+
+- [ ] Make an appropriate choice of categories in the front matter. The first category will be used in the breadcrumb for the page, others will generate the side menu
+
+- [ ] Use Emacs to generate the reading ease and grade level (this should happen automatically when saving the file in my Emacs configuration). These are just for fun, incidentally, and appear to have no impact on audience engagement
+
+- [ ] Set the draft to false when you want to publish, then push to GitHub
+
+- [ ] Drop a video announcing this post on Instagram etc, and post anywhere else you can as well. Reels and videos work better for engagement
+
+- [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)
+
+{{</ md-comment >}}' }
