@@ -12,9 +12,15 @@
       <article class="more-on">
         <h1 class="lowercase">{{ if eq .Data.Plural "tags" }}#{{ replace .Title " " "-" | lower }}{{ else }}{{ .Title | humanize | lower }}{{ end }}</h1>
         {{ .Content }}
-        {{- /* Sort toggle link */ -}}
-        {{- $ascUrl := printf "%s/asc.html" (strings.TrimSuffix "/" .RelPermalink) }}
-        {{- $defaultUrl := strings.TrimSuffix "/asc.html" .RelPermalink }}
+        {{- /* Sort toggle link — preserve current pagination page */ -}}
+        {{- $currentPage := .Paginator.PageNumber }}
+        {{- $base := strings.TrimSuffix "/asc.html" (strings.TrimSuffix "/" .RelPermalink) }}
+        {{- $ascUrl := printf "%s/asc.html" $base }}
+        {{- $defaultUrl := $base }}
+        {{- if ne $currentPage 1 }}
+          {{- $ascUrl = printf "%s/page/%d/asc.html" $base $currentPage }}
+          {{- $defaultUrl = printf "%s/page/%d" $base $currentPage }}
+        {{- end }}
         <div class="sort-toggle">
           {{- if $isAsc }}
             <a href="{{ $defaultUrl }}">Switch to Newest First</a>
