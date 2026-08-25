@@ -1,3 +1,4 @@
+{{ partial "shortcodes/hindrex-js.html" . }}
 <form id="hindrexScoreToCode" onsubmit="convertHindrexScoreToCode(); return false;" style="margin-top: 1rem; margin-bottom: 1rem;">
   <label for="hindrexScoreIn">Hindrex Score:</label><br>
   <input id="hindrexScoreIn" placeholder="Hindrex score (eg, 3678)" class="inputbar" style="width: 20rem;">
@@ -13,124 +14,34 @@
 </form>
 
 <script>
-  const mapping = [
-    [2048, "FOSS"],
-    [1024, "ZI"],
-    [512, "FP"],
-    [256, "ZLS"],
-    [128, "ZR"],
-    [64, "FF"],
-    [32, "A"],
-    [16, "ZC"],
-    [8, "NN"],
-    [4, "RTR"],
-    [2, "LRC"],
-    [1, "LFC"],
-  ];
-
-  const codeToValue = Object.fromEntries(
-    mapping.map(([value, code]) => [code, value])
-  );
-
-  function hindrexScoreToCode(score) {
-    const parts = [];
-    for (const [value, code] of mapping) {
-      if (score & value) {
-        parts.push(code);
-        score &= ~value;
-      }
-    }
-    return parts.join("-");
-  }
-
-  const superseding = {
-    FOSS: ["A"],
-    FP:   ["ZLS", "ZR"],
-    ZC:   ["LFC"],
-  };
-
-  function hindrexCodeToScore(code) {
-    const parts = code.split("-").filter(Boolean);
-    const unique = [...new Set(parts)];
-    const present = new Set(unique);
-
-    // Remove any code superseded by a higher-priority code that is also present
-    const filtered = unique.filter(part => {
-      for (const [dominant, dominated] of Object.entries(superseding)) {
-        if (present.has(dominant) && dominated.includes(part)) {
-          return false;
-        }
-      }
-      return true;
-    });
-
-    return filtered.reduce((sum, part) => sum + (codeToValue[part] || 0), 0);
-  }
-
-  function findSupersedingConflicts(parts) {
-    const present = new Set(parts);
-    const conflicts = [];
-    for (const [dominant, dominated] of Object.entries(superseding)) {
-      if (present.has(dominant)) {
-        for (const sub of dominated) {
-          if (present.has(sub)) {
-            conflicts.push({ dominant, sub });
-          }
-        }
-      }
-    }
-    return conflicts;
-  }
-
   function convertHindrexScoreToCode() {
     let result;
-    let scoreIn = document.getElementById("hindrexScoreIn").value.trim().replace(/\*/g, "");
-    let score = parseInt(scoreIn, 10);
-
-    if (isNaN(score) || score < 1 || score > 4095) {
-      result = "Input not valid (must be 1–4095)";
+    const scoreIn = document.getElementById("hindrexScoreIn").value.trim().replace(/\*/g, "");
+    const score = parseInt(scoreIn, 10);
+    if (isNaN(score) || score < 1 || score > Hindrex.maxScore) {
+      result = "Input not valid (must be 1–" + Hindrex.maxScore + ")";
     } else {
-      const code = hindrexScoreToCode(score);
-      const parts = code.split("-").filter(Boolean);
-      const conflicts = findSupersedingConflicts(parts);
-
+      const { code, conflicts, correctedParts, correctedScore } = Hindrex.analyzeScore(score);
       let warning = "";
       if (conflicts.length > 0) {
         const messages = conflicts.map(c => c.dominant + " supersedes " + c.sub);
-        const correctedParts = parts.filter(part => {
-          for (const [dom, dominated] of Object.entries(superseding)) {
-            if (parts.includes(dom) && dominated.includes(part)) return false;
-          }
-          return true;
-        });
-        const correctedScore = correctedParts.reduce((s, p) => s + codeToValue[p], 0);
         warning = "<br><span style='color:#f66;'>⚠ Score " + score + " is technically invalid: " +
                   messages.join(", ") + ". Corrected score: <strong>" + correctedScore +
                   "</strong> => <em>" + correctedParts.join("-") + "</em>.</span>";
       }
-
       result = "<em>Result:</em> <strong>" + code + "</strong>" + warning;
     }
-
     document.getElementById("hindrexCodeOut").innerHTML = result;
   }
 
   function convertHindrexCodeToScore() {
     let result;
-    let codeIn = document.getElementById("hindrexCodeIn").value.trim().toUpperCase();
-
-    const parts = codeIn.split("-").filter(Boolean);
-    if (parts.length === 0) {
-       result = "Input not valid";
+    const codeIn = document.getElementById("hindrexCodeIn").value.trim().toUpperCase();
+    if (!Hindrex.isCodeValid(codeIn)) {
+      result = "Input not valid";
     } else {
-      const invalid = parts.filter((part) => !(part in codeToValue));
-      if (invalid.length > 0) {
-        result = "Input not valid";
-      } else {
-        result = "<em>Result:</em> <strong>" + hindrexCodeToScore(codeIn).toString() + "</strong>";
-      }
+      result = "<em>Result:</em> <strong>" + Hindrex.codeToScore(codeIn).toString() + "</strong>";
     }
-
     document.getElementById("hindrexScoreOut").innerHTML = result;
   }
-</script>{{- /* This comment removes trailing newlines. */ -}}
+</script>

@@ -1,0 +1,186 @@
+{{- /*
+  shortcodes/hindrex/rating — build-time Hindrex score-2-code and code-2-score conversion
+  for the {{< hindrex-rating >}} shortcode.
+
+  Contract:
+    - Accepts score=, code=, or both. No params gives a build error.
+    - Both parameters must agree after normalization, otherwise report a
+      build error.
+    - Superseding conflicts (e.g. FOSS+A) are normalized SILENTLY and the
+      corrected canonical form is rendered without throwing a build error.
+    - Rendered output (default, when the explainer page exists):
+      <a class="hindrex-rating-link" href="<explainer>?score=N"
+         title="What is a Hindrex rating?">
+        <span class="hindrex-rating"><strong>N</strong> => <em>CODE</em></span>
+      </a>
+      Use link=false to get the bare span without the anchor.
+      The explainer page path is resolved in the shortcode
+      (hindrex-rating.html); if it is missing, the build fails.
+    - Runs entirely at build time (Go templates). The JS library in
+      assets/js/hindrex.js is the runtime twin of this code (used for the
+      interactive decoder). The code, and tables are therefore duplicated
+      here. Both will need to be updated if the domain rules change.
+
+  Hugo version quirks (v0.162.0-extended when first coded):
+    - Pruned functions: has, join, list, compact, fail, required do NOT exist.
+      Membership checks are hand-rolled loops; string joining is a print loop;
+      errorf (not fail) is used for loud build errors.
+    - append has argument order (item, slice) with item FIRST, e.g.
+      $s = append "x" $s.
+    - A pipe into a multi-arg function swaps its arguments:
+      `upper "FF-NN" | split "-"` yields ["-"]. Always use an intermediate
+      variable: $u := upper $code, then split $u "-".
+    - `template` cannot be captured: not in assignments ($x := template ...),
+      not as a range source, not inside parenthesized pipelines. It only works
+      as a standalone action in output position — so template definitions
+      cannot be composed by capturing output; compose at the data level
+      (pass a dict into one fat define instead).
+    - Template variables are statically scoped: declare every variable used in
+      multiple branches at the top of the define, even if only one branch
+      assigns it.
+*/ -}}
+
+{{ define "shortcodes/hindrex/rating" -}}
+  {{- $score := .score -}}
+  {{- $code := .code -}}
+  {{- $explainer := .explainer -}}
+  {{- $link := .link -}}
+  {{- $hasScore := ne $score nil -}}
+  {{- $hasCode := ne $code nil -}}
+  {{- $codes := .codes -}}
+  {{- $superseding := .superseding -}}
+  {{- $bits := (slice) -}}
+  {{- $names := (slice) -}}
+  {{- $values := (dict) -}}
+  {{- $maxScore := 0 -}}
+  {{- range $row := $codes -}}
+    {{- $bits = append $row.score $bits -}}
+    {{- $names = append $row.code $names -}}
+    {{- $values = merge $values (dict $row.code $row.score) -}}
+    {{- $maxScore = add $maxScore $row.score -}}
+  {{- end -}}
+  {{- $upperCode := "" -}}
+  {{- $sScore := 0 -}}
+  {{- $sCode := "" -}}
+  {{- $cScore := 0 -}}
+  {{- $cCode := "" -}}
+  {{- $scoreOut := 0 -}}
+  {{- $codeOut := "" -}}
+
+  {{- if not (or $hasScore $hasCode) -}}
+    {{- errorf "hindrex-rating: supply score=, code=, or both" -}}
+  {{- end -}}
+
+  {{- if $hasScore -}}
+    {{- if not (and (ge $score 1) (le $score $maxScore)) -}}
+      {{- errorf (printf "hindrex-rating: score %v is out of range 1-%v" $score $maxScore) -}}
+    {{- end -}}
+    {{- $parts := (slice) -}}
+    {{- range $i, $bit := $bits -}}
+      {{- if ge (mod $score (mul $bit 2)) $bit -}}
+        {{- $parts = append (index $names $i) $parts -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $kept := (slice) -}}
+    {{- range $part := $parts -}}
+      {{- $skip := false -}}
+      {{- range $dominant, $dominated := $superseding -}}
+        {{- $dominantPresent := false -}}
+        {{- range $p := $parts -}}
+          {{- if eq $p $dominant -}}
+            {{- $dominantPresent = true -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $dominantPresent -}}
+          {{- range $d := $dominated -}}
+            {{- if eq $d $part -}}
+              {{- $skip = true -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $skip -}}
+        {{- $kept = append $part $kept -}}
+      {{- end -}}
+    {{- end -}}
+    {{- range $i, $part := $kept -}}
+      {{- if $i -}}
+        {{- $sCode = print $sCode "-" -}}
+      {{- end -}}
+      {{- $sCode = print $sCode $part -}}
+      {{- $sScore = add $sScore (index $values $part) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if $hasCode -}}
+    {{- $upperCode = upper $code -}}
+    {{- $parts := uniq (split $upperCode "-") -}}
+    {{- $invalid := false -}}
+    {{- range $part := $parts -}}
+      {{- if not (index $values $part) -}}
+        {{- $invalid = true -}}
+        {{- errorf (printf "hindrex-rating: unknown code part %q" $part) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if $invalid -}}
+      {{- $parts = (slice) -}}
+    {{- end -}}
+    {{- $kept := (slice) -}}
+    {{- range $part := $parts -}}
+      {{- $skip := false -}}
+      {{- range $dominant, $dominated := $superseding -}}
+        {{- $dominantPresent := false -}}
+        {{- range $p := $parts -}}
+          {{- if eq $p $dominant -}}
+            {{- $dominantPresent = true -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $dominantPresent -}}
+          {{- range $d := $dominated -}}
+            {{- if eq $d $part -}}
+              {{- $skip = true -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $skip -}}
+        {{- $kept = append $part $kept -}}
+      {{- end -}}
+    {{- end -}}
+    {{- range $i, $bit := $bits -}}
+      {{- $name := index $names $i -}}
+      {{- $in := false -}}
+      {{- range $p := $kept -}}
+        {{- if eq $p $name -}}
+          {{- $in = true -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if $in -}}
+        {{- if $cCode -}}
+          {{- $cCode = print $cCode "-" -}}
+        {{- end -}}
+        {{- $cCode = print $cCode $name -}}
+        {{- $cScore = add $cScore (index $values $name) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if and $hasScore $hasCode -}}
+    {{- if or (ne $cScore $sScore) (ne $cCode $sCode) -}}
+      {{- errorf (printf "hindrex-rating: score %v and code %q do not match (canonical form is %v / %s)" $score $code $sScore $sCode) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if $hasScore -}}
+    {{- $scoreOut = $sScore -}}
+    {{- $codeOut = $sCode -}}
+  {{- else -}}
+    {{- $scoreOut = $cScore -}}
+    {{- $codeOut = $cCode -}}
+  {{- end -}}
+  {{- if and $explainer $link -}}
+    <a class="hindrex-rating-link" href="{{ $explainer }}?score={{ $scoreOut }}" title="What is a Hindrex rating?"><span class="hindrex-rating"><strong>{{ $scoreOut }}</strong> => <em>{{ $codeOut }}</em></span></a>
+  {{- else -}}
+    <span class="hindrex-rating"><strong>{{ $scoreOut }}</strong> => <em>{{ $codeOut }}</em></span>
+  {{- end -}}
+{{- end }}

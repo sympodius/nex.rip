@@ -1,0 +1,7 @@
+{{- /* Partial to format hindrex ratings universally across the site. It should be able to take in either a score or a code. The output should be a score/code combo in the form: <span class="hindrex-rating"><strong>78</strong> => <em>FF-NN-RTR-LRC</em></span>. I think it should also link to a page on the website that describes the Hindrex score/code to users. This would also allow people to universally link to the Nex.RIP site as the authoritative source for such explainers (similar to the Creative Commons website). First things first, though: entering either a score or a code should return the correctly formatted Hindrex score span. */ -}}
+
+{{- $explainer := site.GetPage "/secrets/hindrex-ratings/" -}}
+   {{- if not $explainer -}}
+     {{- errorf "hindrex-rating: explainer page /secrets/hindrex-ratings/ not found — check the path or create the page" -}}
+   {{- end -}}
+   {{ template "shortcodes/hindrex/rating" (dict "score" (.Get "score" | default nil) "code" (.Get "code" | default nil) "explainer" $explainer.RelPermalink "link" (.Get "link" | default true) "codes" hugo.Data.hindrex.codes "superseding" hugo.Data.hindrex.superseding) }}

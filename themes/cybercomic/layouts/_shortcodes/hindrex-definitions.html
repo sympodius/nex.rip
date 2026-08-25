@@ -1,0 +1,14 @@
+{{- /*
+  hindrex-definitions — render the Hindrex criteria definitions list.
+
+  Reads definitions from data/hindrex.json so the list cannot drift from
+  the rest of the site. Outputs a bare <ul> because shortcode output is
+  not re-parsed as Markdown. Footnote references cannot be emitted from
+  a shortcode either (they must appear in the Markdown body), so any
+  footnotes belong in the surrounding page copy.
+*/ -}}
+<ul>
+  {{- range hugo.Data.hindrex.codes }}
+  <li><strong>{{ .code }}</strong> :: {{ .definition }}</li>
+  {{- end }}
+</ul>

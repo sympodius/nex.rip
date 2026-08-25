@@ -1,0 +1,20 @@
+{{- /*
+  Partial that loads the Hindrex runtime on a page.
+
+  Builds a single combined asset at build time: the site's Hindrex data
+  (data/hindrex.json) assigned to window.HINDREX_DATA, followed by the
+  library source (assets/js/hindrex.js), then minified and fingerprinted.
+
+  Every include emits the SAME fingerprinted URL, so a page with any
+  number of Hindrex shortcodes downloads and executes the file exactly
+  once (browsers dedupe identical external script srcs). The data tag
+  is therefore included in the payload once, not once per shortcode.
+
+  Consumers read window.HINDREX_DATA (a plain parsed object). The
+  library initializes from it at load, and the data assignment is the
+  first statement of the file, so the two are always in sync.
+*/ -}}
+{{- $data := hugo.Data.hindrex | jsonify -}}
+{{- $js := resources.Get "js/hindrex.js" -}}
+{{- $combined := printf "window.HINDREX_DATA = %s;\n%s\n" $data $js.Content | resources.FromString "hindrex-combined.js" | minify | fingerprint -}}
+<script src="{{ $combined.RelPermalink }}"></script>

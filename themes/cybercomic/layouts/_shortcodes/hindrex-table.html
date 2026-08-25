@@ -1,0 +1,27 @@
+{{- /*
+  hindrex-table — render the Hindrex score/criteria table.
+
+  Reads codes and superseding from data/hindrex.json so the table cannot
+  drift from the rest of the site. Outputs a bare <table> (not Markdown
+  pipes) because shortcode output is not re-parsed as Markdown; the bare
+  element still picks up the theme's default table styling.
+  The "(> X)" annotation lists the codes this code supersedes, derived
+  from the "superseding" map in data/hindrex.json.
+*/ -}}
+{{- $superseding := hugo.Data.hindrex.superseding -}}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Hindrex Score</th>
+      <th style="text-align:right">Criteria</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- range hugo.Data.hindrex.codes }}
+    <tr>
+      <td style="text-align:left"><strong>{{ .score }}</strong></td>
+      <td style="text-align:right"><strong>{{ .code }}</strong> : {{ .label }}{{ with index $superseding .code }} (> {{ delimit . ", " }}){{ end }}</td>
+    </tr>
+    {{- end }}
+  </tbody>
+</table>

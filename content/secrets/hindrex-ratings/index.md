@@ -20,6 +20,8 @@ tags:
 draft: false
 ---
 
+{{< hindrex-score-summary >}}
+
 {{< banner src="images/post-cover.png" alt="A black handheld device with a physical keyboard, secured by a metal chain and padlock. Credit: John Urquhart Ferguson" >}}
 
 {{< md-comment >}}
@@ -46,40 +48,17 @@ As I mentioned in my [roadmap for Nex.RIP](/secrets/whats-in-the-box/), I will b
 
 These fears have led to the development of the *Hindrance Index Rating System* (hindrex)[^hindrex-collaborators], as shown in the table below. This system rates how hindered a piece of software seems to be. The scores and the criteria associated with them are summed to create a rating for a piece of software; the higher the score, the less hindered the software.
 
-| Hindrex Score | Criteria                                       |
-| :---          |                                           ---: |
-| **2048**      | **FOSS** : Free and Open Source Software (> A) |
-| **1024**      | **ZI** : Zero Internet                         |
-| **512**       | **FP** : Full Privacy (> ZLS, ZR)              |
-| **256**       | **ZLS** : Zero Licensing Servers               |
-| **128**       | **ZR** : Zero Registration                     |
-| **64**        | **FF** : Full-Featured                         |
-| **32**        | **A** : Archivable                             |
-| **16**        | **ZC** : Zero Cost (> LFC)                     |
-| **8**         | **NN** : No Nagging                            |
-| **4**         | **RTR** : Ready To Run                         |
-| **2**         | **LRC** : Low Run Cost                         |
-| **1**         | **LFC** : Low Financial Cost                   |
+{{< hindrex-table >}}
 
-These are the definitions for the criteria above:
-- **FOSS** :: Free and Open Source Software, abiding by the four essential freedoms of free software[^free-software-def], and the Open Source definition[^open-source-def]
-- **ZI** :: Zero Internet required to install and run the software (excluding a potential one-off download step)
-- **FP** :: Full Privacy, such that the entity you got the software from never gets any personal information about you and does not spy on you
-- **ZLS** :: Zero Licensing Servers required to download, install, or run the software
-- **ZR** :: Zero Registration required to download, install, or run the software
-- **FF** :: Full-Featured, without limitations (this means that it is fully usable for its intended purpose and free of timed or sporadic crippling. It does not mean that it includes all the features of a paid counterpart)
-- **A** :: Archivable such that it can be backed up and reinstalled later without requiring new licenses/registrations, or a connection to the Internet
-- **ZC** :: Zero Cost, meaning that no outlay of money is required to attain or run the software
-- **NN** :: No Nag screens/boxes asking you to buy an upgrade or another product such that it interferes with regular operation of the software
-- **RTR** :: Ready To Run, or extremely easy and low cost to compile from source code
-- **LRC** :: Low Run Cost, meaning that it doesn't have prohibitively expensive hardware requirements
-- **LFC** :: Low Financial Cost, meaning that it isn't prohibitively expensive to purchase
+These are the definitions for the criteria above (the free software definition[^free-software-def] and the Open Source definition[^open-source-def] are linked in footnotes):
+
+{{< hindrex-definitions >}}
 
 This rating system should always produce a uniquely reversible number, such that a single score can always be split back down into the criteria with only one possible outcome. In general, though, I'll still give ratings as both a single number and a series of criteria abbreviations.
 
-For example: software that was full-featured, had no nag screens, was ready to run, and had a low run cost (but had no other criteria on the list) would be given the rating "**78** => *FF-NN-RTR-LRC*."
+For example: software that was full-featured, had no nag screens, was ready to run, and had a low run cost (but had no other criteria on the list) would be given the rating "{{< hindrex-rating code="FF-NN-RTR-LRC" link=false >}}."
 
-Because some of the higher scores imply the criteria for the lower scores, the maximum achievable rating would be "**3678** => *FOSS-ZI-FP-FF-ZC-NN-RTR-LRC*."
+Because some of the higher scores imply the criteria for the lower scores, the maximum achievable rating would be "{{< hindrex-rating score=3678 link=false >}}."
 
 At times throughout the site, I'll give my preferred software choice for a given task. In most cases, I'll also say whether my choice is based on a high hindrex rating or the software's output quality (hopefully both).
 

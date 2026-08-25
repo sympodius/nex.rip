@@ -1,0 +1,77 @@
+{{ partial "shortcodes/hindrex-js.html" . }}
+<div class="hindrex-score-summary hidden"></div>
+<script>
+  (function () {
+    const hindrexData = window.HINDREX_DATA;
+    const defs = Object.fromEntries(hindrexData.codes.map(c => [c.code, c]));
+    const params = new URLSearchParams(window.location.search);
+    const scoreParam = params.get("score");
+    const codeParam = params.get("code");
+
+    function ratingSpan(score, code) {
+      return '<span class="hindrex-rating"><strong>' + score + '</strong> => <em>' + code + '</em></span>';
+    }
+
+    function partsList(parts) {
+      return '<ul class="hindrex-summary-parts">' + parts.map(part =>
+        "<li><strong>" + part + "</strong> :: " +
+        defs[part].definition + "</li>"
+      ).join("") + "</ul>";
+    }
+
+    function render(score, code, parts, conflicts, origScore, origCode) {
+      let out = "<p><em>Hindrex rating </em> " + ratingSpan(score, code) + ":</p>";
+      out += partsList(parts);
+      if (conflicts.length > 0) {
+        const messages = conflicts.map(c => c.dominant + " supersedes " + c.sub).join(", ");
+        out += "<p class='hindrex-summary-notice'><span style='color:#f66;'>⚠ Note: the supplied score (" + ratingSpan(origScore, origCode) + ") is technically invalid — " +
+               messages + ". The rating above is its corrected canonical form.</span></p>";
+      }
+      out += "<p><em>Read on for more information about hindrex ratings:</em></p>";
+      return out;
+    }
+
+    let html = "";
+
+    if (scoreParam !== null || codeParam !== null) {
+      const score = scoreParam !== null ? parseInt(scoreParam, 10) : null;
+      const code = codeParam !== null ? codeParam.trim().toUpperCase() : null;
+      const scoreOk = score !== null && !isNaN(score) && score >= 1 && score <= Hindrex.maxScore;
+      const codeOk = code !== null && code !== "" && Hindrex.isCodeValid(code);
+
+      if (scoreParam !== null && !scoreOk) {
+        html = "<p class='hindrex-summary-notice'><span style='color:#f66;'>⚠ The score in this URL is not valid (must be a whole number from 1 to " + Hindrex.maxScore + ").</span></p>";
+      } else if (codeParam !== null && !codeOk) {
+        html = "<p class='hindrex-summary-notice'><span style='color:#f66;'>⚠ The code in this URL is not a valid Hindrex code.</span></p>";
+      } else if (scoreOk && codeOk) {
+        const s = Hindrex.analyzeScore(score);
+        const cScore = Hindrex.codeToScore(code);
+        if (s.correctedScore === cScore) {
+          html = render(s.correctedScore, Hindrex.scoreToCode(s.correctedScore), s.correctedParts, s.conflicts, score, Hindrex.scoreToCode(score));
+        } else {
+          html = "<p class='hindrex-summary-notice'><span style='color:#f66;'>⚠ The score in this URL and the code do not match — score " +
+                 score + " normalizes to " + Hindrex.scoreToCode(s.correctedScore) + " (" + s.correctedScore +
+                 "), while the code normalizes to " + Hindrex.scoreToCode(cScore) + " (" + cScore + ").</span></p>";
+        }
+      } else if (scoreOk) {
+        const s = Hindrex.analyzeScore(score);
+        html = render(s.correctedScore, Hindrex.scoreToCode(s.correctedScore), s.correctedParts, s.conflicts, score, Hindrex.scoreToCode(score));
+      } else if (codeOk) {
+        const cScore = Hindrex.codeToScore(code);
+        const cParts = Hindrex.scoreToCode(cScore).split("-").filter(Boolean);
+        // Detect superseding conflicts in the code as supplied (before
+        // normalization) so the code-only path warns exactly like the
+        // score-only path does for conflicting scores.
+        const rawParts = [...new Set(code.split("-").filter(Boolean))];
+        const conflicts = Hindrex.findSupersedingConflicts(rawParts);
+        const origScore = rawParts.reduce((sum, p) => sum + Hindrex.codeToValue[p], 0);
+        html = render(cScore, Hindrex.scoreToCode(cScore), cParts, conflicts, origScore, code);
+      }
+    }
+
+    document.querySelectorAll(".hindrex-score-summary").forEach(el => {
+      el.innerHTML = html;
+      if (html) { el.classList.remove("hidden"); }
+    });
+  })();
+</script>
