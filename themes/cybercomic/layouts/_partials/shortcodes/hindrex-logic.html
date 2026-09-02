@@ -14,6 +14,8 @@
         <span class="hindrex-rating"><strong>N</strong> => <em>CODE</em></span>
       </a>
       Use link=false to get the bare span without the anchor.
+      Use bookend=true to surround the rendered output with
+      "(hindrex rating: " and ")".
       The explainer page path is resolved in the shortcode
       (hindrex-rating.html); if it is missing, the build fails.
     - Runs entirely at build time (Go templates). The JS library in
@@ -178,9 +180,11 @@
     {{- $scoreOut = $cScore -}}
     {{- $codeOut = $cCode -}}
   {{- end -}}
+  {{- if .bookend -}}(hindrex rating: {{ end -}}
   {{- if and $explainer $link -}}
     <a class="hindrex-rating-link" href="{{ $explainer }}?score={{ $scoreOut }}" title="What is a Hindrex rating?"><span class="hindrex-rating"><strong>{{ $scoreOut }}</strong> => <em>{{ $codeOut }}</em></span></a>
   {{- else -}}
     <span class="hindrex-rating"><strong>{{ $scoreOut }}</strong> => <em>{{ $codeOut }}</em></span>
   {{- end -}}
+  {{- if .bookend -}}){{- end -}}
 {{- end }}

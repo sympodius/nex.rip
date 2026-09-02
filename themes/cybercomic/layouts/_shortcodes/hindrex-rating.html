@@ -4,4 +4,4 @@
    {{- if not $explainer -}}
      {{- errorf "hindrex-rating: explainer page /secrets/hindrex-ratings/ not found — check the path or create the page" -}}
    {{- end -}}
-   {{ template "shortcodes/hindrex/rating" (dict "score" (.Get "score" | default nil) "code" (.Get "code" | default nil) "explainer" $explainer.RelPermalink "link" (.Get "link" | default true) "codes" hugo.Data.hindrex.codes "superseding" hugo.Data.hindrex.superseding) }}
+   {{ template "shortcodes/hindrex/rating" (dict "score" (.Get "score" | default nil) "code" (.Get "code" | default nil) "explainer" $explainer.RelPermalink "link" (.Get "link" | default true) "bookend" (.Get "bookend" | default false) "codes" hugo.Data.hindrex.codes "superseding" hugo.Data.hindrex.superseding) -}}
