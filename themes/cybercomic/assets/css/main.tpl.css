@@ -748,12 +748,19 @@ table {
   border-collapse: collapse;
   border-top: 3px solid var(--color-ink);
   border-bottom: 3px solid var(--color-ink);
-  table-layout: fixed;
+  table-layout: auto;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 th,
 td {
   padding: 0.2em 0.6em 0.2em 0.6em;
+  border-right: 1px solid #999999;
+  border-left: 1px solid #999999;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 thead {
@@ -764,16 +771,6 @@ thead {
 
 tr {    
   border-bottom: 1px solid #999999;
-}
-
-
-
-th,
-td {
-  border-right: 1px solid #999999;
-  border-left: 1px solid #999999;
-  overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 
