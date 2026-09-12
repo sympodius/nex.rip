@@ -742,6 +742,11 @@ h2 a {
     padding-right: 1rem;
 }
 
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 table {
   width: 100%;
   margin: 10px auto;
@@ -749,9 +754,6 @@ table {
   border-top: 3px solid var(--color-ink);
   border-bottom: 3px solid var(--color-ink);
   table-layout: auto;
-  display: block;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 th,

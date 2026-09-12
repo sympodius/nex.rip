@@ -7,8 +7,14 @@
   element still picks up the theme's default table styling.
   The "(> X)" annotation lists the codes this code supersedes, derived
   from the "superseding" map in data/hindrex.json.
+
+  Note: raw HTML tables are not processed by Hugo's table render hook,
+  so this shortcode wraps the table in .table-wrap itself (the same
+  wrapper used by layouts/_markup/render-table.html for markdown
+  tables) to keep it horizontally scrollable on narrow viewports.
 */ -}}
 {{- $superseding := hugo.Data.hindrex.superseding -}}
+<div class="table-wrap">
 <table>
   <thead>
     <tr>
@@ -25,3 +31,4 @@
     {{- end }}
   </tbody>
 </table>
+</div>

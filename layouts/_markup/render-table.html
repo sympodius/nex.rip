@@ -1,0 +1,46 @@
+{{- /*
+  Table render hook (Hugo >= 0.112 style; the old "partials/table.html"
+  wrapper no longer exists in current Hugo).
+
+  Renders Hugo's default table output, wrapped in a horizontally
+  scrollable div for narrow viewports. Markdown tables written in raw
+  HTML (e.g. the hindrex-table shortcode) are NOT processed by render
+  hooks, so they wrap themselves with the same .table-wrap div.
+*/ -}}
+<div class="table-wrap">
+<table
+	{{- range $k, $v := .Attributes }}
+		{{- if $v }}
+		{{- printf " %s=%q" $k ($v | transform.HTMLEscape) | safeHTMLAttr }}
+		{{- end }}
+	{{- end }}>
+	<thead>
+		{{- range .THead }}
+			<tr>
+				{{- range . }}
+					<th
+						{{- with .Alignment }}
+						{{- printf " style=%q" (printf "text-align: %s" .) | safeHTMLAttr }}
+						{{- end -}}>
+						{{- .Text -}}
+					</th>
+				{{- end }}
+			</tr>
+		{{- end }}
+	</thead>
+	<tbody>
+		{{- range .TBody }}
+			<tr>
+				{{- range . }}
+					<td
+						{{- with .Alignment }}
+						{{- printf " style=%q" (printf "text-align: %s" .) | safeHTMLAttr }}
+						{{- end -}}>
+						{{- .Text -}}
+					</td>
+				{{- end }}
+			</tr>
+		{{- end }}
+	</tbody>
+</table>
+</div>
