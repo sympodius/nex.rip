@@ -149,7 +149,7 @@ And that's everything you need to get started! Whether you're recording mono wit
 
 [^daw]: A [Digital Audio Workstation (DAW)](https://en.wikipedia.org/wiki/Digital_audio_workstation) is the computer software used to record, edit, mix, and master audio. It is the environment where post-production happens.
 [^zoom-ssh-6]: If you're using one of the Mid-side modules attached to the Zoom H6 (such as the [Zoom SSH-6 Stereo Shotgun Mic Module](https://zoomcorp.com/en/us/accessories/mic-capsules-foot-switches-and-pedals/SSH-6/) or the [Zoom MSH-6 Stereo Mid-side Mic Module](https://zoomcorp.com/en/us/accessories/mic-capsules-foot-switches-and-pedals/MSH-6/)), then you should also turn off the recorder's built-in Mid-side options by setting the "Side Mic Level" to "RAW." If you've done this successfully, then you should see "Side Mic Level : RAW" on the display while recording.
-[^zoom-ms-decoder]: If these steps seem too complicated, you might have more luck using [Zoom's free MS Decoder VST plugin](https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h6-audio-recorder/h6-support/) {{< hindrex-rating score=638 code="FP-FF-A-ZC-NN-RTR-LRC" bookend=true >}}.
+[^zoom-ms-decoder]: If these steps seem too complicated, you might have more luck using [Zoom's free MS Decoder VST plugin](https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h6-audio-recorder/h6-support/) {{< hindrex-rating code="FP-FF-A-ZC-NN-RTR-LRC" >}}.
 
 {{< md-comment >}}
 I considered putting information here about recording specific instruments (violin, acoustic guitar, etc), but the article was already getting pretty long. They might end up being diversion articles.

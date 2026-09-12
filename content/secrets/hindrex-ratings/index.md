@@ -5,7 +5,7 @@ author: Nexami Engeo
 description: "Introducing the hindrex rating system: a score that measures how hindered software is by privacy invasions, internet requirements, and licensing servers."
 summary: A scoring system for software freedom and privacy.
 readingEase: College Students
-gradeLevel: 18
+gradeLevel: 15
 images:
 - images/post-cover.png
 categories:
@@ -56,9 +56,9 @@ These are the definitions for the criteria above (the free software definition[^
 
 This rating system should always produce a uniquely reversible number, such that a single score can always be split back down into the criteria with only one possible outcome. In general, though, I'll still give ratings as both a single number and a series of criteria abbreviations.
 
-For example: software that was full-featured, had no nag screens, was ready to run, and had a low run cost (but had no other criteria on the list) would be given the rating "{{< hindrex-rating code="FF-NN-RTR-LRC" link=false >}}."
+For example: software that was full-featured, had no nag screens, was ready to run, and had a low run cost (but had no other criteria on the list) would be given the rating "{{< hindrex-rating code="FF-NN-RTR-LRC" link=false bookend=false >}}."
 
-Because some of the higher scores imply the criteria for the lower scores, the maximum achievable rating would be "{{< hindrex-rating score=3678 link=false >}}."
+Because some of the higher scores imply the criteria for the lower scores, the maximum achievable rating would be "{{< hindrex-rating score=3678 link=false bookend=false >}}."
 
 At times throughout the site, I'll give my preferred software choice for a given task. In most cases, I'll also say whether my choice is based on a high hindrex rating or the software's output quality (hopefully both).
 
