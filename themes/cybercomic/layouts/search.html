@@ -49,7 +49,7 @@
   
 {{- /*
   Vendored third-party assets (fuse.js, mark.js).
-  Source selection is controlled by the allowCDN site param; see the
+  Source selection is controlled by the allowCDN.vendor site param; see the
   vendor/asset.html partial for the rules.
 */}}
 {{ partial "vendor/asset.html" (dict "path" "js/fuse.min.js" "cdnUrl" "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" "assetType" "script" "defer" true) }}

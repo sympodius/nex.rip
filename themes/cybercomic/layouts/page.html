@@ -3,7 +3,7 @@
 
 {{- /*
   Vendored third-party assets (jquery, nanogallery2).
-  Source selection is controlled by the allowCDN site param; see the
+  Source selection is controlled by the allowCDN.vendor site param; see the
   vendor/asset.html partial for the rules.
 */}}
 {{ partial "vendor/asset.html" (dict "path" "js/jquery.min.js" "cdnUrl" "https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" "assetType" "script" "defer" true) }}

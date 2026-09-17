@@ -7,7 +7,7 @@
   <meta name="description" content="{{ .Description }}">
   {{- end }}
   {{- /*
-    Vendor fonts. allowCDN (site param):
+    Vendor fonts. allowCDN.fonts (site param):
       true  → load from the Google Fonts CDN, falling back to the local copies
               (with a warning) if the CDN is unreachable at build time.
       false → never use the CDN; local copies are required.
@@ -32,7 +32,7 @@
       {{- errorf "vendor/fonts: missing local font file %q (required as CDN fallback)" $f }}
     {{- end }}
   {{- end }}
-  {{- if site.Params.allowCDN }}
+  {{- if site.Params.allowCDN.fonts }}
     {{- $fontCSS := "https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" }}
     {{- if (try (resources.GetRemote $fontCSS)).Err }}
       {{- warnf "vendor/fonts: Google Fonts unreachable, using local @font-face" }}

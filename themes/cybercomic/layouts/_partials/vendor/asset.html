@@ -7,14 +7,14 @@
     assetType — "script" or "stylesheet"
     defer     — bool (script only)
 
-  Rules (site param allowCDN):
+  Rules (site param allowCDN.vendor):
     false → the local copy is the only source; hard error if it is missing.
     true  → the CDN is used when reachable at build time (tag emitted with an
             SRI integrity hash); otherwise the local copy is used instead and
             a warning is logged. Hard error if neither source is available.
 */ -}}
 {{- $local := resources.Get .path -}}
-{{- if site.Params.allowCDN }}
+{{- if site.Params.allowCDN.vendor }}
   {{- $remote := try (resources.GetRemote .cdnUrl) }}
   {{- if $remote.Err }}
     {{- if not $local }}

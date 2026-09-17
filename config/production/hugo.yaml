@@ -4,4 +4,6 @@ minify:
   minifyOutput: true
 
 params:
-  allowCDN: true
+  allowCDN:
+    fonts: true
+    vendor: true
