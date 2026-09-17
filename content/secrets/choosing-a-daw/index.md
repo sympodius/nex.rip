@@ -78,7 +78,7 @@ In all likelihood, your choice will mainly depend on what sort of computer you h
 Made by Avid Technology Inc, this is one of the first professional DAWs, and is still considered something of an industry standard. It integrates well with some professional mixing desks, and tries to mimic a traditional hardware workflow as much as possible (which can be needlessly limiting at times).
 
 - Traditional hardware workflow (perhaps overly so)
-- Runs on Windows and MacOS
+- Runs on Windows and macOS
 - Pretty expensive
 - Poor hindrex rating
 - Only supports Avid's proprietary plugin format: [AAX](https://en.wikipedia.org/wiki/Pro_Tools#Pro_Tools_|_HDX_(2011%E2%80%93present)#:~:text=AAX)
@@ -93,7 +93,7 @@ One of the most popular DAWs, despite only running on Apple Inc devices. Logic P
 After its parent company Emagic was acquired by Apple Inc in 2002, Logic Pro was discontinued on Windows with no support given to the tens of thousands of users who had invested their time and money into Logic Pro on that platform. This sort of behaviour by software companies is one of the reasons that I consider hindrex ratings important.
 
 - Traditional hardware workflow (but with higher-than-average usability)
-- Only runs on MacOS
+- Only runs on macOS
 - Pretty expensive
 - Poor hindrex rating
 - Only supports Apple's proprietary plugin format: [AU](https://en.wikipedia.org/wiki/Audio_Units)
@@ -106,10 +106,10 @@ After its parent company Emagic was acquired by Apple Inc in 2002, Logic Pro was
 Perhaps the most popular DAW in terms of users, Ableton Live has a slight bent toward live performance, with great support for loops and samples. However, it is also fully capable of the other DAW functions.
 
 - Hybrid workflow (*Session* view unique, *Arrangement* view traditional)
-- Runs on Windows and MacOS
+- Runs on Windows and macOS
 - Pretty expensive (though does offer a rent-to-own option)
 - Poor hindrex rating
-- Has support for [VST](https://en.wikipedia.org/wiki/Virtual_Studio_Technology) (when running on Windows and MacOS) and [AU](https://en.wikipedia.org/wiki/Audio_Units) (when running on MacOS)
+- Has support for [VST](https://en.wikipedia.org/wiki/Virtual_Studio_Technology) (when running on Windows and macOS) and [AU](https://en.wikipedia.org/wiki/Audio_Units) (when running on macOS)
 
 
 ## [REAPER](https://www.reaper.fm)
@@ -127,10 +127,10 @@ REAPER is often incorrectly called a free DAW. While it is very reasonably price
 Fun fact: REAPER was created by the same guy[^justin-frankel] who made [Winamp](https://en.wikipedia.org/wiki/Winamp) and [Gnutella](https://en.wikipedia.org/wiki/Gnutella).
 
 - Adapted traditional hardware workflow
-- Runs on Windows, MacOS, and Linux
+- Runs on Windows, macOS, and Linux
 - Very reasonably priced
 - High hindrex rating (probably the highest you're likely to get for a proprietary DAW)
-- Supports most plugin types: [VST](https://en.wikipedia.org/wiki/Virtual_Studio_Technology), [CLAP](https://en.wikipedia.org/wiki/CLever_Audio_Plug-in), [LV2](https://en.wikipedia.org/wiki/LV2), [AU](https://en.wikipedia.org/wiki/Audio_Units) (when running on MacOS), and [DX](https://en.wikipedia.org/wiki/DirectX) (when running on Windows)
+- Supports most plugin types: [VST](https://en.wikipedia.org/wiki/Virtual_Studio_Technology), [CLAP](https://en.wikipedia.org/wiki/CLever_Audio_Plug-in), [LV2](https://en.wikipedia.org/wiki/LV2), [AU](https://en.wikipedia.org/wiki/Audio_Units) (when running on macOS), and [DX](https://en.wikipedia.org/wiki/DirectX) (when running on Windows)
 
   
 ## [Ardour](https://ardour.org)
@@ -150,10 +150,10 @@ Although it's open source, if you want to get ready-to-run versions directly fro
 Fun fact: Ardour was created by [Amazon's](https://amazon.com) second ever employee, and he's also the creator of the Linux JACK audio system[^paul-davis].
 
 - Adapted traditional hardware workflow
-- Runs on Windows, MacOS, and Linux
+- Runs on Windows, macOS, and Linux
 - Free (with a minimum charge of $1 for pre-compiled binaries)
 - Highest possible hindrex rating
-- Supports the most common plugin types: [VST](https://en.wikipedia.org/wiki/Virtual_Studio_Technology), [LV2](https://en.wikipedia.org/wiki/LV2), and [AU](https://en.wikipedia.org/wiki/Audio_Units) (when running on MacOS)
+- Supports the most common plugin types: [VST](https://en.wikipedia.org/wiki/Virtual_Studio_Technology), [LV2](https://en.wikipedia.org/wiki/LV2), and [AU](https://en.wikipedia.org/wiki/Audio_Units) (when running on macOS)
 
 
 ## Conclusions
