@@ -2,3 +2,6 @@ enableRobotsTXT: true
 
 minify:
   minifyOutput: true
+
+params:
+  allowCDN: true

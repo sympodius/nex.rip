@@ -14,6 +14,16 @@ social:
 enableSearch: true
 searchPagerSize: 5
 
+# allowCDN: true  → vendor assets (fonts, third-party JS/CSS) load from CDNs
+#                   when reachable at build time, falling back to local copies
+#                   (with a warning) if not.
+# allowCDN: false → CDNs are never used; local copies are required and missing
+#                   ones fail the build.
+# Scope: vendored site assets only (fonts, jQuery, nanogallery2, fuse.js,
+# mark.js). Analytics and Netlify Identity are gated on the build environment
+# instead (see baseof.html), so a production build still loads them.
+allowCDN: false
+
 logo:
   svg: "images/logo.svg"
   height: "3.688rem"
