@@ -3,9 +3,10 @@ var fuseOptions = {
     shouldSort: true,
     includeMatches: true,
     includeScore: true,
-    tokenize: true,
+    tokenize: false,
     location: 0,
-    distance: 100,
+    distance: 100000,
+    threshold: 0.3,
     minMatchCharLength: 1,
     keys: [
         {name: "title", weight: 0.45},
@@ -131,8 +132,31 @@ function populateResults(results) {
 	var contents = value.item.contents;
 	var snippet = "";
 	var snippetHighlights = [];
-	snippetHighlights.push(searchQuery);
-	snippet = contents.substring(0, summaryInclude * 2) + '&hellip;';
+	var literalQuery = dequote(searchQuery);
+	// Fuse may have matched a fuzzy variant (e.g. the article contains
+	// "that exist" for a query of "that exists"); in that case fall
+	// back to the longest prefix of the query that really appears in
+	// the content, so the snippet and highlight land on real text.
+	if (literalQuery.length > 4 && contents.toLowerCase().indexOf(literalQuery.toLowerCase()) === -1) {
+	    var lowerContents = contents.toLowerCase();
+	    for (var n = literalQuery.length - 1; n >= 4; n--) {
+		if (lowerContents.indexOf(literalQuery.slice(0, n).toLowerCase()) > -1) {
+		    literalQuery = literalQuery.slice(0, n);
+		    break;
+		}
+	    }
+	}
+	snippetHighlights.push(literalQuery);
+	// Position the snippet at the matched text (which is also what Mark
+	// highlights). Fall back to the start of the article when the match
+	// was in the title/tags rather than the content.
+	var matchPos = contents.toLowerCase().indexOf(literalQuery.toLowerCase());
+	if (matchPos > -1) {
+	    var snippetStart = Math.max(0, matchPos - summaryInclude);
+	    snippet = (snippetStart > 0 ? '&hellip;' : '') + contents.substring(snippetStart, snippetStart + summaryInclude * 2) + '&hellip;';
+	} else {
+	    snippet = contents.substring(0, summaryInclude * 2) + '&hellip;';
+	}
 	// Replace values
 	var tags = "";
 	if (value.item.tags) {
@@ -203,4 +227,13 @@ function hide(elem) {
 }
 function param(name) {
     return decodeURIComponent((location.search.split(name + '=')[1] || '').split('&')[0]).replace(/\+/g, ' ');
+}
+
+function dequote(q) {
+    // Users can wrap a query in quote characters. Keep those in the
+    // Fuse query: the quote characters consume fuzz budget and make
+    // the search effectively stricter. But since the quotes don't
+    // appear in the content, strip them when matching literal text
+    // for snippet positioning and highlighting.
+    return q.replace(/^["']+/, '').replace(/["']+$/, '');
 }
