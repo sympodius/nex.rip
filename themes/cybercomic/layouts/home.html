@@ -51,7 +51,7 @@
           <div class="top-three-separator"></div>
           <div class="top-three{{- if $page.Eq $firstRangePage }} first-top-three{{ else if $page.Eq $lastRangePage }} last-top-three{{- end -}}">
             <a href="{{- $page.RelPermalink -}}">
-              <div class="top-three-summary hidden">{{- .Summary -}}</div>
+              <div class="top-three-summary hidden"><span>{{- .Summary -}}</span></div>
               <div class="top-three-title">{{- .Title -}}</div>
             </a>
           </div>
