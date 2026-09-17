@@ -20,6 +20,10 @@ tags:
 - sample-rate
 - bit-depth
 - file-formats
+- aliasing
+- nyquist
+- nyquist-shannon
+- sampling-theorem
 draft: false
 ---
 
