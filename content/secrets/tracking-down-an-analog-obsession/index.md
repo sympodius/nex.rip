@@ -24,7 +24,7 @@ tags:
 - saturators
 - channel-strips
 - home-studio
-draft: true
+draft: false
 ---
 
 {{< banner src="images/post-cover.png" alt="A cyan digital sine wave becoming a warm, distorted orange wave as it passes through seven Analog Obsession plugin modules. Credit: John Urquhart Ferguson" >}}
@@ -44,7 +44,7 @@ draft: true
 - [x] Make an appropriate choice of tags in the front matter. These will help in recommending pages to the reader
 - [x] Make an appropriate choice of categories in the front matter. The first category will be used in the breadcrumb for the page, others will generate the side menu
 - [x] Use Emacs to generate the reading ease and grade level (this should happen automatically when saving the file in my Emacs configuration). These are just for fun, incidentally, and appear to have no impact on audience engagement
-- [ ] Set the draft to false when you want to publish, then push to GitHub
+- [x] Set the draft to false when you want to publish, then push to GitHub
 - [ ] Drop a video announcing this post on Instagram etc, and post anywhere else you can as well. Reels and videos work better for engagement
 - [ ] Consider what tomorrow's article will be, and try to post a new one once a day (more is fine)
 {{</ md-comment >}}
