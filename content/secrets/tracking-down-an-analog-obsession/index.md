@@ -5,7 +5,7 @@ author: Nexami Engeo
 description: "Analogue sound without the cost: mapping every free Analog Obsession plugin to the classic hardware it's believed to emulate (noting original designs)."
 summary: The fidelity of a fortune for the cost of a coffee.
 readingEase: Professionals
-gradeLevel: 29
+gradeLevel: 28
 images:
 - images/post-cover.png
 categories:
@@ -219,5 +219,5 @@ I've tried to keep similar plugins grouped together so that they're easier to br
 
 With that, you now have a complete map of the hardware hidden behind each Analog Obsession plugin. The software is free, runs in the DAW you've already [chosen](/secrets/choosing-a-daw), and is faithful enough to give you that much-coveted analogue sound without emptying your pockets. I'll do my best to keep this list up to date with any future Analog Obsession releases, but if you think I've misidentified anything (or haven't included something), do [let me know](/legal/about/#contact). And if you do find yourself using these plugins a lot, remember that the whole thing is kept alive by one developer on a donation model. Now go and make your records sound like they cost a fortune.
 
-[^patreon-about]: https://www.patreon.com/analogobsession/about
-[^kvr-about]: https://www.kvraudio.com/developer/analog-obsession
+[^patreon-about]: [About Page](https://www.patreon.com/analogobsession/about) for Analog Obsession's Patreon.
+[^kvr-about]: [Developer Page](https://www.kvraudio.com/developer/analog-obsession) for Analog Obsession's KVR Audio account.
