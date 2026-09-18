@@ -30,7 +30,7 @@
       {{- end }}
     {{- end }}
   {{- else }}
-    {{- with $remote.Value | resources.Minify | fingerprint }}
+    {{- with $remote.Value | fingerprint }}
       {{- if eq $.assetType "script" }}
   <script type="text/javascript" src="{{ $.cdnUrl }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"{{ if $.defer }} defer{{ end }}></script>
       {{- else }}
