@@ -135,7 +135,7 @@ Fun fact: REAPER was created by the same guy[^justin-frankel] who made [Winamp](
   
 ## [Ardour](https://ardour.org)
 
-***hindrex rating:*** {{< hindrex-rating code="FOSS-ZI-FP-FF-ZC-NN-LRC" bookend=false >}}
+***hindrex rating:*** {{< hindrex-rating code="FOSS-ZI-FP-FF-ZC-NN-RTR-LRC" bookend=false >}}
 
 Ardour is probably the most niche DAW on this list, and has a relatively small user base. However, it's highly capable and can perform all of the DAW functions you could ever need. It comes with about the same number of plugins as REAPER, but not the 200-plus [JSFX scripts](https://github.com/ReaTeam/Doc/wiki/JSFX-from-REAPER-Native). However, you can use [ysfx](https://github.com/JoepVanlier/ysfx) to run all those same scripts with Ardour (much as you can with Ableton Live and Logic Pro). Ardour has an equally powerful and easier-to-learn (though slightly slower) scripting system that uses the popular Lua scripting language. REAPER can use Lua as well, but only to automate the user interface (not to process audio signals). Ardour can do everything in Lua, from customising and automating the user interface, to processing any audio you want.
 
