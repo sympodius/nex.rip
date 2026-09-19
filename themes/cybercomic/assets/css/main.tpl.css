@@ -765,6 +765,16 @@ td {
   word-break: normal;
 }
 
+/* keep the cell wrap policy on links inside cells too — the global `a` rule
+   (break-word, for long URLs in prose) has the same specificity but appears
+   later, so it otherwise wins and mid-word-breaks table cells, collapsing
+   their min-content width */
+th a,
+td a {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
 thead {
   border-bottom: 3px solid var(--color-ink);
   border-right: 1px solid var(--color-ink);
