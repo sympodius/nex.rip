@@ -4,8 +4,8 @@ date: 2026-09-16T13:14:26+01:00
 author: Nexami Engeo
 description: "Analogue sound without the cost: mapping every free Analog Obsession plugin to the classic hardware it's believed to emulate (noting original designs)."
 summary: The fidelity of a fortune for the cost of a coffee.
-readingEase: Professionals
-gradeLevel: 29
+readingEase: College Graduates
+gradeLevel: 26
 images:
 - images/post-cover.png
 categories:
@@ -59,7 +59,7 @@ Analog Obsession operates on a donation model, so you are free to download and u
 
 It would be impossible to overstate how much money this is potentially saving you (even if you make a reasonable donation). Compared to the commercial software offerings, it's saving you thousands of pounds. Compared to the actual analogue hardware, it's saving you tens of thousands of pounds. I think it's fair to say that the big commercial software is even more faithful to the original hardware, but you're certainly paying a huge amount for that extra accuracy.
 
-The one downside of Analog Obsession's plugins is that most don't explicitly name the hardware they're emulating. I can only speculate on the reasons for this, but my guess would be that they're trying to avoid any legal entanglements. I also haven't been able to find a single complete, authoritative chart online---the community lists that exist are incomplete or disagree with each other on some of the hardware. As such, I've decided to produce my own. Below is a list of the hardware that I ***think*** each Analog Obsession plugin is trying to replicate. You should note that this is very much just my personal opinion, and I can't claim to be 100% correct in my guesses (and many community sources disagree with them)... but I suspect I'm pretty close.
+One downside of Analog Obsession's plugins is that most don't explicitly name the hardware they're emulating. I can only speculate on the reasons for this, but my guess would be that they're trying to avoid any legal entanglements. I also haven't been able to find a single complete, authoritative chart online---the community lists that exist are incomplete or disagree with each other on some of the hardware. As such, I've decided to produce my own. Below is a list of the hardware that I ***think*** each Analog Obsession plugin is trying to replicate. You should note that this is very much just my personal opinion, and I can't claim to be 100% correct in my guesses (and many community sources disagree with them)... but I suspect I'm pretty close.
 
 Most of the plugins have a 4x oversampling option to reduce [aliasing](/secrets/digitally-storing-audio), but it's often off by default. Therefore, if comparing to other (licensed) software recreations, you may not get a fair comparison unless you turn on oversampling ([Universal Audio](https://www.uaudio.com/) plugins, for example, handle oversampling internally with nothing for you to enable). Oversampling for Analog Obsession plugins is usually turned on by clicking the Analog Obsession logo so that it turns red.
 
@@ -222,6 +222,8 @@ I've tried to keep similar plugins grouped together so that they're easier to br
 |[SPre](https://plugins4free.com/plugin/3094)      |E-mu SP-1200 Vintage Sampler Tonal Simulator [***currently unmaintained***]                                                                                                                   |
 |[Transature](https://plugins4free.com/plugin/3100)|Analog Obsession Original Transformer Saturation Box [***currently unmaintained***]                                                                                                           |
 |[Zupaa](https://plugins4free.com/plugin/3087)     |Marshall 'Supa Fuzz' Fuzz Pedal [***integrated*** into [PEDALz](https://www.patreon.com/analogobsession/posts/pedalz-54136573)]                                                               |
+
+One thing to keep in mind if you plan to use these plugins long-term: Analog Obsession has historically changed a plugin's internal ID on updates, so your DAW treats the new version as a *different* plugin. If you open an old project after updating one it used, it'll often show the plugin as missing (or with reset parameters). The fix is to not update in place; as a safety net, keep a backup for each version of every Analog Obsession plugin you install (or back up the install files themselves) so that you can swap the old ones back in when an old project needs them. These backups are important because Analog Obsession usually doesn't keep old versions available to download. Many DAWs can also map a missing plugin to its replacement once and remember the choice. Note that this only happens if you actively overwrite an installed version. If you leave a version untouched, nothing breaks. Analog Obsession doesn't force updates; it's entirely your choice when (or whether) to update.
 
 With that, you now have a complete map of the hardware hidden behind each Analog Obsession plugin. The software is free, runs in the DAW you've already [chosen](/secrets/choosing-a-daw), and is faithful enough to give you that much-coveted analogue sound without emptying your pockets. I'll do my best to keep this list up to date with any future Analog Obsession releases, but if you think I've misidentified anything (or haven't included something), do [let me know](/legal/about/#contact). And if you do find yourself using these plugins a lot, remember that the whole thing is kept alive by one developer on a donation model. Now go and make your records sound like they cost a fortune.
 
