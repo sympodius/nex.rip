@@ -5,7 +5,7 @@ author: Nexami Engeo
 description: "Analogue sound without the cost: mapping every free Analog Obsession plugin to the classic hardware it's believed to emulate (noting original designs)."
 summary: The fidelity of a fortune for the cost of a coffee.
 readingEase: Professionals
-gradeLevel: 28
+gradeLevel: 29
 images:
 - images/post-cover.png
 categories:
@@ -26,6 +26,8 @@ tags:
 - home-studio
 draft: false
 ---
+
+***Last updated: 19th September 2026***
 
 {{< banner src="images/post-cover.png" alt="A cyan digital sine wave becoming a warm, distorted orange wave as it passes through seven Analog Obsession plugin modules. Credit: John Urquhart Ferguson" >}}
 
@@ -194,6 +196,10 @@ I've tried to keep similar plugins grouped together so that they're easier to br
 |----------------------------------------------------------------------------|---------------------------------------------------|
 |[Rare](https://www.patreon.com/analogobsession/posts/rare-bundle-90832098)  |Pultec EQP-1A Program Equaliser                    |
 |[RareSE](https://www.patreon.com/analogobsession/posts/rare-bundle-90832098)|Pultec EQP-1A Program Equaliser (L/R & M/S version)|
+
+|Analog Obsession JSFX Plugins                                                                 |Hardware/Description                                                               |
+|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+|[SATURATION PROFILER](https://www.patreon.com/analogobsession/posts/saturation-jsfx-169968571)|Profile the saturation/transfer function and harmonic distortion of an audio signal|
 
 |Analog Obsession Legacy Plugins                   |Hardware/Description                                                                                                                                                                          |
 |--------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
