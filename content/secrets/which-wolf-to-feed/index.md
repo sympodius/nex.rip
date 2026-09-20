@@ -12,9 +12,9 @@ categories:
 - arcanum
 tags:
 - arcanum
-- fabienne black
-- neil crow
-- le chien
+- fabienne-black
+- neil-crow
+- le-chien
 - motivation
 draft: false
 ---
