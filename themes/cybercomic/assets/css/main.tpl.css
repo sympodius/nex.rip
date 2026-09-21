@@ -727,9 +727,16 @@ pre code { white-space: pre-wrap; }
 }
 
 .inputbutton:hover {
+    background-color: var(--site-background);
     border: 0.125rem solid var(--logo-high);
     box-shadow: var(--shadow-pop-lg);
     outline: 0.1875rem solid transparent;
+}
+
+/* button:focus also sets background: transparent, so restore it for
+   buttons that retain focus after being clicked. */
+.inputbutton:focus {
+    background-color: var(--site-background);
 }
 
 .inputbutton:active {
