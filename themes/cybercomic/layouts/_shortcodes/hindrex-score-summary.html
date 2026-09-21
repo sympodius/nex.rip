@@ -23,8 +23,8 @@
       let out = "<p><em>Hindrex rating </em> " + ratingSpan(score, code) + ":</p>";
       out += partsList(parts);
       if (conflicts.length > 0) {
-        const messages = conflicts.map(c => c.dominant + " supersedes " + c.sub).join(", ");
-        out += "<p class='hindrex-summary-notice'><span style='color:#f66;'>⚠ Note: the supplied score (" + ratingSpan(origScore, origCode) + ") is technically invalid — " +
+        const messages = conflicts.map(c => c.sub + " is superseded by " + c.dominant).join(", ");
+        out += "<p class='hindrex-summary-notice'><span style='color:#f66;'>⚠ Note: the supplied score (" + ratingSpan(origScore, origCode) + ") is technically invalid—" +
                messages + ". The rating above is its corrected canonical form.</span></p>";
       }
       out += "<p><em>Read on for more information about hindrex ratings:</em></p>";
