@@ -1,19 +1,58 @@
 {{ partial "shortcodes/hindrex-js.html" . }}
+{{- $explainer := site.GetPage "/secrets/hindrex-ratings/" -}}
 <form id="hindrexScoreToCode" onsubmit="convertHindrexScoreToCode(); return false;" style="margin-top: 1rem; margin-bottom: 1rem;">
   <label for="hindrexScoreIn">Hindrex Score:</label><br>
   <input id="hindrexScoreIn" placeholder="Hindrex score (eg, 3678)" class="inputbar" style="width: 20rem;">
   <button type="button" onclick="convertHindrexScoreToCode()" class="inputbutton" form="hindrexScoreToCode" style="width: 10rem;">Convert to code</button><br>
-  <output name="hindrexCodeOut" for="hindrexScoreIn" id="hindrexCodeOut"></output>
+  <output name="hindrexCodeOut" for="hindrexScoreIn" id="hindrexCodeOut" style="line-height: 3rem;"></output>
 </form>
 
 <form id="hindrexCodeToScore" onsubmit="convertHindrexCodeToScore(); return false;" style="margin-top: 1rem; margin-bottom: 1.5rem;">
   <label for="hindrexCodeIn">Hindrex Code:</label><br>
   <input id="hindrexCodeIn" placeholder="Hindrex code (eg, FF-NN-RTR-LRC)" class="inputbar" style="width: 20rem;">
   <button type="button" onclick="convertHindrexCodeToScore()" class="inputbutton" form="hindrexCodeToScore" style="width: 10rem;">Convert to score</button><br>
-  <output name="hindrexScoreOut" for="hindrexCodeIn" id="hindrexScoreOut"></output>
+  <output name="hindrexScoreOut" for="hindrexCodeIn" id="hindrexScoreOut" style="line-height: 3rem;"></output>
 </form>
 
 <script>
+  // Canonical base for shareable rating URLs (the explainer page).
+  const explainerUrl = "{{ $explainer.Permalink }}";
+
+  // Returns an icon button that copies the given text to the clipboard.
+  function copyButton(label, text) {
+    const data = JSON.stringify(text).replace(/"/g, "&quot;");
+    // min-width keeps the button the same size while the label
+    // temporarily flips to a tick (3.55em = rendered width of "copy").
+    return ' <button type="button" class="inputbutton" title="Copy ' + label + ' to clipboard" '
+           + 'style="min-width: 3.55em;" '
+           + 'onclick="hindrexCopy(' + data + ', this)">copy</button>';
+  }
+
+  function hindrexCopy(text, btn) {
+    const original = btn.innerHTML;
+    function done(ok) {
+      btn.innerHTML = ok ? "&#10003;" : "&#10007;";
+      setTimeout(() => { btn.innerHTML = original; }, 1500);
+    }
+    function fallback() {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done(ok);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => done(true), fallback);
+    } else {
+      fallback();
+    }
+  }
+
   function convertHindrexScoreToCode() {
     let result;
     const scoreIn = document.getElementById("hindrexScoreIn").value.trim().replace(/\*/g, "");
@@ -21,15 +60,22 @@
     if (isNaN(score) || score < 1 || score > Hindrex.maxScore) {
       result = "Input not valid (must be 1–" + Hindrex.maxScore + ")";
     } else {
-      const { code, conflicts, correctedParts, correctedScore } = Hindrex.analyzeScore(score);
+      const { conflicts, correctedParts, correctedScore } = Hindrex.analyzeScore(score);
       let warning = "";
       if (conflicts.length > 0) {
-        const messages = conflicts.map(c => c.dominant + " supersedes " + c.sub);
+        const messages = conflicts.map(c => c.sub + " is superseded by " + c.dominant);
+        // The corrected code is already shown in the result, so the warning
+        // only needs to explain the conflict and the corrected score.
         warning = "<br><span style='color:#f66;'>⚠ Score " + score + " is technically invalid: " +
-                  messages.join(", ") + ". Corrected score: <strong>" + correctedScore +
-                  "</strong> => <em>" + correctedParts.join("-") + "</em>.</span>";
+                  messages.join(", ") + ". Corrected score: <strong>" + correctedScore + "</strong>.</span>";
       }
-      result = "<em>Result:</em> <strong>" + code + "</strong>" + warning;
+      // Show the corrected (canonical) code, matching the build-time
+      // hindrex-rating shortcode; the warning explains what was corrected.
+      const correctedCode = correctedParts.join("-");
+      // Use the corrected score so the canonical URL always points at a valid rating.
+      const url = explainerUrl + "?score=" + correctedScore;
+      result = "<em>Result:</em> <strong>" + correctedCode + "</strong>" + copyButton("Result", correctedCode) + warning +
+               "<br><em>Canonical URL:</em> <a href=\"" + url + "\">" + url + "</a>" + copyButton("URL", url);
     }
     document.getElementById("hindrexCodeOut").innerHTML = result;
   }
@@ -40,7 +86,10 @@
     if (!Hindrex.isCodeValid(codeIn)) {
       result = "Input not valid";
     } else {
-      result = "<em>Result:</em> <strong>" + Hindrex.codeToScore(codeIn).toString() + "</strong>";
+      const scoreOut = Hindrex.codeToScore(codeIn).toString();
+      const url = explainerUrl + "?score=" + scoreOut;
+      result = "<em>Result:</em> <strong>" + scoreOut + "</strong>" + copyButton("Result", scoreOut) +
+               "<br><em>Canonical URL:</em> <a href=\"" + url + "\">" + url + "</a>" + copyButton("URL", url);
     }
     document.getElementById("hindrexScoreOut").innerHTML = result;
   }
