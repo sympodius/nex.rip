@@ -145,7 +145,7 @@ One of the really great aspects of this setup is that the figure-8 tracks will c
 
 And that's everything you need to get started! Whether you're recording mono with a single cardioid, or running X-Y or Mid-side from two mics, the method is the same every time: capture a neutral sound in the dead room, keep the options open, and make your choices in the DAW where you can change your mind. The table above is your decision-making tool when you're facing a new instrument or a new part, and the one principle behind every row is the one we started from: capture only what the room and the computer can't add for you.
 
-
+<h2 class="footnotes">Footnotes</h2>
 
 [^daw]: A [Digital Audio Workstation (DAW)](https://en.wikipedia.org/wiki/Digital_audio_workstation) is the computer software used to record, edit, mix, and master audio. It is the environment where post-production happens.
 [^zoom-ssh-6]: If you're using one of the Mid-side modules attached to the Zoom H6 (such as the [Zoom SSH-6 Stereo Shotgun Mic Module](https://zoomcorp.com/en/us/accessories/mic-capsules-foot-switches-and-pedals/SSH-6/) or the [Zoom MSH-6 Stereo Mid-side Mic Module](https://zoomcorp.com/en/us/accessories/mic-capsules-foot-switches-and-pedals/MSH-6/)), then you should also turn off the recorder's built-in Mid-side options by setting the "Side Mic Level" to "RAW." If you've done this successfully, then you should see "Side Mic Level : RAW" on the display while recording.

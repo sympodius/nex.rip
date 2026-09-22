@@ -114,6 +114,8 @@ If you do end up going for an SM58, I would recommend getting the base model wit
 
 I bought my first two SM58 microphones back in 2004. I've never had to replace them. We recorded all our early music using them and used them for live gigs too. They both sound just as good now as they did back then. After more than two decades, it's still a no-brainer. Honestly, it's probably one of the best recording investments you'll ever make.
 
+<h2 class="footnotes">Footnotes</h2>
+
 [^dynamic-range]: *Dynamic range* is the difference between the loudest and quietest sounds in a recording.
 [^noise-floor]: *Noise floor* is the unwanted noise that is unintentionally recorded. This can include ambient and background noise from the recording space, as well as noise within the audio signal chain itself (like limitations of the mics and cables, or quantization noise from storing analogue information digitally).
 [^clipping]: *Clipping* is a distortion that can occur any time the audio signal is amplified beyond the dynamic range limits of the recording equipment/medium. To ensure this type of distortion isn't introduced, your audio should never clip at any point in the entire production pipeline (from recording through to final release).

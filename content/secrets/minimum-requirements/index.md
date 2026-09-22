@@ -107,6 +107,8 @@ My hope moving forward is to spend no more money on hardware. I really want this
 
 Hopefully you've not found this summary of hardware too boring, but I thought it would be good to let everyone know what baseline I was working with. I promise future articles will be more focused on what you need to do, instead of what I've already done.
 
+<h2 class="footnotes">Footnotes</h2>
+
 [^dark-fire]: [Original Gibson article about the Dark Fire Electric Guitar](https://legacy.gibson.com/News-Lifestyle/Features/en-us/dark-fire-full.aspx)
 [^gk-3]: [Original Roland article about the GK-3 MIDI Pickup](https://www.roland.com/global/products/gk-3/)
 [^sg-voodoo]: [Fandom wiki article about the SG Special Voodoo](https://solidguitar.fandom.com/wiki/SG_Special_Voodoo)

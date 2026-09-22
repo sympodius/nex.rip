@@ -227,5 +227,7 @@ One thing to keep in mind if you plan to use these plugins long-term: Analog Obs
 
 With that, you now have a complete map of the hardware hidden behind each Analog Obsession plugin. The software is free, runs in the DAW you've already [chosen](/secrets/choosing-a-daw), and is faithful enough to give you that much-coveted analogue sound without emptying your pockets. I'll do my best to keep this list up to date with any future Analog Obsession releases, but if you think I've misidentified anything (or haven't included something), do [let me know](/legal/about/#contact). And if you do find yourself using these plugins a lot, remember that the whole thing is kept alive by one developer on a donation model. Now go and make your records sound like they cost a fortune.
 
+<h2 class="footnotes">Footnotes</h2>
+
 [^patreon-about]: [About Page](https://www.patreon.com/analogobsession/about) for Analog Obsession's Patreon.
 [^kvr-about]: [Developer Page](https://www.kvraudio.com/developer/analog-obsession) for Analog Obsession's KVR Audio account.

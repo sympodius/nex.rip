@@ -72,4 +72,6 @@ Perhaps the obvious next question is why use digital at all if it doesn't sound 
 
 The analogue vibe might not work for all musical styles (or your personal preference), but it's been the predominant sound for most of music production's history. It's also what most listeners expect a 'professional' recording to sound like. Analogue-emulated hardware will come up a lot in my tutorials, but you can still ignore that and follow along with the other aspects of sound production. Either way, I hope you can appreciate why I've chosen the analogue emulation route.
 
+<h2 class="footnotes">Footnotes</h2>
+
 [^sampling-theorem]: This is known as the [Nyquist–Shannon sampling theorem](https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem).

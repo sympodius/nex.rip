@@ -99,6 +99,8 @@ So, hopefully you now know why you should be gain staging when recording, and ro
 
 If you want to know more about bit depth, check out my post on [Digitally Storing Audio](/secrets/digitally-storing-audio/#bit-depth).
 
+<h2 class="footnotes">Footnotes</h2>
+
 [^headroom]: This is sometimes called *headroom*.
 [^noise-floor]: *Noise floor* is the unwanted noise that is unintentionally recorded. This can include ambient and background noise from the recording space, as well as noise within the audio signal chain itself (like limitations of the mics and cables, or quantisation noise from storing analogue information digitally).
 [^clipping]: *Clipping* is a distortion that can occur any time the audio signal is amplified beyond the dynamic range[^dynamic-range] limits of the recording equipment/medium. To ensure this type of distortion isn't introduced, your audio should never clip at any point in the entire production pipeline (from recording through to final release).

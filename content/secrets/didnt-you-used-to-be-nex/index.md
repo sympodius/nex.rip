@@ -84,4 +84,6 @@ I guess that's everything. At the moment it feels like Nex is dead and forgotten
 
 The battle-cry here at *Nex (RIP)* is this: **NEX LIVES!**
 
+<h2 class="footnotes">Footnotes</h2>
+
 [^engeo]: Back in the day we told people our family name wasn't really *engeo*. We said it was just the phonetic spelling of *NGO* (*Non-Governmental Organisation*). We did enjoy our little word games.

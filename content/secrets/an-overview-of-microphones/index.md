@@ -97,6 +97,8 @@ On a related note, if you are recording outside then you might consider a windsc
 
 And that's about as much as you'll need to know about microphones to get you started. Learning about microphones is a very deep rabbit hole to fall down, but I've tried to keep things to the essentials for our desired goal of creating a 'professional' sounding recording as quickly and cheaply as possible. We still have a few more things to cover in recording audio before we move back *in the box*, but a microphone is the last required purchase for a while. Still, it's a pretty dang important one!
 
+<h2 class="footnotes">Footnotes</h2>
+
 [^phantom-power]: *Phantom power* is a means of powering the microphone's internal electronics through its XLR cable.
 [^transients]: *Transients* are the brief, sharp bursts of energy that occur at the start of a sound (for example, the initial attack of a drum hit, the pluck of a guitar string, or the consonants in speech). Accurate transient capture means the microphone can reproduce these fast-moving details faithfully, rather than smoothing or rounding them off.
 [^dynamics]: *Dynamics* refer to the variations in volume and intensity throughout a performance. A microphone that captures dynamics accurately will faithfully reproduce these fluctuations rather than compressing or flattening them, preserving the natural ebb and flow of the sound.

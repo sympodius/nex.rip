@@ -174,6 +174,8 @@ From this point on, I'll assume you can do the basics in whichever DAW you pick.
 
 Don't spend a lot of time agonising over which DAW to use. I've made my arguments for why I've chosen Ardour, but any DAW on this list (and many that aren't) can capably make a great record. However, you're the one that will have to use it effectively. Most people tend to commit pretty hard to the DAW they choose, so don't take the decision too lightly either. Whichever one you go for, learn the basics from your DAW's manual and I'll see you for the next tutorial.
 
+<h2 class="footnotes">Footnotes</h2>
+
 [^audio-interface]: An audio interface is a device that connects microphones and instruments directly to your computer, amplifying their weak analogue signals and converting them into the digital data your DAW records (and back again for playback). Most are external boxes that include a microphone preamp.
 [^midi]: MIDI stands for [Musical Instrument Digital Interface](https://en.wikipedia.org/wiki/MIDI). It's a communication and performance capture standard for digital music equipment that was first established in 1983. It is widely supported and has only had one major---fully backward compatible---update (in 2020). It will likely outlive us all. I'll be talking more about it in another article, as it will form a big part of our post-production work.
 [^jsfx-loaders]: You can get [VST3](https://en.wikipedia.org/wiki/Virtual_Studio_Technology), [AU](https://en.wikipedia.org/wiki/Audio_Units), and [CLAP](https://en.wikipedia.org/wiki/CLever_Audio_Plug-in) loaders for [JSFX](https://github.com/justinfrankel/jsfx) from [ysfx](https://github.com/JoepVanlier/ysfx).

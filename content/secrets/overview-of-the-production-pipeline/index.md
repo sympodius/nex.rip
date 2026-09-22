@@ -99,5 +99,6 @@ And those are just the stages in audio production. Before that there is pre-prod
 
 Hopefully that gives you a general idea of how things were done in the analogue days so that you know what we're trying to match. The digital pipeline is pretty different in its execution, but the stages themselves still exist there too. When we start going through each one, I'll point out the differences and how we can try to capture the best of analogue in our digital systems.
 
+<h2 class="footnotes">Footnotes</h2>
 
 [^dynamic-range]: Dynamic range is the difference between the loudest and quietest sounds in a recording.

@@ -88,4 +88,6 @@ One final point: don't assume you know what a cable is designed for just because
 
 Two hundred pounds for a recording box (plus even more for an optional DI) might seem like a lot of money---especially since a standard audio interface with built-in instrument inputs would be cheaper overall. But for the dead room workflow, where you need a quiet, self-contained recorder right next to you, it's the most practical way to make the most of your microphones and isolation setup.
 
+<h2 class="footnotes">Footnotes</h2>
+
 [^xlr-cable]: [Wikipedia page on XLR cables](https://en.wikipedia.org/wiki/XLR_connector).

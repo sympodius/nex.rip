@@ -136,6 +136,8 @@ A lot of tutorials online will recommend using a 48 kHz sample rate at 16-bit de
 
 Hopefully you've found this all useful and now have a better understanding of how audio signals are stored on computers, and why the numbers matter. If not, Nex won't mind you using the same settings as him.
 
+<h2 class="footnotes">Footnotes</h2>
+
 [^sampling-theorem]: [Primer on the Nyquist–Shannon sampling theorem from Wikipedia](https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem).
 [^intermodulation-distortion]: [Primer on intermodulation distortion from Wikipedia](https://en.wikipedia.org/wiki/Intermodulation).
 [^noise-floor]: *Noise floor* is the unwanted noise that is unintentionally recorded. This can include ambient and background noise from the recording space, as well as noise within the audio signal chain itself (like limitations of the mics and cables, or quantisation noise from storing analogue information digitally).

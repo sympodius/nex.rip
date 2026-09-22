@@ -62,10 +62,12 @@ Because some of the higher scores imply the criteria for the lower scores, the m
 
 At times throughout the site, I'll give my preferred software choice for a given task. In most cases, I'll also say whether my choice is based on a high hindrex rating or the software's output quality (hopefully both).
 
-Even though I will always try to give both the score and code for a hindrex rating, you may wish to use the decoder below on the off chance that I forget. Or, if you want to use hindrex scores as part of your own evaluations of software, the encoder for codes-to-scores might be helpful to you as well. You can thank John for coding those up for me.
+Even though I will always try to give both the score and code for a hindrex rating, you may wish to use the decoder below on the off chance that I forget. Or, if you want to use hindrex scores as part of your own evaluations of software, the encoder for codes-to-scores might be helpful to you as well. You can thank John[^hindrex-collaborators] for coding those up for me.
 
 {{< hindrex-decoder >}}
 
-[^hindrex-collaborators]: My thanks to John Urquhart Ferguson and the great Ladon for helping me develop the hindrex system.
+<h2 class="footnotes">Footnotes</h2>
+
+[^hindrex-collaborators]: My thanks to [John Urquhart Ferguson](https://www.haiverin.scot) and the great Ladon for helping me develop the hindrex system.
 [^free-software-def]: [The free software definition at Wikipedia](https://en.wikipedia.org/wiki/The_Free_Software_Definition).
 [^open-source-def]: [Wikipedia page on open source software](https://en.wikipedia.org/wiki/Open-source_software).
