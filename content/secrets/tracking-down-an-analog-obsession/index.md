@@ -131,24 +131,24 @@ I've tried to keep similar plugins grouped together so that they're easier to br
 |[CHANNEV](https://www.patreon.com/analogobsession/posts/channev-52960238)|Neve 1272 Mic Pre-amp/Neve 1081 Equaliser/Neve 2264 Compressor & Limiter                                                     |
 |[KONSOL](https://www.patreon.com/analogobsession/posts/konsol-34420510)  |Gray: Universal Audio 610 Console (Tube)/Blue: Neve 1073 Console (Transistor)/Black: Solid State Logic 4000 E Console (OpAmp)|
 
-|Analog Obsession Miscellaneous Plugins                                          |Hardware/Description                                                                             |
-|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-|[ATTRACTOR](https://www.patreon.com/analogobsession/posts/attractor-122556016)  |Analog Obsession Original---dynamic processor (with transient manipulation)                      |
-|[Chopa](https://www.patreon.com/analogobsession/posts/chopa-67845888)           |Analog Obsession Original---movement for synths, guitars, and vocals                             |
-|[CITE](https://www.patreon.com/analogobsession/posts/cite-105307600)            |Analog Obsession Original---high frequency processor                                             |
-|[DrGate](https://www.patreon.com/analogobsession/posts/drgate-116225259)        |Analog Obsession Original---drum-specific gate                                                   |
-|[EQProfiler](https://www.patreon.com/analogobsession/posts/eqprofiler-170334240)|Profile and clone the linear frequency response of EQs (but not harmonics)                       |
-|[LOADES](https://www.patreon.com/analogobsession/posts/loades-62370686)         |Analog Obsession Original---de-esser                                                             |
-|[LOVEND](https://www.patreon.com/analogobsession/posts/lovend-34669483)         |Analog Obsession Original---harmonic bass enhancer                                               |
-|[MidBoss](https://www.patreon.com/analogobsession/posts/midboss-141665938)      |Analog Obsession Original---mid-frequency targeted saturator and sweetener with 6 different types|
-|[MoMa](https://www.patreon.com/analogobsession/posts/moma-100041804)            |Ethan Winer's 'Mojo Maestro' Passive Saturation Box                                              |
-|[POORTEC](https://www.patreon.com/analogobsession/posts/poortec-119632465)      |'Pultec Style' Program Equaliser (without SRPP gain stage and inductors)                         |
-|[RazorClip](https://www.patreon.com/analogobsession/posts/razorclip-151529497)  |Analog Obsession Original---clipper with 5 options                                               |
-|[Realizer](https://www.patreon.com/analogobsession/posts/realizer-77091774)     |Analog Obsession Original---transient-based random value generator                               |
-|[ReLife](https://www.patreon.com/analogobsession/posts/relife-58488732)         |Analog Obsession Original---magic knob general plugin (make things sound good with little effort)|
-|[SweetDrums](https://www.patreon.com/analogobsession/posts/sweetdrums-34294118) |Analog Obsession Original---magic knob drum shaper                                               |
-|[SweetVox](https://www.patreon.com/analogobsession/posts/sweetvox-34294211)     |Analog Obsession Original---magic knob voice shaper and de-esser                                 |
-|[ToneShaper](https://www.patreon.com/analogobsession/posts/toneshaper-169700744)|Analog Obsession Original---magic knob passive tone and body control                             |
+|Analog Obsession Miscellaneous Plugins                                          |Hardware/Description                                                                                  |
+|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+|[ATTRACTOR](https://www.patreon.com/analogobsession/posts/attractor-122556016)  |Analog Obsession Original: dynamic processor (with transient manipulation)                           |
+|[Chopa](https://www.patreon.com/analogobsession/posts/chopa-67845888)           |Analog Obsession Original: movement for synths, guitars, and vocals                                  |
+|[CITE](https://www.patreon.com/analogobsession/posts/cite-105307600)            |Analog Obsession Original: high frequency processor                                                  |
+|[DrGate](https://www.patreon.com/analogobsession/posts/drgate-116225259)        |Analog Obsession Original: drum-specific gate                                                        |
+|[EQProfiler](https://www.patreon.com/analogobsession/posts/eqprofiler-170334240)|Analog Obsession Original: profile and clone the linear frequency response of EQs (but not harmonics)|
+|[LOADES](https://www.patreon.com/analogobsession/posts/loades-62370686)         |Analog Obsession Original: de-esser                                                                  |
+|[LOVEND](https://www.patreon.com/analogobsession/posts/lovend-34669483)         |Analog Obsession Original: harmonic bass enhancer                                                    |
+|[MidBoss](https://www.patreon.com/analogobsession/posts/midboss-141665938)      |Analog Obsession Original: mid-frequency targeted saturator and sweetener with 6 different types     |
+|[MoMa](https://www.patreon.com/analogobsession/posts/moma-100041804)            |Ethan Winer's 'Mojo Maestro' Passive Saturation Box                                                   |
+|[POORTEC](https://www.patreon.com/analogobsession/posts/poortec-119632465)      |'Pultec Style' Program Equaliser (without SRPP gain stage and inductors)                              |
+|[RazorClip](https://www.patreon.com/analogobsession/posts/razorclip-151529497)  |Analog Obsession Original: clipper with 5 options                                                    |
+|[Realizer](https://www.patreon.com/analogobsession/posts/realizer-77091774)     |Analog Obsession Original: transient-based random value generator                                    |
+|[ReLife](https://www.patreon.com/analogobsession/posts/relife-58488732)         |Analog Obsession Original: magic knob general plugin (make things sound good with little effort)     |
+|[SweetDrums](https://www.patreon.com/analogobsession/posts/sweetdrums-34294118) |Analog Obsession Original: magic knob drum shaper                                                    |
+|[SweetVox](https://www.patreon.com/analogobsession/posts/sweetvox-34294211)     |Analog Obsession Original: magic knob voice shaper and de-esser                                      |
+|[ToneShaper](https://www.patreon.com/analogobsession/posts/toneshaper-169700744)|Analog Obsession Original: magic knob passive tone and body control                                  |
 
 |Analog Obsession American Bundle                                                |Hardware/Description |
 |--------------------------------------------------------------------------------|---------------------|
@@ -200,8 +200,8 @@ I've tried to keep similar plugins grouped together so that they're easier to br
 
 |Analog Obsession JSFX Plugins                                                                 |Hardware/Description                                                               |
 |----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-|[EQ PROFILER](https://www.patreon.com/analogobsession/posts/eq-profiler-jsfx-169892391)       |Profile and clone the linear frequency response of EQs (but not harmonics)         |
-|[SATURATION PROFILER](https://www.patreon.com/analogobsession/posts/saturation-jsfx-169968571)|Profile the saturation/transfer function and harmonic distortion of an audio signal|
+|[EQ PROFILER](https://www.patreon.com/analogobsession/posts/eq-profiler-jsfx-169892391)       |Analog Obsession Original: profile and clone the linear frequency response of EQs (but not harmonics)         |
+|[SATURATION PROFILER](https://www.patreon.com/analogobsession/posts/saturation-jsfx-169968571)|Analog Obsession Original: profile the saturation/transfer function and harmonic distortion of an audio signal|
 
 |Analog Obsession Legacy Plugins                   |Hardware/Description                                                                                                                                                                          |
 |--------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
