@@ -4,8 +4,8 @@ date: 2026-09-16T13:14:26+01:00
 author: Nexami Engeo
 description: "Analogue sound without the cost: mapping every free Analog Obsession plugin to the classic hardware it's believed to emulate (noting original designs)."
 summary: The fidelity of a fortune for the cost of a coffee.
-readingEase: College Graduates
-gradeLevel: 26
+readingEase: Professionals
+gradeLevel: 27
 images:
 - images/post-cover.png
 categories:
@@ -27,7 +27,7 @@ tags:
 draft: false
 ---
 
-***Last updated: 19th September 2026***
+***Last updated: 28th September 2026***
 
 {{< banner src="images/post-cover.png" alt="A cyan digital sine wave becoming a warm, distorted orange wave as it passes through seven Analog Obsession plugin modules. Credit: John Urquhart Ferguson" >}}
 
@@ -137,6 +137,7 @@ I've tried to keep similar plugins grouped together so that they're easier to br
 |[Chopa](https://www.patreon.com/analogobsession/posts/chopa-67845888)           |Analog Obsession Original---movement for synths, guitars, and vocals                             |
 |[CITE](https://www.patreon.com/analogobsession/posts/cite-105307600)            |Analog Obsession Original---high frequency processor                                             |
 |[DrGate](https://www.patreon.com/analogobsession/posts/drgate-116225259)        |Analog Obsession Original---drum-specific gate                                                   |
+|[EQProfiler](https://www.patreon.com/analogobsession/posts/eqprofiler-170334240)|Profile and clone the linear frequency response of EQs (but not harmonics)                       |
 |[LOADES](https://www.patreon.com/analogobsession/posts/loades-62370686)         |Analog Obsession Original---de-esser                                                             |
 |[LOVEND](https://www.patreon.com/analogobsession/posts/lovend-34669483)         |Analog Obsession Original---harmonic bass enhancer                                               |
 |[MidBoss](https://www.patreon.com/analogobsession/posts/midboss-141665938)      |Analog Obsession Original---mid-frequency targeted saturator and sweetener with 6 different types|
@@ -199,6 +200,7 @@ I've tried to keep similar plugins grouped together so that they're easier to br
 
 |Analog Obsession JSFX Plugins                                                                 |Hardware/Description                                                               |
 |----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+|[EQ PROFILER](https://www.patreon.com/analogobsession/posts/eq-profiler-jsfx-169892391)       |Profile and clone the linear frequency response of EQs (but not harmonics)         |
 |[SATURATION PROFILER](https://www.patreon.com/analogobsession/posts/saturation-jsfx-169968571)|Profile the saturation/transfer function and harmonic distortion of an audio signal|
 
 |Analog Obsession Legacy Plugins                   |Hardware/Description                                                                                                                                                                          |
