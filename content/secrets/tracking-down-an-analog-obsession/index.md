@@ -27,7 +27,7 @@ tags:
 draft: false
 ---
 
-***Last updated: 28th September 2026***
+***Last updated: 29th September 2026***
 
 {{< banner src="images/post-cover.png" alt="A cyan digital sine wave becoming a warm, distorted orange wave as it passes through seven Analog Obsession plugin modules. Credit: John Urquhart Ferguson" >}}
 
