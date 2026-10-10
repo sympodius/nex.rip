@@ -34,3 +34,6 @@ go.work.sum
 /resources/
 /public/
 *.hugo_build.lock
+
+# Netlify build cache state (lastfm previous pull + album art)
+.lastfm-state/

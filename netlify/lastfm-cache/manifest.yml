@@ -1,0 +1,3 @@
+name: netlify-lastfm-cache
+description: Persists the listensfetcher state (previous pull + album art) between builds
+input: {}

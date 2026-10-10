@@ -1,5 +1,5 @@
 // src/index.ts
-import { readFileSync, writeFileSync as writeFileSync2, mkdirSync as mkdirSync2 } from "node:fs";
+import { readFileSync, writeFileSync as writeFileSync2, mkdirSync as mkdirSync2, readdirSync, statSync, copyFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -163,6 +163,12 @@ async function downloadImage(url, dir) {
   const hash = hashUrl(url);
   const ext = getExtension(url);
   const filename = `${hash}${ext}`;
+  // Cache-first: the filename is a hash of the URL, so an existing file
+  // means "this URL was already cached". Staleness for same-URL content
+  // changes is bounded by the 90-day TTL that prunes the state cache.
+  if (existsSync(dir + "/" + filename)) {
+    return filename;
+  }
   for (let attempt = 0; attempt < MAX_RETRIES2; attempt++) {
     if (attempt > 0) {
       await sleep2(RETRY_DELAY_MS2);
@@ -174,6 +180,7 @@ async function downloadImage(url, dir) {
       }
       const buffer = Buffer.from(await response.arrayBuffer());
       writeFileSync(dir + "/" + filename, buffer);
+      recordImageCached(MANIFEST_FILE, filename);
       return filename;
     } catch {
       continue;
@@ -223,6 +230,11 @@ var ROOT_DIR = resolve(import.meta.dirname, "../..");
 var DATA_FILE = resolve(ROOT_DIR, "data", "lastfm.json");
 var IMAGES_DIR = resolve(ROOT_DIR, "assets", "lastfm", "images");
 var TMP_BASE = resolve(ROOT_DIR, "data");
+var STATE_DIR = resolve(ROOT_DIR, ".lastfm-state");
+var STATE_FILE = resolve(STATE_DIR, "lastfm.json");
+var STATE_IMAGES_DIR = resolve(STATE_DIR, "images");
+var MANIFEST_FILE = resolve(STATE_IMAGES_DIR, "manifest.json");
+var IMAGE_TTL_MS = 90 * 24 * 60 * 60 * 1000;
 var EMPTY_ALBUM = {
   image: null,
   name: "",
@@ -272,6 +284,163 @@ function matchTopTracks(artists, recentTracks) {
   }
   return topTracks;
 }
+function readPreviousArtists(filePath) {
+  try {
+    const prev = JSON.parse(readFileSync(filePath, "utf-8"));
+    if (Array.isArray(prev.artists)) {
+      return prev.artists;
+    }
+  } catch {
+  }
+  return [];
+}
+function backfillFromPrevious(artists, filePath, imagesDir, target = 5) {
+  if (artists.length >= target) {
+    return;
+  }
+  const previous = readPreviousArtists(filePath);
+  for (const prev of previous) {
+    if (artists.length >= target) {
+      break;
+    }
+    if (artists.some((a) => a.name.toLowerCase() === prev.name.toLowerCase())) {
+      continue;
+    }
+    const entry = {
+      ...prev,
+      rank: artists.length + 1,
+      carried_over: true
+    };
+    // Previous image files may not exist in this build environment;
+    // drop the reference so the template falls back to the no-art SVG.
+    const image = entry.top_track?.album?.image;
+    if (image && !existsSync(resolve(imagesDir, image))) {
+      entry.top_track.album.image = null;
+    }
+    artists.push(entry);
+    console.log(`  \u2713 ${prev.name} \u2014 carried over from previous pull (${prev.play_count} plays)`);
+  }
+}
+function readLatestPrevious(committedPath, statePath) {
+  let best = null;
+  for (const path of [committedPath, statePath]) {
+    try {
+      const parsed = JSON.parse(readFileSync(path, "utf-8"));
+      if (!Array.isArray(parsed.artists)) {
+        continue;
+      }
+      const ts = Date.parse(parsed.fetched_at) || 0;
+      if (best === null || ts > best.ts) {
+        best = { path, ts };
+      }
+    } catch {
+    }
+  }
+  return best ? best.path : committedPath;
+}
+function readImageManifest(manifestPath) {
+  let raw;
+  try {
+    raw = readFileSync(manifestPath, "utf-8");
+  } catch (error) {
+    // A missing manifest is a fresh start; anything else is corruption.
+    // Both degrade to an empty manifest — undated files are always kept.
+    return {};
+  }
+  try {
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+      return parsed;
+    }
+  } catch {
+  }
+  return {};
+}
+function writeImageManifest(manifestPath, manifest) {
+  writeFileSync2(manifestPath, JSON.stringify(manifest, null, 2));
+}
+function recordImageCached(manifestPath, filename) {
+  try {
+    const manifest = readImageManifest(manifestPath);
+    if (!manifest[filename]) {
+      // First-cached time only — cache hits never refresh the timestamp,
+      // so every file expires 90 days after it was first cached.
+      manifest[filename] = new Date().toISOString();
+      writeImageManifest(manifestPath, manifest);
+    }
+  } catch {
+  }
+}
+function selectExpiredImages(manifest, files, now, ttlMs) {
+  const cutoff = now - ttlMs;
+  return files.filter((file) => {
+    const cachedAt = manifest[file];
+    if (!cachedAt) {
+      return false; // Undated file: keep, err on the safe side.
+    }
+    const ts = Date.parse(cachedAt);
+    return Number.isFinite(ts) && ts < cutoff;
+  });
+}
+function restoreStateImages() {
+  try {
+    if (!existsSync(STATE_IMAGES_DIR)) {
+      return;
+    }
+    let count = 0;
+    for (const file of readdirSync(STATE_IMAGES_DIR)) {
+      if (file === "manifest.json") {
+        continue;
+      }
+      const src = resolve(STATE_IMAGES_DIR, file);
+      if (statSync(src).isFile() && !existsSync(resolve(IMAGES_DIR, file))) {
+        copyFileSync(src, resolve(IMAGES_DIR, file));
+        count += 1;
+      }
+    }
+    if (count > 0) {
+      console.log(`  \u2713 Restored ${count} album art file(s) from previous build`);
+    }
+  } catch {
+  }
+}
+function saveState(data) {
+  try {
+    mkdirSync2(STATE_DIR, { recursive: true });
+    mkdirSync2(STATE_IMAGES_DIR, { recursive: true });
+    writeFileSync2(STATE_FILE, JSON.stringify(data, null, 2));
+    const manifest = readImageManifest(MANIFEST_FILE);
+    const now = new Date().toISOString();
+    for (const artist of data.artists) {
+      const image = artist.top_track?.album?.image;
+      if (!image) {
+        continue;
+      }
+      const src = resolve(IMAGES_DIR, image);
+      if (existsSync(src)) {
+        copyFileSync(src, resolve(STATE_IMAGES_DIR, image));
+        if (!manifest[image]) {
+          manifest[image] = now;
+        }
+      }
+    }
+    const images = existsSync(STATE_IMAGES_DIR)
+      ? readdirSync(STATE_IMAGES_DIR).filter((file) => file !== "manifest.json")
+      : [];
+    const expired = selectExpiredImages(manifest, images, Date.now(), IMAGE_TTL_MS);
+    for (const file of expired) {
+      rmSync(resolve(STATE_IMAGES_DIR, file), { force: true });
+      delete manifest[file];
+    }
+    if (expired.length > 0) {
+      console.log(`  \u2713 Pruned ${expired.length} image(s) cached more than 90 days ago`);
+    }
+    writeImageManifest(MANIFEST_FILE, manifest);
+    console.log(`  \u2713 Saved build state to .lastfm-state for the next build`);
+  } catch {
+    console.log(`  \u26A0 Could not save build state`);
+  }
+}
 async function main() {
   let tmpFile = null;
   try {
@@ -283,6 +452,7 @@ async function main() {
     console.log(`\u2713 Fetched ${recentTracks.length} recent track(s)`);
     const topTracks = matchTopTracks(topArtists, recentTracks);
     mkdirSync2(IMAGES_DIR, { recursive: true });
+    restoreStateImages();
     console.log(`\u280B Fetching album art...`);
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
     for (const [artistName, track] of topTracks) {
@@ -344,6 +514,8 @@ async function main() {
         top_track: topTrack
       });
     }
+    const previousFile = readLatestPrevious(DATA_FILE, STATE_FILE);
+    backfillFromPrevious(artists, previousFile, IMAGES_DIR);
     const data = {
       fetched_at: (/* @__PURE__ */ new Date()).toISOString(),
       user: USER,
@@ -357,6 +529,7 @@ async function main() {
     atomicFileSwap(tmpFile, DATA_FILE);
     tmpFile = null;
     console.log(`\u2713 Wrote ${artists.length} artist(s) to data/lastfm.json`);
+    saveState(data);
     console.log(`  user: ${USER}`);
     console.log(`  fetched_at: ${data.fetched_at}`);
     process.exit(0);
@@ -372,5 +545,11 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main();
 }
 export {
-  matchTopTracks
+  matchTopTracks,
+  backfillFromPrevious,
+  readLatestPrevious,
+  downloadImage,
+  readImageManifest,
+  recordImageCached,
+  selectExpiredImages
 };

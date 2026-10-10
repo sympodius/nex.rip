@@ -1,0 +1,9 @@
+# Build configuration (moved from the Netlify UI — this file now takes
+# precedence for the settings it defines).
+[build]
+  command = "node listensfetcher/dist/index.js && hugo --gc --minify && npm --version"
+  publish = "public"
+
+# Persists the listensfetcher state between builds (see plugin README comments).
+[[plugins]]
+  package = "./netlify/lastfm-cache"
