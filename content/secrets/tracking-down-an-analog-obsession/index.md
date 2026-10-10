@@ -27,7 +27,7 @@ tags:
 draft: false
 ---
 
-***Last updated: 29th September 2026***
+***Last updated: 10th October 2026***
 
 {{< banner src="images/post-cover.png" alt="A cyan digital sine wave becoming a warm, distorted orange wave as it passes through seven Analog Obsession plugin modules. Credit: John Urquhart Ferguson" >}}
 
@@ -67,23 +67,24 @@ Also, Analog Obsession plugins usually compensate for gain automatically. This m
 
 I've tried to keep similar plugins grouped together so that they're easier to browse, but it's still a massive list:
 
-|Analog Obsession Standalone Compressors                                    |Hardware/Description                                                                                |
-|---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-|[BUSTERse](https://www.patreon.com/analogobsession/posts/busterse-42658623)|Solid State Logic Bus Compressor [VCA]                                                              |
-|[COMPER](https://www.patreon.com/analogobsession/posts/comper-74729047)    |Analog Obsession Original VCA, FET and OPTO Blended Compressor [VCA/FET/OPTO]                       |
-|[dBComp](https://www.patreon.com/analogobsession/posts/dbcomp-56933944)    |dbx 160 Compressor [VCA]                                                                            |
-|[EDComp](https://www.patreon.com/analogobsession/posts/edcomp-129902016)   |Analog Obsession Original Pre-Emphasis/De-Emphasis Compressor [Digital]                             |
-|[FetCB](https://www.patreon.com/analogobsession/posts/fetcb-92444426)      |Trident Audio CB9146 Compressor [FET]                                                               |
-|[KolinMB](https://www.patreon.com/analogobsession/posts/kolinmb-85062886)  |Collins 26U Compressor (multi-band version) [Tube]                                                  |
-|[LAEA](https://www.patreon.com/analogobsession/posts/laea-153437904)       |Teletronix LA-3A Compressor [Solid-State OPTO]                                                      |
-|[LALA](https://www.patreon.com/analogobsession/posts/lala-36128829)        |Teletronix LA-2A Compressor [Tube OPTO]                                                             |
-|[MuChild](https://www.patreon.com/analogobsession/posts/muchild-157419821) |Fairchild 660 Vari-mu Compressor [Tube]                                                             |
-|[OSS](https://www.patreon.com/analogobsession/posts/oss-34292591)          |Universal Audio UA 176 Compressor [Tube]                                                            |
-|[SPECOMP](https://www.patreon.com/analogobsession/posts/specomp-51285294)  |'Solid State Logic Style' Spectral Compressor [VCA]                                                 |
-|[TheBus](https://www.patreon.com/analogobsession/posts/thebus-163129163)   |Analog Obsession Original Compressor (soft knee with linear frequency response) [Digital]           |
-|[TRAX](https://www.patreon.com/analogobsession/posts/trax-70970958)        |SPL Transient Designer [Transient Shaper]                                                           |
-|[VariMoon](https://www.patreon.com/analogobsession/posts/varimoon-34323360)|Esoteric Audio Research (EAR) 660 (a Fairchild 660 Clone) Vari-mu Compressor [Tube]                 |
-|[YALA](https://www.patreon.com/analogobsession/posts/yala-34323384)        |Hybrid Vari-mu Compressor Combining EMI/Abbey Road RS124 (modified ALTEC 436B) and ALTEC 436C [Tube]|
+|Analog Obsession Standalone Compressors                                         |Hardware/Description                                                                                |
+|--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+|[BUSTERse](https://www.patreon.com/analogobsession/posts/busterse-42658623)     |Solid State Logic Bus Compressor [VCA]                                                              |
+|[COMPER](https://www.patreon.com/analogobsession/posts/comper-74729047)         |Analog Obsession Original VCA, FET and OPTO Blended Compressor [VCA/FET/OPTO]                       |
+|[dBComp](https://www.patreon.com/analogobsession/posts/dbcomp-56933944)         |dbx 160 Compressor [VCA]                                                                            |
+|[DiodeCrush](https://www.patreon.com/analogobsession/posts/diodecrush-171393011)|Analog Obsession Original 'Diode-Bridge Style' Heavy Crush Compressor [Diode Bridge]                |
+|[EDComp](https://www.patreon.com/analogobsession/posts/edcomp-129902016)        |Analog Obsession Original Pre-Emphasis/De-Emphasis Compressor [Digital]                             |
+|[FetCB](https://www.patreon.com/analogobsession/posts/fetcb-92444426)           |Trident Audio CB9146 Compressor [FET]                                                               |
+|[KolinMB](https://www.patreon.com/analogobsession/posts/kolinmb-85062886)       |Collins 26U Compressor (multi-band version) [Tube]                                                  |
+|[LAEA](https://www.patreon.com/analogobsession/posts/laea-153437904)            |Teletronix LA-3A Compressor [Solid-State OPTO]                                                      |
+|[LALA](https://www.patreon.com/analogobsession/posts/lala-36128829)             |Teletronix LA-2A Compressor [Tube OPTO]                                                             |
+|[MuChild](https://www.patreon.com/analogobsession/posts/muchild-157419821)      |Fairchild 660 Vari-mu Compressor [Tube]                                                             |
+|[OSS](https://www.patreon.com/analogobsession/posts/oss-34292591)               |Universal Audio UA 176 Compressor [Tube]                                                            |
+|[SPECOMP](https://www.patreon.com/analogobsession/posts/specomp-51285294)       |'Solid State Logic Style' Spectral Compressor [VCA]                                                 |
+|[TheBus](https://www.patreon.com/analogobsession/posts/thebus-163129163)        |Analog Obsession Original Compressor (soft knee with linear frequency response) [Digital]           |
+|[TRAX](https://www.patreon.com/analogobsession/posts/trax-70970958)             |SPL Transient Designer [Transient Shaper]                                                           |
+|[VariMoon](https://www.patreon.com/analogobsession/posts/varimoon-34323360)     |Esoteric Audio Research (EAR) 660 (a Fairchild 660 Clone) Vari-mu Compressor [Tube]                 |
+|[YALA](https://www.patreon.com/analogobsession/posts/yala-34323384)             |Hybrid Vari-mu Compressor Combining EMI/Abbey Road RS124 (modified ALTEC 436B) and ALTEC 436C [Tube]|
 
 |Analog Obsession Standalone Channel Strips, Equalisers, and Pre-amps       |Hardware/Description                                                                                                                                                   |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
