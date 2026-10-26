@@ -27,7 +27,7 @@ tags:
 draft: false
 ---
 
-***Last updated: 10th October 2026***
+***Last updated: 26th October 2026***
 
 {{< banner src="images/post-cover.png" alt="A cyan digital sine wave becoming a warm, distorted orange wave as it passes through seven Analog Obsession plugin modules. Credit: John Urquhart Ferguson" >}}
 
@@ -149,6 +149,7 @@ I've tried to keep similar plugins grouped together so that they're easier to br
 |[ReLife](https://www.patreon.com/analogobsession/posts/relife-58488732)         |Analog Obsession Original: magic knob general plugin (make things sound good with little effort)                                                                                       |
 |[SweetDrums](https://www.patreon.com/analogobsession/posts/sweetdrums-34294118) |Analog Obsession Original: magic knob drum shaper                                                                                                                                      |
 |[SweetVox](https://www.patreon.com/analogobsession/posts/sweetvox-34294211)     |Analog Obsession Original: magic knob voice shaper and de-esser                                                                                                                        |
+|[TheMachine](https://www.patreon.com/analogobsession/posts/themachine-173345538)|Ampex 350 ¼-inch 2-track Tape Machine [Tube]                                                                                                                                           |
 |[ToneShaper](https://www.patreon.com/analogobsession/posts/toneshaper-169700744)|Analog Obsession Original: magic knob passive tone and body control                                                                                                                    |
 
 |Analog Obsession American Bundle                                                |Hardware/Description |
